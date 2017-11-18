@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (4.3.0)
+  - Cosmos (12.0.1)
+  - Crashlytics (3.8.3):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
+  - MBProgressHUD (1.0.0)
+  - NVActivityIndicatorView (3.3)
+  - ReachabilitySwift (3)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SwiftMessages (3.1.5)
+  - Toast-Swift (2.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.3.0)
+  - Cosmos (~> 12.0)
+  - Crashlytics
+  - Fabric
+  - MBProgressHUD (~> 1.0.0)
+  - NVActivityIndicatorView
+  - ReachabilitySwift
+  - SDWebImage (~> 3.8)
+  - SwiftMessages
+  - Toast-Swift (~> 2.0.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Cosmos: 4a9f57998a08788a1062c7b8eefbc62d2b590f39
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  NVActivityIndicatorView: 0a4cd7863d0e409e65b72e253c3e13f48d0260d7
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SwiftMessages: bb85d7c30e85256f9367214b0907e1f409e1870a
+  Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
+
+PODFILE CHECKSUM: 42ee2b75e8fa572ab1b5b61b0d3dc6c8b8d26534
+
+COCOAPODS: 1.3.1
