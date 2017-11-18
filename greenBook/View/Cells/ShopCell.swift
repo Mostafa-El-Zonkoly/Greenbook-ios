@@ -1,3 +1,6 @@
+
+
+
 //
 //  ShopCell.swift
 //  greenBook
@@ -15,45 +18,43 @@ protocol ShopCellDelegate {
 }
 
 class ShopCell: UITableViewCell {
-    
+    var shopViewAdded = false
+    @IBOutlet weak var containerView: UIView!
+    var shopView : ShopView!
     // MARK: Outlets
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        addShopView()
+        self.containerView.layoutSubviews()
+    }
     
-    @IBOutlet weak var shopImgView: UIImageView!
-    @IBOutlet weak var rateView: CosmosView!
-    @IBOutlet weak var rateLabel: UILabel!
-    @IBOutlet weak var favouriteImgView: UIImageView!
-    @IBOutlet weak var shopDetailsLabel: UILabel!
-    @IBOutlet weak var shopDistanceLabel: UILabel!
-    
-    @IBOutlet weak var shopTitleLabel: UILabel!
     var delegate : ShopCellDelegate?
     var shop : Shop?
     
     func bindShop(shop : Shop){
         self.selectionStyle = .none
-        self.shop = shop
-        self.shopDetailsLabel.text = shop.shopDescription
-        self.shopTitleLabel.text = shop.name
-        self.rateLabel.text = "\(shop.rate.toString(decimals: 1))  (\(shop.num_of_reviews))"
-        self.rateView.rating = shop.rate
-        if let url = URL.init(string: shop.main_photo_url) {
-            self.shopImgView.sd_setImage(with: url)
-        }
-        if !shop.favourited() {
-            self.favouriteImgView.image = #imageLiteral(resourceName: "icFav")
-        }else{
-            self.favouriteImgView.image = #imageLiteral(resourceName: "icFavSelected")
-        }
-        self.shopDistanceLabel.text = shop.getDistance()
+       self.shopView.bindShop(shop: shop)
+       
     }
-    
+    func addShopView(){
+        if let _shopView = Bundle.main.loadNibNamed("ShopView", owner: self, options: nil)?.first as? ShopView{
+            shopViewAdded = true
+            self.shopView = _shopView
+            self.containerView.addSubview(shopView)
+            
+            let horizontalConstraint = NSLayoutConstraint(item: shopView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: containerView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+            let verticalConstraint = NSLayoutConstraint(item: shopView, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: containerView, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0)
+            let widthConstraint = NSLayoutConstraint(item: shopView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: containerView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+            let leading = NSLayoutConstraint(item: shopView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: containerView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+            let trailing = NSLayoutConstraint(item: shopView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: containerView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+            let heightConstraint = NSLayoutConstraint(item: shopView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: containerView, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 0)
+            containerView.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint,leading,trailing])
+        }
+        
+    }
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.shopImgView.image = nil
-        self.shopTitleLabel.text = ""
-        self.shopDetailsLabel.text = ""
-        self.rateView.rating = 0
-        self.rateLabel.text = "0.0  (0)"
-        self.shopDistanceLabel.text = ""
+        self.shopView.resetView()
     }
 }
+
