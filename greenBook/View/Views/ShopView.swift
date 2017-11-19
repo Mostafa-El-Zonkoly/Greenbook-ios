@@ -18,6 +18,8 @@ class ShopView: UIView {
     @IBOutlet weak var shopDetailsLabel: UILabel!
     @IBOutlet weak var shopDistanceLabel: UILabel!
     @IBOutlet weak var shopTitleLabel: UILabel!
+    @IBOutlet weak var shopDistanceHeight: NSLayoutConstraint!
+    
     var shop : Shop?
     func bindShop(shop : Shop){
         self.shop = shop

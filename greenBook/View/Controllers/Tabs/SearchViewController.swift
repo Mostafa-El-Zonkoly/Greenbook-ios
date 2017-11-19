@@ -22,7 +22,7 @@ enum SearchType {
 }
 class SearchViewController: AbstractViewController, UITextFieldDelegate, UITableViewDataSource,UITableViewDelegate {
     var searchType : SearchType = .location
-    
+    var selectedShop : Shop?
     @IBOutlet weak var filterViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var filterTable: UITableView!
     @IBOutlet weak var filterView: UIView!
@@ -79,11 +79,16 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             self.categories = CategoryManager.sharedInistance.categories
             self.tableView.reloadData()
         }
+        self.navigationController?.isNavigationBarHidden = true
+
         self.filterTable.rowHeight = 40.0
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.selectedShop = nil
+        self.navigationController?.isNavigationBarHidden = true
+
         ShopManager.sharedInstance.loadFavouriteShops { (response) in
             self.tableView.reloadData()
         }
@@ -167,6 +172,11 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                 }
             }else{
                 // Result is of a shop
+                if  indexPath.row < self.shops.count {
+                    self.selectedShop = self.shops[indexPath.row]
+                    performSegue(withIdentifier: "showShopSegue", sender: self)
+
+                }
             }
         }else{
             if self.searchType == .category {
@@ -263,5 +273,15 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         self.filteredCategories =  CategoryManager.sharedInistance.getCategoriesWithPrefix(prefix: prefix)
         self.filterViewHeightConstraint.constant = CGFloat(self.filteredCategories.count) * self.filterTable.rowHeight
         self.filterTable.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showShopSegue" {
+            if let dest = segue.destination as? ShopViewController {
+                if let shop = self.selectedShop {
+                    dest.shop = shop
+                }
+            }
+        }
     }
 }

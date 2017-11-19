@@ -112,10 +112,12 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="loc-bn-X8i" secondAttribute="bottom" constant="9" id="1eu-wp-0Ml"/>
+                <constraint firstItem="ic3-sM-2Oe" firstAttribute="top" secondItem="1jy-f0-GMY" secondAttribute="bottom" constant="5" id="78c-Xk-2Iu"/>
                 <constraint firstAttribute="trailing" secondItem="ACe-jd-xQk" secondAttribute="trailing" constant="35" id="DRW-a7-IMQ"/>
                 <constraint firstAttribute="trailing" secondItem="4td-UR-N1I" secondAttribute="trailing" constant="28.5" id="GUS-so-zIj"/>
                 <constraint firstItem="loc-bn-X8i" firstAttribute="top" secondItem="ACe-jd-xQk" secondAttribute="bottom" constant="6" id="N5x-ve-aH8"/>
                 <constraint firstItem="igg-Lp-NAS" firstAttribute="leading" secondItem="Rpq-uh-wnO" secondAttribute="leading" constant="13" id="Sco-dK-738"/>
+                <constraint firstItem="fF1-CG-wMT" firstAttribute="top" secondItem="1jy-f0-GMY" secondAttribute="bottom" constant="6" id="eQt-sn-WF0"/>
                 <constraint firstItem="4td-UR-N1I" firstAttribute="leading" secondItem="1jy-f0-GMY" secondAttribute="trailing" constant="10" id="fnY-W5-GTR"/>
                 <constraint firstItem="fF1-CG-wMT" firstAttribute="top" secondItem="igg-Lp-NAS" secondAttribute="bottom" constant="-17" id="gRv-cY-bwb"/>
                 <constraint firstItem="loc-bn-X8i" firstAttribute="leading" secondItem="ACe-jd-xQk" secondAttribute="leading" id="i8m-YY-WM9"/>
@@ -138,6 +140,7 @@
                 <outlet property="rateLabel" destination="ic3-sM-2Oe" id="P8z-9N-1uT"/>
                 <outlet property="rateView" destination="fF1-CG-wMT" id="1UT-fx-NYG"/>
                 <outlet property="shopDetailsLabel" destination="ACe-jd-xQk" id="bTj-GA-0QT"/>
+                <outlet property="shopDistanceHeight" destination="Xky-u0-5wp" id="Eju-Rg-kn0"/>
                 <outlet property="shopDistanceLabel" destination="loc-bn-X8i" id="aR6-s3-VJK"/>
                 <outlet property="shopImgView" destination="igg-Lp-NAS" id="GuR-5L-zBt"/>
                 <outlet property="shopTitleLabel" destination="1jy-f0-GMY" id="3fu-8f-kcD"/>

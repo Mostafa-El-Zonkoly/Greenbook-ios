@@ -17,4 +17,8 @@ pod 'ReachabilitySwift'
 pod 'NVActivityIndicatorView'
 pod 'SwiftMessages'
 pod 'Cosmos', '~> 12.0'
+pod 'XLPagerTabStrip'
+pod 'FTImageViewer'
+pod 'Kingfisher'
+
 end

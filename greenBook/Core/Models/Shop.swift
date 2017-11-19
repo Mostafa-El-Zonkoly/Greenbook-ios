@@ -19,6 +19,7 @@ class Shop: BaseModel {
     var location : Location = Location()
     var main_photo_url : String = ""
     var photos : [Photo] = []
+    var phone_number : String = ""
     
     override func bindDictionary(dict: [String : Any]) {
         super.bindDictionary(dict: dict)
@@ -30,10 +31,12 @@ class Shop: BaseModel {
                 photos.append(photo)
             }
         }
+        if let value = dict["phone_number"] as? String {
+            self.phone_number = value
+        }
         if let value = dict["main_photo_url"] as? String {
             self.main_photo_url = value
         }
-
         if let value = dict["location"] as? [String : Any] {
             self.location = Location()
             self.location.bindDictionary(dict: value)
@@ -77,5 +80,22 @@ class Shop: BaseModel {
             return "\(max(distance, 0).toString(decimals: 2)) KM near you"
         }
         return "Unkown"
+    }
+    
+    func isOpen() -> Bool {
+        for workDay in workingDays {
+            if workDay.liesWithin() {
+                return workDay.isOpen()
+            }
+        }
+        return false
+    }
+    
+    func isOpenText() -> String {
+        if isOpen() {
+            return "Opened now"
+        }else{
+            return "Closed now"
+        }
     }
 }

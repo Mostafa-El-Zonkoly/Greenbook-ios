@@ -31,4 +31,27 @@ class WorkingDay : BaseModel {
             self.state = value
         }
     }
+    static let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    func liesWithin() -> Bool {
+        let date = Date() // time utc
+        let calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
+        let components = calendar.dateComponents([.weekday, .hour, .minute], from: date)
+        if let weekDay = components.weekday, WorkingDay.weekDays.count > components.weekday! {
+            if WorkingDay.weekDays[weekDay] == self.day_name {
+                // Same Day, Start Parsing Time
+                let dateFormatter = DateFormatter.init()
+                dateFormatter.dateFormat = "hh:mm a"
+                if let startDate = dateFormatter.date(from: self.opened_at), let closeDate = dateFormatter.date(from: self.closed_at) {
+                    if date.compare(startDate).rawValue != CFComparisonResult.compareLessThan.rawValue, date.compare(closeDate).rawValue != CFComparisonResult.compareGreaterThan.rawValue {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    func isOpen() -> Bool {
+        return state == "opened"
+    }
 }
