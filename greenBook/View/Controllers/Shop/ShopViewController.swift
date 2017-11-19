@@ -114,11 +114,17 @@ class ShopViewController: AbstractSegmentedBarViewController {
         if let shop = self.shop {
             shopGalleryView.shop = shop
         }
+        
+        let shopReviewView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopReviewView") as! ShopReviewsViewController
+        if let shop = self.shop {
+            shopReviewView.shop = shop
+        }
+
         var frame = detailsView.view.frame
         frame.size.width = self.containerView.frame.width
         detailsView.view.frame = frame
         shopGalleryView.view.frame = frame
-        return [detailsView,shopGalleryView]
+        return [detailsView,shopGalleryView,shopReviewView]
     }
     
     override func viewWillDisappear(_ animated: Bool) {

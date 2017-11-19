@@ -32,19 +32,7 @@ class ShopGalleryViewController: AbstractViewController,IndicatorInfoProvider {
         self.imageGridView.frame = gridFrame
         self.scrollView.setNeedsDisplay()
         
-        var tempImages : [String] = []
-        for photo in self.shop.photos {
-            tempImages.append(photo.photo_url)
-        }
-        self.imagesArray = tempImages
-        scrollView.contentSize.height = imageGridHeight.constant
-        scrollView.contentSize.width = scrollView.frame.width
-        
-        imageGridView.showWithImageArray(self.imagesArray) { (buttonsArray, buttonIndex) in
-            // preview images with one line of code
-            
-            FTImageViewer.showImages(self.imagesArray, atIndex: buttonIndex, fromSenderArray: buttonsArray)
-        }
+      
 
     }
     var imagesArray : [String] = [] {
@@ -58,6 +46,19 @@ class ShopGalleryViewController: AbstractViewController,IndicatorInfoProvider {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        var tempImages : [String] = []
+        for photo in self.shop.photos {
+            tempImages.append(photo.photo_url)
+        }
+        self.imagesArray = tempImages
+        scrollView.contentSize.height = imageGridHeight.constant
+        scrollView.contentSize.width = scrollView.frame.width
+        
+        imageGridView.showWithImageArray(self.imagesArray) { (buttonsArray, buttonIndex) in
+            // preview images with one line of code
+            
+            FTImageViewer.showImages(self.imagesArray, atIndex: buttonIndex, fromSenderArray: buttonsArray)
+        }
       
     }
     override func viewDidLayoutSubviews() {

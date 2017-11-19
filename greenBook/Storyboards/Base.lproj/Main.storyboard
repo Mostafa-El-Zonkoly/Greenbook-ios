@@ -88,7 +88,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rP1-Sj-ZvE">
-                                        <rect key="frame" x="34" y="14" width="108" height="19.5"/>
+                                        <rect key="frame" x="34" y="15.5" width="108" height="16.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with Google+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8ts-Y6-3cC">
-                                        <rect key="frame" x="34" y="14" width="103" height="19.5"/>
+                                        <rect key="frame" x="34" y="15.5" width="103" height="16.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -153,7 +153,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="htO-pf-Omx">
-                                                <rect key="frame" x="71" y="16.5" width="213" height="25"/>
+                                                <rect key="frame" x="71" y="18.5" width="213" height="21"/>
                                                 <color key="textColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
@@ -179,7 +179,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nS8-mW-Jua">
-                                                <rect key="frame" x="71" y="16.5" width="213" height="25"/>
+                                                <rect key="frame" x="71" y="18.5" width="213" height="21"/>
                                                 <color key="textColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -568,8 +568,15 @@
                                     <constraint firstAttribute="height" constant="140" id="uBp-3c-lek"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOl-nw-qgg">
+                                <rect key="frame" x="0.0" y="160" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="UXc-aB-F6c"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="42I-lW-XWC" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="162" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="161" width="375" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="b5r-J4-lnE"/>
@@ -583,11 +590,11 @@
                                 <cells/>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHO-vP-35U">
-                                <rect key="frame" x="0.0" y="207" width="375" height="411"/>
+                                <rect key="frame" x="0.0" y="206" width="375" height="412"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="579-w1-EX7" firstAttribute="trailing" secondItem="cHO-vP-35U" secondAttribute="trailing" id="1L2-Rg-w2q"/>
                             <constraint firstItem="579-w1-EX7" firstAttribute="bottom" secondItem="cHO-vP-35U" secondAttribute="bottom" id="8K7-tI-3tV"/>
@@ -595,9 +602,12 @@
                             <constraint firstItem="w7D-em-Swu" firstAttribute="top" secondItem="579-w1-EX7" secondAttribute="top" id="O9b-hv-MT6"/>
                             <constraint firstItem="579-w1-EX7" firstAttribute="trailing" secondItem="42I-lW-XWC" secondAttribute="trailing" id="XCC-us-D72"/>
                             <constraint firstItem="cHO-vP-35U" firstAttribute="top" secondItem="42I-lW-XWC" secondAttribute="bottom" id="XPB-JJ-k2y"/>
-                            <constraint firstItem="42I-lW-XWC" firstAttribute="top" secondItem="w7D-em-Swu" secondAttribute="bottom" constant="2" id="ZhT-EP-Ids"/>
+                            <constraint firstItem="42I-lW-XWC" firstAttribute="top" secondItem="w7D-em-Swu" secondAttribute="bottom" constant="1" id="ZhT-EP-Ids"/>
                             <constraint firstItem="cHO-vP-35U" firstAttribute="leading" secondItem="579-w1-EX7" secondAttribute="leading" id="bHK-wy-uBG"/>
+                            <constraint firstItem="579-w1-EX7" firstAttribute="trailing" secondItem="kOl-nw-qgg" secondAttribute="trailing" id="fUS-nS-4ze"/>
+                            <constraint firstItem="kOl-nw-qgg" firstAttribute="top" secondItem="w7D-em-Swu" secondAttribute="bottom" id="hex-OM-f3Z"/>
                             <constraint firstItem="579-w1-EX7" firstAttribute="trailing" secondItem="w7D-em-Swu" secondAttribute="trailing" id="qFu-72-uIz"/>
+                            <constraint firstItem="kOl-nw-qgg" firstAttribute="leading" secondItem="579-w1-EX7" secondAttribute="leading" id="yhe-59-WLF"/>
                             <constraint firstItem="42I-lW-XWC" firstAttribute="leading" secondItem="579-w1-EX7" secondAttribute="leading" id="zCG-ql-wbq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="579-w1-EX7"/>
@@ -853,7 +863,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r5c-J4-fwa">
-                                                                <rect key="frame" x="71" y="16.5" width="213" height="25"/>
+                                                                <rect key="frame" x="71" y="18.5" width="213" height="21"/>
                                                                 <color key="textColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
@@ -886,7 +896,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LCU-lF-qDC">
-                                                                <rect key="frame" x="71" y="16.5" width="213" height="25"/>
+                                                                <rect key="frame" x="71" y="18.5" width="213" height="21"/>
                                                                 <color key="textColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
@@ -919,7 +929,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rsE-AN-nfC">
-                                                                <rect key="frame" x="71" y="16.5" width="213" height="25"/>
+                                                                <rect key="frame" x="71" y="18.5" width="213" height="21"/>
                                                                 <color key="textColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -952,7 +962,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p4y-ox-8e9">
-                                                                <rect key="frame" x="71" y="16.5" width="213" height="25"/>
+                                                                <rect key="frame" x="71" y="18.5" width="213" height="21"/>
                                                                 <color key="textColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -1024,7 +1034,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZM2-Lm-O0Q" customClass="RoundedButton" customModule="greenBook" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="576" width="299" height="37"/>
+                                                <rect key="frame" x="38" y="580" width="299" height="33"/>
                                                 <color key="backgroundColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1211,6 +1221,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="cU7-M7-zTH" firstAttribute="top" secondItem="GuL-xH-7Jf" secondAttribute="top" id="0u7-f9-xMW"/>
                                     <constraint firstAttribute="bottom" secondItem="cU7-M7-zTH" secondAttribute="bottom" id="3sn-vU-Psy"/>
@@ -1239,6 +1250,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDj-V4-lU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4773.6000000000004" y="120.98950524737631"/>
+        </scene>
+        <!--Shop Reviews View Controller-->
+        <scene sceneID="cZB-rU-NAf">
+            <objects>
+                <viewController restorationIdentifier="ShopReviewView" storyboardIdentifier="ShopReviewView" automaticallyAdjustsScrollViewInsets="NO" id="SnR-bT-mYi" customClass="ShopReviewsViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2SX-lg-4to">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OuG-DE-4cw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SnR-bT-mYi" id="oOc-pN-8nX"/>
+                                    <outlet property="delegate" destination="SnR-bT-mYi" id="3FS-QB-DJh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="top" secondItem="OuG-DE-4cw" secondAttribute="top" id="TJO-UI-4lW"/>
+                            <constraint firstItem="tUX-Tm-Cay" firstAttribute="bottom" secondItem="OuG-DE-4cw" secondAttribute="bottom" id="Uba-d7-1c6"/>
+                            <constraint firstItem="tUX-Tm-Cay" firstAttribute="trailing" secondItem="OuG-DE-4cw" secondAttribute="trailing" id="cen-XB-pl8"/>
+                            <constraint firstItem="OuG-DE-4cw" firstAttribute="leading" secondItem="tUX-Tm-Cay" secondAttribute="leading" id="q5v-hl-deU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tUX-Tm-Cay"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="OuG-DE-4cw" id="arj-Jg-Iuc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnQ-Yc-1FP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3758" y="-967"/>
         </scene>
     </scenes>
     <resources>

@@ -36,6 +36,11 @@
 		066670DA1FAE7E2000739695 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D51FAE7E1F00739695 /* RoundedView.swift */; };
 		066670DB1FAE7E2000739695 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D61FAE7E1F00739695 /* BorderedView.swift */; };
 		0691241F1FBA6E700022D063 /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691241E1FBA6E700022D063 /* ShopManager.swift */; };
+		069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069577251FC21D0200DCB24D /* ShopReviewCell.xib */; };
+		069577281FC2258D00DCB24D /* ShopReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069577271FC2258D00DCB24D /* ShopReview.swift */; };
+		0695772B1FC2270D00DCB24D /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695772A1FC2270D00DCB24D /* DateFormat.swift */; };
+		0695772D1FC2287100DCB24D /* ShopReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695772C1FC2287100DCB24D /* ShopReviewsViewController.swift */; };
+		0695772F1FC22A2700DCB24D /* ShopReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695772E1FC22A2700DCB24D /* ShopReviewCell.swift */; };
 		06A1E2721FBFDA55005F618A /* ShopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A1E2711FBFDA55005F618A /* ShopView.xib */; };
 		06A1E2741FBFDABB005F618A /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A1E2731FBFDABB005F618A /* ShopView.swift */; };
 		06A1E2761FBFE37F005F618A /* AbstractSegmentedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A1E2751FBFE37F005F618A /* AbstractSegmentedBarViewController.swift */; };
@@ -96,6 +101,11 @@
 		066670D51FAE7E1F00739695 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		066670D61FAE7E1F00739695 /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
 		0691241E1FBA6E700022D063 /* ShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopManager.swift; sourceTree = "<group>"; };
+		069577251FC21D0200DCB24D /* ShopReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopReviewCell.xib; sourceTree = "<group>"; };
+		069577271FC2258D00DCB24D /* ShopReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReview.swift; sourceTree = "<group>"; };
+		0695772A1FC2270D00DCB24D /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		0695772C1FC2287100DCB24D /* ShopReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewsViewController.swift; sourceTree = "<group>"; };
+		0695772E1FC22A2700DCB24D /* ShopReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReviewCell.swift; sourceTree = "<group>"; };
 		06A1E2711FBFDA55005F618A /* ShopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopView.xib; sourceTree = "<group>"; };
 		06A1E2731FBFDABB005F618A /* ShopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		06A1E2751FBFE37F005F618A /* AbstractSegmentedBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractSegmentedBarViewController.swift; sourceTree = "<group>"; };
@@ -177,12 +187,26 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		069577291FC226F700DCB24D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				066670D61FAE7E1F00739695 /* BorderedView.swift */,
+				066670D21FAE7E1F00739695 /* BorderlessView.swift */,
+				066670D31FAE7E1F00739695 /* CircularImage.swift */,
+				066670D41FAE7E1F00739695 /* CircularLabel.swift */,
+				066670D51FAE7E1F00739695 /* RoundedView.swift */,
+				066670D01FAE7A3800739695 /* RoundedButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		06A1E2791FBFE77D005F618A /* Shop */ = {
 			isa = PBXGroup;
 			children = (
 				06A1E2771FBFE444005F618A /* ShopViewController.swift */,
 				06A1E27A1FBFE78B005F618A /* DetailsViewController.swift */,
 				06C87F041FC1178800EE7A97 /* ShopGalleryViewController.swift */,
+				0695772C1FC2287100DCB24D /* ShopReviewsViewController.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -262,6 +286,7 @@
 				060E715D1FBA4BBF00898592 /* ShopCell.swift */,
 				06B952E71FC03E3F00DF556F /* SegmentCollectionCell.swift */,
 				06C87F021FC10C1400EE7A97 /* ShopDetailCell.swift */,
+				0695772E1FC22A2700DCB24D /* ShopReviewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -298,6 +323,7 @@
 				060E71651FBA5D8500898592 /* Photo.swift */,
 				060E71671FBA5D9D00898592 /* WorkingDay.swift */,
 				060E71691FBA5E0600898592 /* Location.swift */,
+				069577271FC2258D00DCB24D /* ShopReview.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,6 +359,7 @@
 				06B3C4151FA7E88600D02947 /* LaunchScreen.storyboard */,
 				06A1E2711FBFDA55005F618A /* ShopView.xib */,
 				06B952E51FC03DB400DF556F /* SegmentCollectionCell.xib */,
+				069577251FC21D0200DCB24D /* ShopReviewCell.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -340,12 +367,8 @@
 		06B3C4381FA7F2B600D02947 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				066670D61FAE7E1F00739695 /* BorderedView.swift */,
-				066670D21FAE7E1F00739695 /* BorderlessView.swift */,
-				066670D31FAE7E1F00739695 /* CircularImage.swift */,
-				066670D41FAE7E1F00739695 /* CircularLabel.swift */,
-				066670D51FAE7E1F00739695 /* RoundedView.swift */,
-				066670D01FAE7A3800739695 /* RoundedButton.swift */,
+				0695772A1FC2270D00DCB24D /* DateFormat.swift */,
+				069577291FC226F700DCB24D /* Views */,
 				0646ACB81FB3D25B007760EE /* StringCheckers.swift */,
 				060E716B1FBA61AD00898592 /* DoubleHandler.swift */,
 			);
@@ -440,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				066670C71FAE76BA00739695 /* OpenSans-Italic.ttf in Resources */,
+				069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */,
 				066670C41FAE76BA00739695 /* OpenSans-BoldItalic.ttf in Resources */,
 				06B3C4171FA7E88600D02947 /* LaunchScreen.storyboard in Resources */,
 				06A1E2721FBFDA55005F618A /* ShopView.xib in Resources */,
@@ -554,10 +578,13 @@
 				06B3C43A1FA7F2C700D02947 /* GBError.swift in Sources */,
 				06C87F031FC10C1400EE7A97 /* ShopDetailCell.swift in Sources */,
 				06A1E2781FBFE444005F618A /* ShopViewController.swift in Sources */,
+				0695772F1FC22A2700DCB24D /* ShopReviewCell.swift in Sources */,
+				069577281FC2258D00DCB24D /* ShopReview.swift in Sources */,
 				06B3C4301FA7F14F00D02947 /* UserManager.swift in Sources */,
 				060E716C1FBA61AD00898592 /* DoubleHandler.swift in Sources */,
 				06B3C43C1FA7F3DA00D02947 /* Response.swift in Sources */,
 				06B952E81FC03E3F00DF556F /* SegmentCollectionCell.swift in Sources */,
+				0695772B1FC2270D00DCB24D /* DateFormat.swift in Sources */,
 				0646ACB91FB3D25B007760EE /* StringCheckers.swift in Sources */,
 				0650F3161FB5CE73006A00F7 /* AbstractScrollableViewController.swift in Sources */,
 				06B952EA1FC0447600DF556F /* ViewControllerExtension.swift in Sources */,
@@ -568,6 +595,7 @@
 				06B3C40D1FA7E88600D02947 /* AppDelegate.swift in Sources */,
 				06C87F051FC1178800EE7A97 /* ShopGalleryViewController.swift in Sources */,
 				06FCAFA51FB906880099685A /* SearchViewController.swift in Sources */,
+				0695772D1FC2287100DCB24D /* ShopReviewsViewController.swift in Sources */,
 				066670DA1FAE7E2000739695 /* RoundedView.swift in Sources */,
 				06B3C42A1FA7E9F800D02947 /* UserSession.swift in Sources */,
 				0650F3141FB5CE65006A00F7 /* SignupViewController.swift in Sources */,
