@@ -12,9 +12,6 @@
         <array key="OpenSans-Bold.ttf">
             <string>OpenSans-Bold</string>
         </array>
-        <array key="OpenSans-Light.ttf">
-            <string>OpenSans-Light</string>
-        </array>
         <array key="OpenSans-Regular.ttf">
             <string>OpenSans</string>
         </array>
@@ -22,15 +19,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="NPa-It-f2Y" customClass="ShopReviewCell" customModule="greenBook" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="102" id="NPa-It-f2Y" customClass="ShopReviewCell" customModule="greenBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NPa-It-f2Y" id="Afd-Jl-BX1">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="101.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OA4-BG-FGg" userLabel="Comment View">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfile" translatesAutoresizingMaskIntoConstraints="NO" id="F1Q-8U-QlZ" customClass="CircularImage" customModule="greenBook" customModuleProvider="target">
                                 <rect key="frame" x="9" y="11" width="50" height="50"/>
@@ -52,7 +49,7 @@
                                     <constraint firstAttribute="height" constant="19" id="JZS-LS-2zi"/>
                                     <constraint firstAttribute="width" constant="103" id="xPa-iS-R9Q"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
                                 <color key="textColor" red="0.70980392156862748" green="0.17254901960784313" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -103,29 +100,60 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrw-Ww-8BX">
-                                <rect key="frame" x="73" y="52" width="295" height="19.5"/>
+                                <rect key="frame" x="73" y="53" width="295" height="19.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEO-M4-MRB">
+                                <rect key="frame" x="73" y="77.5" width="45" height="11.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="Tov-HH-uT7"/>
+                                </constraints>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" red="0.047058823530000002" green="0.64705882349999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editReview:" destination="NPa-It-f2Y" eventType="touchUpInside" id="00N-ov-wU2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaE-py-WEg">
+                                <rect key="frame" x="125" y="77" width="46" height="11.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="11.5" id="6gc-e1-18D"/>
+                                    <constraint firstAttribute="width" constant="46" id="Woo-nm-UXa"/>
+                                </constraints>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="0.047058823530000002" green="0.64705882349999999" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteReview:" destination="NPa-It-f2Y" eventType="touchUpInside" id="j5l-9x-Usa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dTu-Ot-2AV" firstAttribute="top" secondItem="OA4-BG-FGg" secondAttribute="top" constant="20" id="2Hb-mO-7FL"/>
                             <constraint firstItem="w6I-bx-z8h" firstAttribute="top" secondItem="OA4-BG-FGg" secondAttribute="top" constant="11" id="AWK-Qv-VOm"/>
+                            <constraint firstItem="uEO-M4-MRB" firstAttribute="leading" secondItem="wrw-Ww-8BX" secondAttribute="leading" id="DM1-43-oGh"/>
+                            <constraint firstItem="uEO-M4-MRB" firstAttribute="top" secondItem="wrw-Ww-8BX" secondAttribute="bottom" constant="5" id="GB3-mA-2Da"/>
+                            <constraint firstAttribute="bottom" secondItem="uEO-M4-MRB" secondAttribute="bottom" constant="3.5" id="GxT-V0-9sd"/>
                             <constraint firstAttribute="trailing" secondItem="wrw-Ww-8BX" secondAttribute="trailing" constant="7" id="MoU-hj-U10"/>
+                            <constraint firstItem="yaE-py-WEg" firstAttribute="centerY" secondItem="uEO-M4-MRB" secondAttribute="centerY" id="NRP-O8-R9h"/>
                             <constraint firstItem="F1Q-8U-QlZ" firstAttribute="leading" secondItem="OA4-BG-FGg" secondAttribute="leading" constant="9" id="U7D-DD-aNs"/>
                             <constraint firstItem="dTu-Ot-2AV" firstAttribute="leading" secondItem="w6I-bx-z8h" secondAttribute="trailing" constant="2" id="UPa-Ub-WPv"/>
                             <constraint firstItem="wrw-Ww-8BX" firstAttribute="leading" secondItem="OA4-BG-FGg" secondAttribute="leading" constant="73" id="X6H-DC-3Ko"/>
                             <constraint firstItem="F1Q-8U-QlZ" firstAttribute="top" secondItem="OA4-BG-FGg" secondAttribute="top" constant="11" id="XhE-yA-zDo"/>
-                            <constraint firstItem="wrw-Ww-8BX" firstAttribute="top" secondItem="12k-F3-jNz" secondAttribute="bottom" constant="2" id="afW-tp-P93"/>
+                            <constraint firstItem="wrw-Ww-8BX" firstAttribute="top" secondItem="12k-F3-jNz" secondAttribute="bottom" constant="3" id="afW-tp-P93"/>
                             <constraint firstItem="w6I-bx-z8h" firstAttribute="leading" secondItem="12k-F3-jNz" secondAttribute="trailing" constant="-64" id="d3P-nW-gJp"/>
                             <constraint firstItem="bUm-0f-8xn" firstAttribute="leading" secondItem="12k-F3-jNz" secondAttribute="trailing" constant="10" id="dEh-Zj-SoH"/>
                             <constraint firstItem="bUm-0f-8xn" firstAttribute="centerY" secondItem="12k-F3-jNz" secondAttribute="centerY" id="edO-af-LG4"/>
-                            <constraint firstAttribute="bottom" secondItem="wrw-Ww-8BX" secondAttribute="bottom" constant="1.5" id="lXU-yV-Uiv"/>
+                            <constraint firstAttribute="bottom" secondItem="wrw-Ww-8BX" secondAttribute="bottom" constant="20" id="lXU-yV-Uiv"/>
                             <constraint firstAttribute="trailing" secondItem="dTu-Ot-2AV" secondAttribute="trailing" constant="7" id="nft-2t-qT4"/>
                             <constraint firstItem="12k-F3-jNz" firstAttribute="top" secondItem="w6I-bx-z8h" secondAttribute="bottom" constant="5" id="qGi-Gf-nxl"/>
                             <constraint firstItem="w6I-bx-z8h" firstAttribute="leading" secondItem="F1Q-8U-QlZ" secondAttribute="trailing" constant="14" id="ukv-gf-qRn"/>
+                            <constraint firstItem="yaE-py-WEg" firstAttribute="leading" secondItem="uEO-M4-MRB" secondAttribute="trailing" constant="7" id="uqV-to-coJ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -137,6 +165,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="deleteButton" destination="yaE-py-WEg" id="LJW-Pw-4Ap"/>
+                <outlet property="editButton" destination="uEO-M4-MRB" id="nD7-hO-WVe"/>
                 <outlet property="rateLabel" destination="bUm-0f-8xn" id="1GA-9v-Ib5"/>
                 <outlet property="reviewDateLabel" destination="dTu-Ot-2AV" id="Tbc-JK-5jB"/>
                 <outlet property="reviewMessageLabel" destination="wrw-Ww-8BX" id="6Zr-ay-YWq"/>
@@ -144,7 +174,7 @@
                 <outlet property="reviewerImageView" destination="F1Q-8U-QlZ" id="BZo-LK-KXl"/>
                 <outlet property="reviewerNameLabel" destination="w6I-bx-z8h" id="x6u-KI-Dxb"/>
             </connections>
-            <point key="canvasLocation" x="34.5" y="199.5"/>
+            <point key="canvasLocation" x="34.5" y="199"/>
         </tableViewCell>
     </objects>
     <resources>

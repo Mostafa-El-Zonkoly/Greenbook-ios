@@ -10,10 +10,13 @@ import Foundation
 import UIKit
 import Cosmos
 import SDWebImage
+
 class ShopReviewCell: UITableViewCell {
     
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     var shopReview : ShopReview?
-    
+    var delegate : ShopReviewDelegate?
     @IBOutlet weak var reviewMessageLabel: UILabel!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var reviewRate: CosmosView!
@@ -37,6 +40,22 @@ class ShopReviewCell: UITableViewCell {
             self.reviewerImageView.image = #imageLiteral(resourceName: "icProfile")
         }
         self.reviewerNameLabel.text = review.user.name
+        let hideButtons = !(review.user.id == UserSession.sharedInstant.currUser.id)
+        self.editButton.isHidden = hideButtons
+        self.deleteButton.isHidden = hideButtons
     }
+    
+    @IBAction func editReview(_ sender: UIButton) {
+        if let review = self.shopReview {
+            self.delegate?.editReview(review: review)
+        }
+    }
+    @IBAction func deleteReview(_ sender: UIButton) {
+        if let review = self.shopReview {
+            self.delegate?.deleteReview(review: review)
+        }
+    }
+    
+    
 }
 

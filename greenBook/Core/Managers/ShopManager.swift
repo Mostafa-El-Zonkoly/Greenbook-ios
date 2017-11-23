@@ -141,8 +141,13 @@ class ShopManager: AbstractManager {
                             for shopDict in shopsDict {
                                 let review = ShopReview()
                                 review.bindDictionary(dict: shopDict)
-                                reviews.append(review)
+                                if review.user.id == UserSession.sharedInstant.currUser.id {
+                                    reviews.insert(review, at: 0)
+                                }else{
+                                    reviews.append(review)
+                                }
                             }
+                            
                             response.result = reviews
                             response.status = true
                             handler(response)

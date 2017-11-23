@@ -11,6 +11,8 @@ import UIKit
 import XLPagerTabStrip
 protocol ShopReviewDelegate {
     func writeReviewPressed()
+    func deleteReview(review : ShopReview)
+    func editReview(review : ShopReview)
 }
 class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var addReviwButton: UIButton!
@@ -92,6 +94,7 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
             let review = reviews[indexPath.section]
             if let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as? ShopReviewCell {
                 cell.bindReview(review: review)
+                cell.delegate = self.delegate
                 return cell
             }
             
@@ -112,4 +115,5 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
         }
         return headerView
     }
+    
 }

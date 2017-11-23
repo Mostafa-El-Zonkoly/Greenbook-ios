@@ -71,6 +71,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
         if !shopViewAdded {
             addShopView()
         }
+        self.selectedReview = nil
         shopContainerView.backgroundColor = UIColor.red
         bindShopView()
         self.navigationController?.isNavigationBarHidden = false
@@ -158,6 +159,10 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
             // TODO Set Shop
             dest.delegate = self
             dest.shop = self.shop
+            if let review = self.selectedReview {
+                dest.review = review
+                dest.state = .edit
+            }
         }
     }
     
@@ -169,4 +174,49 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
         }
     }
     
+    var selectedReview : ShopReview?
+    
+    func editReview(review: ShopReview) {
+        self.selectedReview = review
+        self.performSegue(withIdentifier: "addReviewSegue", sender: self)
+    }
+    
+    func deleteReview(review: ShopReview) {
+        self.selectedReview = review
+        let alertView = UIAlertController(title: "Confirmation", message: "Are you sure you want to delete your shop review?", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+            self.startLoading()
+            ReviewsManager().deleteReview(review: self.selectedReview!, shop: self.shop!, handler: { (response) in
+                self.endLoading()
+                if response.status {
+                    self.showMessage(message: "Review Deleted")
+                    for controller in self.viewControllers {
+                        if let reviews = controller as? ShopReviewsViewController {
+                            reviews.startLoading()
+                            reviews.reloadData()
+                        }
+                    }
+                    if let dict = response.result as? [String : Any]{
+                        if let rate = dict["shop_rate"] as? Double, let reviewsCount = dict["num_of_reviews"] as? Int {
+                            self.setNewRate(rate: rate, count: reviewsCount)
+                        }
+                    }
+                }else{
+                    if let error = response.error {
+                        self.showGBError(error: error)
+                     
+                    }else{
+                        self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+                    }
+                }
+            })
+        })
+        alertView.addAction(OKAction)
+        let editAction = UIAlertAction(title: "Cancel", style: .destructive, handler: { (alert) in
+            
+        })
+        alertView.addAction(editAction)
+        
+        self.present(alertView, animated: true, completion: nil)
+    }
 }

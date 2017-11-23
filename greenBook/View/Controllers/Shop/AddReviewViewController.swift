@@ -30,14 +30,19 @@ class AddReviewViewController: AbstractViewController {
         super.viewDidLoad()
         self.customizeNavigationBar()
         bindUser()
-
         let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(closeKeyboard))
         self.view.addGestureRecognizer(gestureRecognizer)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Add", style: .done, target: self, action: #selector(saveReview))
         self.rateView.rating = 1.0
-        
+        if state == .edit {
+            bindReview()
+        }
     }
-    
+    func bindReview(){
+        rateView.rating = Double(review.rate)
+        reviewTextView.text = review.review
+        reviewTextView.emptyText = false
+    }
     @objc func saveReview(){
         print("Save Review")
         if let shop = self.shop {
@@ -48,7 +53,8 @@ class AddReviewViewController: AbstractViewController {
         self.review.review = reviewTextView.text
         self.review.rate = Int(self.rateView.rating)
         self.startLoading()
-            ReviewsManager().addReview(review: review, shop: shop, handler: { (response) in
+            
+                ReviewsManager().addReview(review: review,update: (state == .edit), shop: shop, handler: { (response) in
                 self.endLoading()
                 if response.status{
                     if let dict = response.result as? [String : Any]{
