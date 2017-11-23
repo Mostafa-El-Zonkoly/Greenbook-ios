@@ -20,7 +20,7 @@ enum SearchType {
     case category
     case location
 }
-class SearchViewController: AbstractViewController, UITextFieldDelegate, UITableViewDataSource,UITableViewDelegate {
+class SearchViewController: AbstractViewController, UITextFieldDelegate, UITableViewDataSource,UITableViewDelegate,ShopViewDelegate {
     var searchType : SearchType = .location
     var selectedShop : Shop?
     @IBOutlet weak var filterViewHeightConstraint: NSLayoutConstraint!
@@ -138,7 +138,9 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "ShopCell", for: indexPath) as? ShopCell {
                     if indexPath.row < self.shops.count {
                         let shop = self.shops[indexPath.row]
+                        cell.shopDelegate = self
                         cell.bindShop(shop: shop)
+                        
                         return cell
                     }
                 }
@@ -281,6 +283,20 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                 if let shop = self.selectedShop {
                     dest.shop = shop
                 }
+            }
+        }
+    }
+    
+    func toggleFavState(shop: Shop) {
+        let fav = !shop.favourited()
+        self.startLoading()
+        ShopManager.sharedInstance.favouriteShopState(shop: shop, state: fav) { (response) in
+            self.tableView.reloadData()
+            self.endLoading()
+            if response.status {
+                
+            }else{
+                self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
             }
         }
     }

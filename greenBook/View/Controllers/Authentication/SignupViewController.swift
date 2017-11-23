@@ -47,7 +47,10 @@ class SignupViewController: AbstractScrollableViewController {
     // MARK : Actions
     
     func uploadImage() {
-        
+        DispatchQueue.main.async {
+            self.openImagePicker()
+        }
+
     }
     
     func signupUser() {
@@ -127,5 +130,13 @@ class SignupViewController: AbstractScrollableViewController {
     
     func loginUser() {
         performSegue(withIdentifier: "userLoggedIn", sender: self)
+    }
+    
+    override func updateUI() {
+        super.updateUI()
+        if let url = URL.init(string: self.imageUrl){
+            self.user.image_url = url.absoluteString
+           self.prifoleImageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "icProfile"))
+        }
     }
 }

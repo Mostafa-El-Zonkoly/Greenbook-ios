@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import XLPagerTabStrip
 
-class ShopViewController: AbstractSegmentedBarViewController {
+class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate {
     
     @IBOutlet weak var buttonsView: ButtonBarView!
     
@@ -100,6 +100,7 @@ class ShopViewController: AbstractSegmentedBarViewController {
             var frame = self.shopView.frame
             frame.size.width = shopContainerView.bounds.width
             self.shopView.frame = frame
+            self.shopView.delegate = self
             
         }
         
@@ -130,5 +131,21 @@ class ShopViewController: AbstractSegmentedBarViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
+    }
+    
+    func toggleFavState(shop: Shop) {
+        let fav = !shop.favourited()
+        self.startLoading()
+        ShopManager.sharedInstance.favouriteShopState(shop: shop, state: fav) { (response) in
+            if let shop = self.shop {
+                self.shopView.bindShop(shop: shop)
+            }
+            self.endLoading()
+            if response.status {
+                
+            }else{
+                self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+            }
+        }
     }
 }

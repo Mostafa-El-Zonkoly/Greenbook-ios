@@ -35,10 +35,11 @@ class ShopManager: AbstractManager {
         // First check connectivity
         var response = Response()
         loadCachedFavourite()
-        response.result = self.favouriteShops
-        handler(response)
+        
         
         if !UserSession.sharedInstant.userLoggedIn(){
+            response.result = self.favouriteShops
+            handler(response)
             return
         }
         if !self.internetConnected() {
@@ -168,5 +169,51 @@ class ShopManager: AbstractManager {
             response.error?.error_type = .server_error
             handler(response)
         }
+    }
+    
+    
+    func favouriteShopState(shop: Shop, state: Bool, handler: @escaping (Response) -> Void) {
+        var response = Response()
+        if !self.internetConnected() {
+            response.error = GBError()
+            response.error?.error_type = .connection
+            handler(response)
+            return
+        }
+        let url = URL.init(string: String.init(format: URLS.FAV_STATE_URL, shop.id))
+        let httpMethod : HTTPMethod = (state) ? .post:.delete
+        
+        let headers = getHeader(auth: true) as! HTTPHeaders
+        let params : [String : Any] = [:]
+        Alamofire.request(url!, method: httpMethod, parameters: params, headers: headers).responseJSON(completionHandler: { (serverResponse) in
+            if let error = serverResponse.error {
+                response.error = GBError()
+                response.error?.error_type = .server_error
+                response.error?.error = error
+                handler(response)
+                return
+            }else {
+                // TODO Parse User Returned
+                if let dict = serverResponse.result.value as? NSDictionary {
+                    response = self.parseMeta(dict: dict as! [String : Any])
+                    if !response.status {
+                        handler(response)
+                        return
+                    }
+                    self.loadFavouriteShops(handler: { (favShopResponse) in
+                        handler(response)
+                    })
+                    
+                    return
+                    
+                }else{
+                    response.error = GBError()
+                    response.error?.error_type = .server_error
+                    handler(response)
+                    return
+                    
+                }
+            }
+        })
     }
 }

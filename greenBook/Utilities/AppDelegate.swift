@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseInstanceID
+import FirebaseMessaging
+import FirebaseDatabase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         loadCategories()
+        
+        FIRApp.configure()
         return true
     }
     func loadCategories() {

@@ -15,7 +15,8 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return "Reviews"
     }
-    
+    let refreshControl = UIRefreshControl()
+
     @IBOutlet weak var tableView: UITableView!
     var reviews : [ShopReview] = []
     var shop : Shop!
@@ -23,13 +24,19 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
         super.viewDidLoad()
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.register(UINib(nibName: "ShopReviewCell", bundle: Bundle.main), forCellReuseIdentifier: "ReviewCell")
+        refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.allEditingEvents)
+        self.tableView.refreshControl = self.refreshControl
 
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.startLoading()
+        self.reloadData()
+    }
+    @objc func reloadData(){
         ShopManager.sharedInstance.loadShopReviews(shop: self.shop) { (response) in
             self.endLoading()
+            self.refreshControl.endRefreshing()
             if response.status {
                 var tmpReviews : [ShopReview] = []
                 if let results = response.result as? [ShopReview] {
@@ -46,7 +53,6 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
             }
         }
     }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return reviews.count
     }
@@ -73,7 +79,11 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init()
-        headerView.backgroundColor = Colors.SEPARATOR_COLOR
+        if section == 0 {
+            headerView.backgroundColor = UIColor.clear
+        }else{
+            headerView.backgroundColor = Colors.SEPARATOR_COLOR
+        }
         return headerView
     }
 }

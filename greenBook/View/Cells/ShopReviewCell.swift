@@ -21,6 +21,10 @@ class ShopReviewCell: UITableViewCell {
     @IBOutlet weak var reviewerNameLabel: UILabel!
     @IBOutlet weak var reviewerImageView: CircularImage!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.selectionStyle = .none
+    }
     func bindReview(review : ShopReview){
         self.shopReview = review
         self.reviewMessageLabel.text = review.review

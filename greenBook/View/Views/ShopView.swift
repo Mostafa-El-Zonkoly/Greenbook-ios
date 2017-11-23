@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 import Cosmos
+
+protocol ShopViewDelegate {
+    func toggleFavState(shop: Shop)
+}
 @IBDesignable
 class ShopView: UIView {
     @IBOutlet weak var shopImgView: UIImageView!
@@ -19,7 +23,7 @@ class ShopView: UIView {
     @IBOutlet weak var shopDistanceLabel: UILabel!
     @IBOutlet weak var shopTitleLabel: UILabel!
     @IBOutlet weak var shopDistanceHeight: NSLayoutConstraint!
-    
+    var delegate : ShopViewDelegate?
     var shop : Shop?
     func bindShop(shop : Shop){
         self.shop = shop
@@ -45,4 +49,16 @@ class ShopView: UIView {
         self.rateLabel.text = "0.0  (0)"
         self.shopDistanceLabel.text = ""
     }
+    
+    @IBAction func toggleFavState(_ sender: UITapGestureRecognizer) {
+        if let delegate = self.delegate, let shop = self.shop {
+            if shop.favourited() {
+                self.favouriteImgView.image = #imageLiteral(resourceName: "icFav")
+            }else{
+                self.favouriteImgView.image = #imageLiteral(resourceName: "icFavSelected")
+            }
+            delegate.toggleFavState(shop: shop)
+        }
+    }
+    
 }

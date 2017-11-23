@@ -35,6 +35,8 @@
 		066670D91FAE7E2000739695 /* CircularLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D41FAE7E1F00739695 /* CircularLabel.swift */; };
 		066670DA1FAE7E2000739695 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D51FAE7E1F00739695 /* RoundedView.swift */; };
 		066670DB1FAE7E2000739695 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D61FAE7E1F00739695 /* BorderedView.swift */; };
+		0678530F1FC43CEB007D4884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0678530E1FC43CEB007D4884 /* GoogleService-Info.plist */; };
+		067853131FC43F49007D4884 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067853121FC43F49007D4884 /* ImageUploader.swift */; };
 		0691241F1FBA6E700022D063 /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691241E1FBA6E700022D063 /* ShopManager.swift */; };
 		069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069577251FC21D0200DCB24D /* ShopReviewCell.xib */; };
 		069577281FC2258D00DCB24D /* ShopReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069577271FC2258D00DCB24D /* ShopReview.swift */; };
@@ -100,6 +102,8 @@
 		066670D41FAE7E1F00739695 /* CircularLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLabel.swift; sourceTree = "<group>"; };
 		066670D51FAE7E1F00739695 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		066670D61FAE7E1F00739695 /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
+		0678530E1FC43CEB007D4884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		067853121FC43F49007D4884 /* ImageUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		0691241E1FBA6E700022D063 /* ShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopManager.swift; sourceTree = "<group>"; };
 		069577251FC21D0200DCB24D /* ShopReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopReviewCell.xib; sourceTree = "<group>"; };
 		069577271FC2258D00DCB24D /* ShopReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReview.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 		06B3C4001FA7E88500D02947 = {
 			isa = PBXGroup;
 			children = (
+				0678530E1FC43CEB007D4884 /* GoogleService-Info.plist */,
 				06B3C40B1FA7E88600D02947 /* greenBook */,
 				06B3C40A1FA7E88600D02947 /* Products */,
 				69122AD6D69D3EC3349CE450 /* Pods */,
@@ -331,6 +336,7 @@
 		06B3C4281FA7E9E900D02947 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				067853121FC43F49007D4884 /* ImageUploader.swift */,
 				06B3C4291FA7E9F800D02947 /* UserSession.swift */,
 				06B3C42F1FA7F14F00D02947 /* UserManager.swift */,
 				06B3C4311FA7F1B500D02947 /* AbstractManager.swift */,
@@ -466,6 +472,7 @@
 				069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */,
 				066670C41FAE76BA00739695 /* OpenSans-BoldItalic.ttf in Resources */,
 				06B3C4171FA7E88600D02947 /* LaunchScreen.storyboard in Resources */,
+				0678530F1FC43CEB007D4884 /* GoogleService-Info.plist in Resources */,
 				06A1E2721FBFDA55005F618A /* ShopView.xib in Resources */,
 				066670CB1FAE76BA00739695 /* OpenSans-Semibold.ttf in Resources */,
 				066670C51FAE76BA00739695 /* OpenSans-ExtraBold.ttf in Resources */,
@@ -495,9 +502,16 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/FTImageViewer/FTImageViewer.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GooglePlacesAPI/GooglePlacesAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
@@ -509,9 +523,16 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FTImageViewer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GooglePlacesAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
@@ -529,9 +550,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-greenBook/Pods-greenBook-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -595,6 +621,7 @@
 				06B3C40D1FA7E88600D02947 /* AppDelegate.swift in Sources */,
 				06C87F051FC1178800EE7A97 /* ShopGalleryViewController.swift in Sources */,
 				06FCAFA51FB906880099685A /* SearchViewController.swift in Sources */,
+				067853131FC43F49007D4884 /* ImageUploader.swift in Sources */,
 				0695772D1FC2287100DCB24D /* ShopReviewsViewController.swift in Sources */,
 				066670DA1FAE7E2000739695 /* RoundedView.swift in Sources */,
 				06B3C42A1FA7E9F800D02947 /* UserSession.swift in Sources */,

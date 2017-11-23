@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import NVActivityIndicatorView
 import SwiftMessages
-
-class AbstractViewController : UIViewController {
+import AVKit
+class AbstractViewController : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // variables
     var activityIndicator : NVActivityIndicatorView!
@@ -94,4 +94,158 @@ class AbstractViewController : UIViewController {
         }
     }
     
+    
+    
+    // MARK: Image Upload
+    /*
+     *  MARK: UIImagePickerController delegate function.
+     */
+    var selectedImageUrl: NSURL!
+    var selectedImage : UIImage?
+    var imagePickerVC: UIImagePickerController!
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePickerVC.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            if let url = info[UIImagePickerControllerReferenceURL] as? NSURL, let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+                self.selectedImageUrl = info[UIImagePickerControllerReferenceURL] as! NSURL
+                self.selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+            }else {
+                self.selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            }
+            self.startUploadImage()
+        }
+    }
+    var imageUrl : String = ""
+    var image_uploaded : Bool = false
+    func updateUI(){
+        
+    }
+    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage? {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize.init(width: size.width * heightRatio, height: size.height*heightRatio)
+        } else {
+            newSize = CGSize.init(width: size.width * widthRatio, height: size.height*widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect.init(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    func startUploadImage()
+    {
+        if let _ = self.selectedImage, let resizedImage = resizeImage(image: self.selectedImage!, targetSize: CGSize.init(width: 100, height: 100)){
+            if let imageData = UIImagePNGRepresentation(resizedImage){
+                self.startLoading()
+                ImageUploader().uploadImage(imageData: imageData, handler: { (response) in
+                    self.endLoading()
+                    if response.status {
+                        self.showMessage(message: "Profile Picture Updated")
+                        if let stringURL = response.result as? String {
+                            self.imageUrl = stringURL
+                        }
+                        self.updateUI()
+                    }else{
+                        self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+                    }
+                })
+            }else{
+                self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+                
+            }
+        }else{
+            self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+        }
+    }
+    
+    func generateImageUrl(fileName: String) throws -> NSURL
+    {
+        let fileURL = NSURL(fileURLWithPath: NSTemporaryDirectory().appendingFormat(fileName))
+        let data = UIImageJPEGRepresentation(self.selectedImage!, 0.6)
+        try data?.write(to: fileURL as URL)
+        return fileURL
+    }
+    // MARK: Image handling
+    func openImagePicker(){
+        print("Capture Image")
+        let alertVC = UIAlertController(title: "Update Profile Picture", message: "Choose your profile picture", preferredStyle: .actionSheet)
+        alertVC.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+            self.openImagePickerViewCamera()
+        }))
+        alertVC.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (action) in
+            self.openImagePickerViewGallery()
+        }))
+        alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+        
+    }
+    
+    
+    /*
+     *  private function that presents image picker from gallery controller
+     */
+    private func openImagePickerViewGallery()
+    {
+        let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        switch status {
+        case .authorized:
+            break
+        case .denied:
+            self.showErrorMessage(errorMessage: "Media Permission denied")
+            return
+        default:
+            break
+        }
+        
+        imagePickerVC = UIImagePickerController()
+        imagePickerVC.delegate = self
+        imagePickerVC.sourceType = .savedPhotosAlbum
+        imagePickerVC.allowsEditing = true
+        present(imagePickerVC, animated: true, completion: nil)
+        
+    }
+    
+    /*
+     *  private function that presents image picker from camera controller
+     */
+    private func openImagePickerViewCamera()
+    {
+        let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        switch status {
+        case .authorized:
+            break
+        case .denied:
+            self.showErrorMessage(errorMessage: "Camera permission denied")
+            
+            return
+        default:
+            break
+        }
+        
+        imagePickerVC = UIImagePickerController()
+        imagePickerVC.delegate = self
+        imagePickerVC.sourceType = .camera
+        imagePickerVC.allowsEditing = true
+        present(imagePickerVC, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+
 }

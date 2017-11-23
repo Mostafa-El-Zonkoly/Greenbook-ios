@@ -27,14 +27,14 @@ class ShopCell: UITableViewCell {
         addShopView()
         self.containerView.layoutSubviews()
     }
-    
+    var shopDelegate : ShopViewDelegate?
     var delegate : ShopCellDelegate?
     var shop : Shop?
     
     func bindShop(shop : Shop){
         self.selectionStyle = .none
        self.shopView.bindShop(shop: shop)
-       
+       self.shopView.delegate = self.shopDelegate
     }
     func addShopView(){
         if let _shopView = Bundle.main.loadNibNamed("ShopView", owner: self, options: nil)?.first as? ShopView{
