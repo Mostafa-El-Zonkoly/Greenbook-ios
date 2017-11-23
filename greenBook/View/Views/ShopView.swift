@@ -25,6 +25,11 @@ class ShopView: UIView {
     @IBOutlet weak var shopDistanceHeight: NSLayoutConstraint!
     var delegate : ShopViewDelegate?
     var shop : Shop?
+    
+    func bindShop(shop : Shop, distanceHidden : Bool){
+        self.bindShop(shop: shop)
+        self.shopDistanceLabel.isHidden = distanceHidden
+    }
     func bindShop(shop : Shop){
         self.shop = shop
         self.shopDetailsLabel.text = shop.shopDescription

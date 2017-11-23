@@ -80,7 +80,6 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             self.tableView.reloadData()
         }
         self.navigationController?.isNavigationBarHidden = true
-
         self.filterTable.rowHeight = 40.0
         
     }
@@ -139,7 +138,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                     if indexPath.row < self.shops.count {
                         let shop = self.shops[indexPath.row]
                         cell.shopDelegate = self
-                        cell.bindShop(shop: shop)
+                        cell.bindShop(shop: shop, distanceHidden: false)
                         
                         return cell
                     }

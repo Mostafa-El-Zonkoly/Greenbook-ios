@@ -31,9 +31,9 @@ class ShopCell: UITableViewCell {
     var delegate : ShopCellDelegate?
     var shop : Shop?
     
-    func bindShop(shop : Shop){
+    func bindShop (shop: Shop , distanceHidden : Bool){
         self.selectionStyle = .none
-       self.shopView.bindShop(shop: shop)
+        self.shopView.bindShop(shop: shop, distanceHidden : distanceHidden)
        self.shopView.delegate = self.shopDelegate
     }
     func addShopView(){
