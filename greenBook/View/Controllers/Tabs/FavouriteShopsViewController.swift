@@ -34,7 +34,7 @@ class FavouriteShopsViewController: AbstractViewController, UITableViewDelegate,
         super.viewDidLoad()
         customizeNavigationBar()
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.allEditingEvents)
+        refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.allEvents)
 
     }
     

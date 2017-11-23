@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import XLPagerTabStrip
 
-class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate {
+class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,ShopReviewDelegate, AddReviewDelegate {
     
     @IBOutlet weak var buttonsView: ButtonBarView!
     
@@ -120,6 +120,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate {
         if let shop = self.shop {
             shopReviewView.shop = shop
         }
+        shopReviewView.delegate = self
 
         var frame = detailsView.view.frame
         frame.size.width = self.containerView.frame.width
@@ -148,4 +149,24 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate {
             }
         }
     }
+    
+    func writeReviewPressed() {
+        self.performSegue(withIdentifier: "addReviewSegue", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addReviewSegue", let dest = segue.destination as? AddReviewViewController {
+            // TODO Set Shop
+            dest.delegate = self
+            dest.shop = self.shop
+        }
+    }
+    
+    func setNewRate(rate: Double, count: Int) {
+        self.shop?.rate = rate
+        self.shop?.num_of_reviews = count
+        if let shop = self.shop {
+            self.shopView.bindShop(shop: shop)
+        }
+    }
+    
 }

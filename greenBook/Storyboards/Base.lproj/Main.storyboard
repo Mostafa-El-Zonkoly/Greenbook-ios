@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -436,7 +437,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EnH-oz-WKE"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Cnq-HQ-tbC"/>
+                    <navigationItem key="navigationItem" title="Favourite" id="Cnq-HQ-tbC"/>
                     <connections>
                         <outlet property="noDataView" destination="5qy-ZE-8Ss" id="Inv-Hy-7o3"/>
                         <outlet property="tableView" destination="dHY-BO-WI1" id="tSs-XT-db1"/>
@@ -718,6 +719,7 @@
                         <outlet property="containerView" destination="cHO-vP-35U" id="E8K-fo-nlA"/>
                         <outlet property="shopContainerHeight" destination="uBp-3c-lek" id="IYR-Zg-TFY"/>
                         <outlet property="shopContainerView" destination="w7D-em-Swu" id="g6X-s2-FoP"/>
+                        <segue destination="tVC-9f-6I5" kind="show" identifier="addReviewSegue" id="blb-IG-XD4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KnZ-fH-r64" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1368,23 +1370,146 @@
                                     <outlet property="delegate" destination="SnR-bT-mYi" id="3FS-QB-DJh"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvu-JR-WiD">
+                                <rect key="frame" x="302" y="584" width="54" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="78x-kk-Kfq"/>
+                                    <constraint firstAttribute="width" constant="54" id="UqY-ge-nvP"/>
+                                </constraints>
+                                <state key="normal" image="icAddReview"/>
+                                <connections>
+                                    <action selector="writeReviewPressed:" destination="SnR-bT-mYi" eventType="touchUpInside" id="B0p-S2-b7N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tUX-Tm-Cay" firstAttribute="bottom" secondItem="vvu-JR-WiD" secondAttribute="bottom" constant="28" id="HZg-Ya-569"/>
                             <constraint firstAttribute="top" secondItem="OuG-DE-4cw" secondAttribute="top" id="TJO-UI-4lW"/>
                             <constraint firstItem="tUX-Tm-Cay" firstAttribute="bottom" secondItem="OuG-DE-4cw" secondAttribute="bottom" id="Uba-d7-1c6"/>
                             <constraint firstItem="tUX-Tm-Cay" firstAttribute="trailing" secondItem="OuG-DE-4cw" secondAttribute="trailing" id="cen-XB-pl8"/>
                             <constraint firstItem="OuG-DE-4cw" firstAttribute="leading" secondItem="tUX-Tm-Cay" secondAttribute="leading" id="q5v-hl-deU"/>
+                            <constraint firstItem="tUX-Tm-Cay" firstAttribute="trailing" secondItem="vvu-JR-WiD" secondAttribute="trailing" constant="19" id="tJH-Vb-ZTO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tUX-Tm-Cay"/>
                     </view>
                     <connections>
+                        <outlet property="addReviwButton" destination="vvu-JR-WiD" id="vMJ-Qy-Jjl"/>
                         <outlet property="tableView" destination="OuG-DE-4cw" id="arj-Jg-Iuc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnQ-Yc-1FP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3758" y="-967"/>
+        </scene>
+        <!--Write A Review-->
+        <scene sceneID="liR-bE-XiW">
+            <objects>
+                <viewController title="Write A Review" id="tVC-9f-6I5" customClass="AddReviewViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P8B-6i-KOO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfile" translatesAutoresizingMaskIntoConstraints="NO" id="V16-h8-cuV" customClass="CircularImage" customModule="greenBook" customModuleProvider="target">
+                                <rect key="frame" x="17.5" y="79.5" width="45" height="45"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="jES-XN-beS"/>
+                                    <constraint firstAttribute="height" constant="45" id="rCd-KJ-Okt"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xb7-to-RWw">
+                                <rect key="frame" x="75.5" y="92" width="283.5" height="20"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                <color key="textColor" red="0.047058823529411764" green="0.6470588235294118" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a Review" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q7v-lU-aVe" customClass="PlaceholderTextView" customModule="greenBook" customModuleProvider="target">
+                                <rect key="frame" x="25" y="139.5" width="325" height="125"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="dhM-Qx-qTd"/>
+                                </constraints>
+                                <color key="textColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5B8-PH-81f" userLabel="Separator View">
+                                <rect key="frame" x="0.0" y="283.5" width="375" height="1.5"/>
+                                <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1.5" id="42g-UZ-A4K"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-zc-7zM" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="115" y="301" width="145" height="25"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="XkM-dB-dGY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" red="0.96078431372549022" green="0.65098039215686276" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                        <color key="value" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a Star to Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-Cm-B3v">
+                                <rect key="frame" x="128" y="347" width="121" height="17.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cs2-zc-7zM" firstAttribute="top" secondItem="5B8-PH-81f" secondAttribute="bottom" constant="16" id="Cwa-2l-9zf"/>
+                            <constraint firstItem="Cs2-zc-7zM" firstAttribute="centerX" secondItem="DW6-7u-io1" secondAttribute="centerX" id="DOB-s7-U4h"/>
+                            <constraint firstItem="Xb7-to-RWw" firstAttribute="top" secondItem="DW6-7u-io1" secondAttribute="top" constant="28" id="DzM-EV-hPM"/>
+                            <constraint firstAttribute="trailing" secondItem="5B8-PH-81f" secondAttribute="trailing" id="EEg-pF-NCP"/>
+                            <constraint firstItem="Q7v-lU-aVe" firstAttribute="top" secondItem="V16-h8-cuV" secondAttribute="bottom" constant="15" id="IzG-Mu-bpW"/>
+                            <constraint firstAttribute="trailing" secondItem="Q7v-lU-aVe" secondAttribute="trailing" constant="25" id="Nan-UC-p5R"/>
+                            <constraint firstItem="V16-h8-cuV" firstAttribute="leading" secondItem="P8B-6i-KOO" secondAttribute="leading" constant="17.5" id="Rr7-fX-Q09"/>
+                            <constraint firstItem="5B8-PH-81f" firstAttribute="leading" secondItem="P8B-6i-KOO" secondAttribute="leading" id="VNh-V1-t3c"/>
+                            <constraint firstItem="Htt-Cm-B3v" firstAttribute="centerX" secondItem="DW6-7u-io1" secondAttribute="centerX" id="a6A-vI-2eV"/>
+                            <constraint firstItem="5B8-PH-81f" firstAttribute="top" secondItem="Q7v-lU-aVe" secondAttribute="bottom" constant="19" id="aM9-Yp-6R8"/>
+                            <constraint firstItem="V16-h8-cuV" firstAttribute="top" secondItem="P8B-6i-KOO" secondAttribute="topMargin" constant="15.5" id="eqa-f3-mZd"/>
+                            <constraint firstItem="Htt-Cm-B3v" firstAttribute="top" secondItem="Cs2-zc-7zM" secondAttribute="bottom" constant="21" id="hMz-vh-7Ns"/>
+                            <constraint firstItem="Q7v-lU-aVe" firstAttribute="leading" secondItem="P8B-6i-KOO" secondAttribute="leading" constant="25" id="o9g-pk-3iS"/>
+                            <constraint firstItem="Xb7-to-RWw" firstAttribute="leading" secondItem="V16-h8-cuV" secondAttribute="trailing" constant="13" id="oNc-P6-REy"/>
+                            <constraint firstItem="DW6-7u-io1" firstAttribute="trailing" secondItem="Xb7-to-RWw" secondAttribute="trailing" constant="16" id="yeB-6P-D7W"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DW6-7u-io1"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="v1a-ep-U0a"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="profileImageView" destination="V16-h8-cuV" id="fyM-AO-zPK"/>
+                        <outlet property="rateView" destination="Cs2-zc-7zM" id="vQd-aW-GZQ"/>
+                        <outlet property="reviewTextView" destination="Q7v-lU-aVe" id="Yac-yx-p3T"/>
+                        <outlet property="usernameLabel" destination="Xb7-to-RWw" id="Qzx-dQ-F6e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0x-MX-4Us" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4637.6000000000004" y="-1239.1304347826087"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="Y5N-zz-Gdd">
@@ -1409,6 +1534,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icAddReview" width="54" height="55"/>
         <image name="icBack" width="9" height="17"/>
         <image name="icEnvelope" width="27" height="21"/>
         <image name="icFacebook" width="15" height="25"/>

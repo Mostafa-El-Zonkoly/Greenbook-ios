@@ -51,4 +51,10 @@ class ShopReview: BaseModel {
         return self.date.dateRep(format: DateFormats.DATE_REP_FORMAT)
     }
     
+    func toSeverDict() -> [String : Any] {
+        var dict : [String : Any] = [:]
+        let innerDict : [String : Any] = ["rate" : self.rate, "description" : self.review]
+        dict["review"] = innerDict
+        return dict
+    }
 }

@@ -9,24 +9,50 @@
 import Foundation
 import UIKit
 import XLPagerTabStrip
-
+protocol ShopReviewDelegate {
+    func writeReviewPressed()
+}
 class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var addReviwButton: UIButton!
     
+    @IBAction func writeReviewPressed(_ sender: UIButton) {
+        self.delegate?.writeReviewPressed()
+    }
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return "Reviews"
     }
     let refreshControl = UIRefreshControl()
-
+    var delegate : ShopReviewDelegate?
     @IBOutlet weak var tableView: UITableView!
-    var reviews : [ShopReview] = []
+    var reviews : [ShopReview] = [] {
+        didSet{
+            self.toggleAddReview()
+        }
+    }
+    
+    func toggleAddReview(){
+        var addedReview = false
+        for review in reviews {
+            if review.user.id == UserSession.sharedInstant.currUser.id {
+                addedReview = true
+                break
+            }
+        }
+        self.addReviwButton.isHidden = addedReview
+    }
     var shop : Shop!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.register(UINib(nibName: "ShopReviewCell", bundle: Bundle.main), forCellReuseIdentifier: "ReviewCell")
-        refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.allEditingEvents)
+        refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.allEvents)
         self.tableView.refreshControl = self.refreshControl
+        let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(closeKeyboard))
+        self.view.addGestureRecognizer(gestureRecognizer)
 
+    }
+    @objc func closeKeyboard(){
+        self.view.endEditing(true)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
