@@ -34,7 +34,7 @@ class ImageUploader: AbstractManager {
                 return
             }
             // Metadata contains file metadata such as size, content-type, and download URL.
-            let downloadURL = metadata.downloadURL
+            let downloadURL = metadata.downloadURL()
             let apiResponse = Response()
             apiResponse.result = downloadURL
             apiResponse.status = true

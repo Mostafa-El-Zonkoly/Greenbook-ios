@@ -104,9 +104,13 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
     
     let appURL = "https://itunes.apple.com/us/app/id1185250904"
 
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editProfileSegue", let dest = segue.destination as? UpdateProfileViewController {
+            dest.user = UserSession.sharedInstant.currUser
+        }
+    }
     func editProfile(){
-        
+        self.performSegue(withIdentifier: "editProfileSegue", sender: self)
     }
     
     func inviteFriend(){

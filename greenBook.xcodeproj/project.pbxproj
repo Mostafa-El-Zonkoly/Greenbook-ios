@@ -74,6 +74,7 @@
 		06C276D61FC764D50062F09E /* FavouriteShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C276D51FC764D50062F09E /* FavouriteShopsViewController.swift */; };
 		06C87F031FC10C1400EE7A97 /* ShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C87F021FC10C1400EE7A97 /* ShopDetailCell.swift */; };
 		06C87F051FC1178800EE7A97 /* ShopGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C87F041FC1178800EE7A97 /* ShopGalleryViewController.swift */; };
+		06DB954F1FC7AFAA0012ED2F /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB954E1FC7AFAA0012ED2F /* UpdateProfileViewController.swift */; };
 		06FCAFA01FB901C60099685A /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAF9F1FB901C60099685A /* CategoryManager.swift */; };
 		06FCAFA21FB901D00099685A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAFA11FB901D00099685A /* Category.swift */; };
 		06FCAFA51FB906880099685A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAFA41FB906880099685A /* SearchViewController.swift */; };
@@ -150,6 +151,7 @@
 		06C276D51FC764D50062F09E /* FavouriteShopsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteShopsViewController.swift; sourceTree = "<group>"; };
 		06C87F021FC10C1400EE7A97 /* ShopDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailCell.swift; sourceTree = "<group>"; };
 		06C87F041FC1178800EE7A97 /* ShopGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopGalleryViewController.swift; sourceTree = "<group>"; };
+		06DB954E1FC7AFAA0012ED2F /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
 		06FCAF9F1FB901C60099685A /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		06FCAFA11FB901D00099685A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		06FCAFA41FB906880099685A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				066670CD1FAE77E700739695 /* Authentication */,
 				06B3C41F1FA7E8EE00D02947 /* Abstract Controllers */,
 				06A1E2791FBFE77D005F618A /* Shop */,
+				06DB954E1FC7AFAA0012ED2F /* UpdateProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				06B3C43A1FA7F2C700D02947 /* GBError.swift in Sources */,
 				06C87F031FC10C1400EE7A97 /* ShopDetailCell.swift in Sources */,
 				06A1E2781FBFE444005F618A /* ShopViewController.swift in Sources */,
+				06DB954F1FC7AFAA0012ED2F /* UpdateProfileViewController.swift in Sources */,
 				06386C5E1FC797580036E8DE /* ProfileHeaderCell.swift in Sources */,
 				0695772F1FC22A2700DCB24D /* ShopReviewCell.swift in Sources */,
 				069577281FC2258D00DCB24D /* ShopReview.swift in Sources */,

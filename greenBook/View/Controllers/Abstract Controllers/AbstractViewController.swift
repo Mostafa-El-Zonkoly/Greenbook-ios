@@ -155,9 +155,9 @@ class AbstractViewController : UIViewController, UIImagePickerControllerDelegate
                 ImageUploader().uploadImage(imageData: imageData, handler: { (response) in
                     self.endLoading()
                     if response.status {
-                        self.showMessage(message: "Profile Picture Updated")
-                        if let stringURL = response.result as? String {
-                            self.imageUrl = stringURL
+                        self.showMessage(message: "Profile Picture uploaded")
+                        if let stringURL = response.result as? URL {
+                            self.imageUrl = stringURL.absoluteString
                         }
                         self.updateUI()
                     }else{

@@ -1401,7 +1401,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="p5x-h2-5G6" secondAttribute="bottom" constant="-8" id="1k9-zw-Za0"/>
+                                                <constraint firstAttribute="bottom" secondItem="p5x-h2-5G6" secondAttribute="bottom" constant="0.5" id="1k9-zw-Za0"/>
                                                 <constraint firstAttribute="trailing" secondItem="p5x-h2-5G6" secondAttribute="trailing" id="6b2-H5-yEW"/>
                                                 <constraint firstItem="4ua-4X-D8a" firstAttribute="leading" secondItem="9Au-GI-gEI" secondAttribute="leading" constant="28" id="MEs-Tv-ZNU"/>
                                                 <constraint firstItem="4ua-4X-D8a" firstAttribute="centerY" secondItem="9Au-GI-gEI" secondAttribute="centerY" id="iez-hf-GMo"/>
@@ -1432,6 +1432,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="v4M-vV-N9g"/>
                     <connections>
                         <outlet property="tableView" destination="bmO-de-kpd" id="IoI-sK-jD8"/>
+                        <segue destination="JG8-8f-egn" kind="show" identifier="editProfileSegue" id="O4j-Vf-iOu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOc-oh-sVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1706,6 +1707,110 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovj-9I-DPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748" y="892"/>
+        </scene>
+        <!--Update Profile View Controller-->
+        <scene sceneID="wn6-lg-9NN">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="JG8-8f-egn" customClass="UpdateProfileViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lkf-mL-8v0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfile-1" translatesAutoresizingMaskIntoConstraints="NO" id="kzG-bb-Ilv" customClass="CircularImage" customModule="greenBook" customModuleProvider="target">
+                                <rect key="frame" x="141" y="97" width="92" height="92"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.8980392157" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kzG-bb-Ilv" secondAttribute="height" multiplier="1:1" id="Ju2-yo-hah"/>
+                                    <constraint firstAttribute="height" constant="92" id="bcq-so-ZD8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMX-hf-7nr">
+                                <rect key="frame" x="133" y="196" width="109" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="5PY-co-To9"/>
+                                    <constraint firstAttribute="height" constant="18" id="S5D-eN-cdg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                <state key="normal" title="Upload Image">
+                                    <color key="titleColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadImage:" destination="JG8-8f-egn" eventType="touchUpInside" id="Eop-1S-TXe"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G34-ce-0aL">
+                                <rect key="frame" x="0.0" y="238" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOn-ns-7UM">
+                                        <rect key="frame" x="17" y="0.0" width="69.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="16"/>
+                                        <color key="textColor" red="0.0078431372549019607" green="0.46666666666666667" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BpA-BU-nuL">
+                                        <rect key="frame" x="17" y="23" width="350" height="21"/>
+                                        <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-g8-W85">
+                                        <rect key="frame" x="17" y="51" width="143" height="2"/>
+                                        <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="58n-5u-Uv1"/>
+                                            <constraint firstAttribute="width" constant="143" id="N5R-4o-XyB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="BpA-BU-nuL" firstAttribute="top" secondItem="UOn-ns-7UM" secondAttribute="bottom" constant="4" id="3UP-EZ-tr0"/>
+                                    <constraint firstAttribute="trailing" secondItem="BpA-BU-nuL" secondAttribute="trailing" constant="8" id="62f-BT-2Xk"/>
+                                    <constraint firstItem="BpA-BU-nuL" firstAttribute="leading" secondItem="UOn-ns-7UM" secondAttribute="leading" id="BCx-EV-xQl"/>
+                                    <constraint firstAttribute="height" constant="60" id="Z0Y-1M-in0"/>
+                                    <constraint firstItem="jzn-g8-W85" firstAttribute="leading" secondItem="G34-ce-0aL" secondAttribute="leading" constant="17" id="ktP-Gh-TqS"/>
+                                    <constraint firstItem="UOn-ns-7UM" firstAttribute="top" secondItem="G34-ce-0aL" secondAttribute="top" id="qqc-ET-coj"/>
+                                    <constraint firstItem="jzn-g8-W85" firstAttribute="top" secondItem="BpA-BU-nuL" secondAttribute="bottom" constant="7" id="tH6-Xe-Bba"/>
+                                    <constraint firstItem="UOn-ns-7UM" firstAttribute="leading" secondItem="G34-ce-0aL" secondAttribute="leading" constant="17" id="xhP-y2-vyc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="G34-ce-0aL" firstAttribute="centerX" secondItem="vDv-CX-Zc8" secondAttribute="centerX" id="KpQ-Kf-Min"/>
+                            <constraint firstItem="G34-ce-0aL" firstAttribute="width" secondItem="Lkf-mL-8v0" secondAttribute="width" id="XNB-Lo-UhQ"/>
+                            <constraint firstItem="vDv-CX-Zc8" firstAttribute="top" secondItem="kzG-bb-Ilv" secondAttribute="top" constant="-33" id="b2t-4r-cB7"/>
+                            <constraint firstItem="UMX-hf-7nr" firstAttribute="centerX" secondItem="kzG-bb-Ilv" secondAttribute="centerX" id="bbK-tE-KIP"/>
+                            <constraint firstItem="kzG-bb-Ilv" firstAttribute="centerX" secondItem="vDv-CX-Zc8" secondAttribute="centerX" id="fO7-cT-NUQ"/>
+                            <constraint firstItem="G34-ce-0aL" firstAttribute="top" secondItem="UMX-hf-7nr" secondAttribute="bottom" constant="24" id="hmm-rD-cJm"/>
+                            <constraint firstItem="UMX-hf-7nr" firstAttribute="top" secondItem="kzG-bb-Ilv" secondAttribute="bottom" constant="7" id="wOq-dS-6Ig"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vDv-CX-Zc8"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3Pb-F8-JCb" appends="YES" id="Lj5-se-KSe"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="fullNameTF" destination="BpA-BU-nuL" id="hNl-OA-RvT"/>
+                        <outlet property="profileImageView" destination="kzG-bb-Ilv" id="OQ3-SY-Zlf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85n-vT-ANt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Zxc-Ec-VZv">
+                    <connections>
+                        <action selector="uploadImagePressed:" destination="JG8-8f-egn" id="zNE-XX-dIQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="3Pb-F8-JCb">
+                    <connections>
+                        <action selector="dismissKeyboardPressed:" destination="JG8-8f-egn" id="gpC-qb-3Lg"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2220" y="1656.521739130435"/>
         </scene>
     </scenes>
     <resources>
