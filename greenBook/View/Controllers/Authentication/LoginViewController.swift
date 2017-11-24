@@ -49,7 +49,7 @@ class LoginViewController: AbstractFormViewController {
         
         let alertController = UIAlertController(title: "Forget password", message: "Please enter your email", preferredStyle: .alert)
         
-        alertController.addAction(UIAlertAction.init(title: "Save", style: .default, handler: { (alert) in
+        alertController.addAction(UIAlertAction.init(title: "Reset", style: .default, handler: { (alert) in
             if let textFields = alertController.textFields {
                 if textFields.count >= 1 {
                     let emailAddreessTF = textFields[0]
@@ -93,7 +93,8 @@ class LoginViewController: AbstractFormViewController {
         alertController.addTextField(configurationHandler: { (textField) -> Void in
             textField.placeholder = "Email Address"
             textField.textAlignment = .left
-            textField.isSecureTextEntry = true
+            textField.isSecureTextEntry = false
+            textField.keyboardType = UIKeyboardType.emailAddress
         })
         self.present(alertController, animated: true, completion: nil)
     }

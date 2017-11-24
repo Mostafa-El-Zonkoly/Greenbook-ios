@@ -209,7 +209,7 @@ class UserManager : AbstractManager {
         if let url = URL.init(string: URLS.FORGET_PASSWORD_URL) {
             
             let headers = getHeader(auth: false) as! HTTPHeaders
-            let params : [String : Any] = ["data": email]
+            let params : [String : Any] = ["data[email]": email]
             Alamofire.request(url, method: HTTPMethod.post, parameters: params, headers: headers).responseJSON(completionHandler: { (serverResponse) in
                 if let error = serverResponse.error {
                     response.error = GBError()
@@ -219,7 +219,7 @@ class UserManager : AbstractManager {
                     return
                 }else {
                     // TODO Parse User Returned
-                    if let dict = serverResponse.result as? [String : Any] {
+                    if let dict = serverResponse.result.value as? NSDictionary {
                         response = self.parseMeta(dict: dict as! [String : Any])
                         if !response.status {
                             handler(response)
