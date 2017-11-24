@@ -70,6 +70,7 @@ class LoginViewController: AbstractFormViewController {
                 user.email = email
                 user.password = password
                 self.startLoading()
+                UserSession.sharedInstant.password = password
                 UserManager().signInUser(user: user, handler: { (response) in
                     self.endLoading()
                     if response.status {

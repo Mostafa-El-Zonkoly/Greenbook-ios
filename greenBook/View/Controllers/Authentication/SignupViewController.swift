@@ -56,6 +56,7 @@ class SignupViewController: AbstractScrollableViewController {
     func signupUser() {
         if checkUserParams() {
             self.startLoading()
+            UserSession.sharedInstant.password = self.user.password
             UserManager().signupUser(user: self.user, handler: { (response) in
                 self.endLoading()
                 if response.status {

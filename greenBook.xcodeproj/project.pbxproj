@@ -16,6 +16,9 @@
 		0615D4A91FC771000097313A /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4A81FC771000097313A /* PlaceholderTextView.swift */; };
 		0615D4AB1FC7776B0097313A /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AA1FC7776B0097313A /* AddReviewViewController.swift */; };
 		0615D4AD1FC77BA70097313A /* ReviewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AC1FC77BA70097313A /* ReviewsManager.swift */; };
+		06386C5E1FC797580036E8DE /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06386C5D1FC797580036E8DE /* ProfileHeaderCell.swift */; };
+		06386C601FC797FB0036E8DE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06386C5F1FC797FB0036E8DE /* ProfileViewController.swift */; };
+		06386C621FC79A7F0036E8DE /* ProfileMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06386C611FC79A7F0036E8DE /* ProfileMenuCell.swift */; };
 		0646ACB71FB3D078007760EE /* AbstractFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0646ACB61FB3D078007760EE /* AbstractFormViewController.swift */; };
 		0646ACB91FB3D25B007760EE /* StringCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0646ACB81FB3D25B007760EE /* StringCheckers.swift */; };
 		0650F3141FB5CE65006A00F7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650F3131FB5CE65006A00F7 /* SignupViewController.swift */; };
@@ -87,6 +90,9 @@
 		0615D4A81FC771000097313A /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		0615D4AA1FC7776B0097313A /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		0615D4AC1FC77BA70097313A /* ReviewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsManager.swift; sourceTree = "<group>"; };
+		06386C5D1FC797580036E8DE /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		06386C5F1FC797FB0036E8DE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		06386C611FC79A7F0036E8DE /* ProfileMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuCell.swift; sourceTree = "<group>"; };
 		0646ACB61FB3D078007760EE /* AbstractFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractFormViewController.swift; sourceTree = "<group>"; };
 		0646ACB81FB3D25B007760EE /* StringCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCheckers.swift; sourceTree = "<group>"; };
 		0650F3131FB5CE65006A00F7 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +308,8 @@
 				06B952E71FC03E3F00DF556F /* SegmentCollectionCell.swift */,
 				06C87F021FC10C1400EE7A97 /* ShopDetailCell.swift */,
 				0695772E1FC22A2700DCB24D /* ShopReviewCell.swift */,
+				06386C5D1FC797580036E8DE /* ProfileHeaderCell.swift */,
+				06386C611FC79A7F0036E8DE /* ProfileMenuCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -397,6 +405,7 @@
 			children = (
 				06FCAFA41FB906880099685A /* SearchViewController.swift */,
 				06C276D51FC764D50062F09E /* FavouriteShopsViewController.swift */,
+				06386C5F1FC797FB0036E8DE /* ProfileViewController.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -607,6 +616,7 @@
 				066670DB1FAE7E2000739695 /* BorderedView.swift in Sources */,
 				06B3C40F1FA7E88600D02947 /* ViewController.swift in Sources */,
 				066670D81FAE7E2000739695 /* CircularImage.swift in Sources */,
+				06386C621FC79A7F0036E8DE /* ProfileMenuCell.swift in Sources */,
 				066670D91FAE7E2000739695 /* CircularLabel.swift in Sources */,
 				06B3C43E1FA7F44F00D02947 /* Constants.swift in Sources */,
 				06B3C4211FA7E8FC00D02947 /* AbstractViewController.swift in Sources */,
@@ -617,6 +627,7 @@
 				06B3C43A1FA7F2C700D02947 /* GBError.swift in Sources */,
 				06C87F031FC10C1400EE7A97 /* ShopDetailCell.swift in Sources */,
 				06A1E2781FBFE444005F618A /* ShopViewController.swift in Sources */,
+				06386C5E1FC797580036E8DE /* ProfileHeaderCell.swift in Sources */,
 				0695772F1FC22A2700DCB24D /* ShopReviewCell.swift in Sources */,
 				069577281FC2258D00DCB24D /* ShopReview.swift in Sources */,
 				0615D4AB1FC7776B0097313A /* AddReviewViewController.swift in Sources */,
@@ -624,6 +635,7 @@
 				060E716C1FBA61AD00898592 /* DoubleHandler.swift in Sources */,
 				06B3C43C1FA7F3DA00D02947 /* Response.swift in Sources */,
 				06B952E81FC03E3F00DF556F /* SegmentCollectionCell.swift in Sources */,
+				06386C601FC797FB0036E8DE /* ProfileViewController.swift in Sources */,
 				0695772B1FC2270D00DCB24D /* DateFormat.swift in Sources */,
 				0646ACB91FB3D25B007760EE /* StringCheckers.swift in Sources */,
 				0650F3161FB5CE73006A00F7 /* AbstractScrollableViewController.swift in Sources */,
