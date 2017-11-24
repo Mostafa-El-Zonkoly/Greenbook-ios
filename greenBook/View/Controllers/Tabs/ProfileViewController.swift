@@ -22,10 +22,13 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     var loggedInCellTypes : [ProfileCellTypes] = [.header, .accountSeparator, .edit, .password, .logout, .supportUS, .invite, .rateApp]
     override func viewDidLoad() {
         super.viewDidLoad()
         customizeNavigationBar()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

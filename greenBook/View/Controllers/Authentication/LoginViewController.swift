@@ -46,6 +46,56 @@ class LoginViewController: AbstractFormViewController {
 //        self.showMessage(message: "Signup")
     }
     @IBAction func forgetPassword(_ sender: UIButton) {
+        
+        let alertController = UIAlertController(title: "Forget password", message: "Please enter your email", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction.init(title: "Save", style: .default, handler: { (alert) in
+            if let textFields = alertController.textFields {
+                if textFields.count >= 1 {
+                    let emailAddreessTF = textFields[0]
+                    if let email = emailAddreessTF.text, emailAddreessTF.text!.validEmail() {
+                        self.startLoading()
+                        UserManager().forgetPassword(email: email, handler: { (response) in
+                            self.endLoading()
+                            if response.status {
+                                let alertController = UIAlertController(title: "Password Reset", message: "Password reset instruction sent to your email", preferredStyle: .alert)
+                                alertController.addAction(UIAlertAction.init(title: "OK", style: .default , handler: { (alert) in
+                                    
+                                }))
+                                self.present(alertController, animated: true, completion: nil)
+                                return
+
+                            }else{
+                                if let error = response.error {
+                                    self.showGBError(error: error)
+                                }else{
+                                    self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+                                }
+                            }
+                        })
+                        return
+                    }else{
+                        self.showErrorMessage(errorMessage: "Invalid email Address")
+                    }
+                    
+                }
+            }
+            self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+        }))
+        alertController.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (alert) in
+            
+        }))
+        
+        
+        
+        
+        //Section 2
+        alertController.addTextField(configurationHandler: { (textField) -> Void in
+            textField.placeholder = "Email Address"
+            textField.textAlignment = .left
+            textField.isSecureTextEntry = true
+        })
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func dismissKeyboardPressed(_ sender: UITapGestureRecognizer) {

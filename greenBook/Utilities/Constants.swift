@@ -12,6 +12,7 @@ import UIKit
 struct URLS {
     static let SERVER_URL = "https://staging-greenbook.herokuapp.com/api/v1/"
     static let SIGNUP_URL = "\(SERVER_URL)users"
+    
     static let LOGIN_URL = "\(SERVER_URL)users/sign_in"
     static let FORGET_PASSWORD_URL = "\(SERVER_URL)users/password"
     static let CATEGORIES_URL = "\(SERVER_URL)categories"
