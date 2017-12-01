@@ -49,6 +49,7 @@ class UserSession {
         self.currUser = User()
         self.token = ""
         let userDefualts = UserDefaults.standard
+        ShopManager.sharedInstance.favouriteShops = [:]
         userDefualts.removeObject(forKey: userKey)
         userDefualts.removeObject(forKey: tokenKey)
         userDefualts.synchronize()

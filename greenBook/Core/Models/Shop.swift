@@ -65,7 +65,7 @@ class Shop: BaseModel {
             self.rate = value
         }
         if let shop = ShopManager.sharedInstance.favouriteShops[self.id] {
-            ShopManager.sharedInstance.favouriteShops[self.id] = self
+            ShopManager.sharedInstance.favouriteShops[self.id] = self.id
             ShopManager.sharedInstance.cacheFavourite()
         }
     }
@@ -98,4 +98,20 @@ class Shop: BaseModel {
             return "Closed now"
         }
     }
+    override func toDict() -> [String : Any] {
+        var dict : [String : Any] = [:]
+        /*
+         var shopDescription = ""
+         var name : String = ""
+         var rate : Double = 0
+         var num_of_reviews : Int = 0
+         var workingDays : [WorkingDay] = []
+         var location : Location = Location()
+         var main_photo_url : String = ""
+         var photos : [Photo] = []
+         var phone_number : String = ""*/
+        
+        return dict
+    }
+    
 }

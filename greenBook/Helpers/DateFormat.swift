@@ -15,6 +15,24 @@ extension String {
             let date = dateFormatter.date(from: self)
             return date
     }
+    func dateForHours() -> Date? {
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateFormat = "hh:mm a"
+        if let hoursDate = dateFormatter.date(from: self){
+            var gregorian = Calendar(identifier: .gregorian)
+            var dateComponents = gregorian.dateComponents([.hour, .minute], from: hoursDate)
+            gregorian.timeZone = TimeZone.init(secondsFromGMT: 0)!
+            var components = gregorian.dateComponents([.year, .month, .day, .hour, .minute, .second, .timeZone], from: Date())
+
+            components.hour = dateComponents.hour
+            components.minute = dateComponents.minute
+            if let todaysDate = gregorian.date(from: components) {
+                return todaysDate
+            }
+
+        }
+        return Date()
+    }
 }
 
 extension Date {

@@ -14,6 +14,7 @@ enum ERROR_TYPE {
     case invalid
     case server_error
     case not_found
+    case location_service
     
 }
 class GBError : NSObject {
@@ -34,6 +35,8 @@ class GBError : NSObject {
                 return "No Internet Connection, please check your internet connection"
             case .not_found:
                 return "Not found"
+            case .location_service:
+                return "Please enable location service"
             case .server_error:
                     return "Something went wrong"
             }

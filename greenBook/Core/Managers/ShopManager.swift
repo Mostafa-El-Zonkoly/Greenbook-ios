@@ -13,34 +13,59 @@ import CoreLocation
 
 class ShopManager: AbstractManager {
     static let sharedInstance : ShopManager = ShopManager()
-    var favouriteShops : [Int: Shop] = [:]
+    var favouriteShops : [Int: Int] = [:]
     
     func loadCachedFavourite() {
         if !UserSession.sharedInstant.userLoggedIn(){
             let userDefaults = UserDefaults.standard
-            if let dict = userDefaults.value(forKey: "FavouriteCache") as? [Int : Shop] {
-                self.favouriteShops = dict
+            var newFav : [Int : Int] = [:]
+            if let dict = userDefaults.value(forKey: "FavouriteCache") as? [String : [String : Any]] {
+                for key in dict.keys {
+                    if let shopDict = dict[key], let intKey = Int(key) {
+                        let shop = Shop()
+                        shop.bindDictionary(dict: shopDict)
+                        newFav[intKey] = intKey
+                    }
+                }
             }
+            self.favouriteShops = newFav
             self.cacheFavourite()
         }
+    }
+    func shopsDictionary() -> [Int : Int] {
+        var dict : [Int : Int] = [:]
+        for key in favouriteShops.keys {
+            dict[key] = key
+        }
+        return dict
     }
     func cacheFavourite(){
         if !UserSession.sharedInstant.userLoggedIn() {
             let userDefaults = UserDefaults.standard
-            userDefaults.setValue(self.favouriteShops, forKey: "FavouriteCache")
+            userDefaults.setValue(shopsDictionary(), forKey: "FavouriteCache")
             userDefaults.synchronize()
         }
+    }
+    
+    func loadShopsWithIDs(shopIDs : [Int],handler: @escaping (Response) -> Void) {
+    
     }
     func loadFavouriteShops(handler: @escaping (Response) -> Void) {
         // First check connectivity
         var response = Response()
         loadCachedFavourite()
         
+        var urlString = URLS.FAV_URL
         
+        var ids = ""
         if !UserSession.sharedInstant.userLoggedIn(){
-            response.result = self.favouriteShops
-            handler(response)
-            return
+            urlString = URLS.SHOPS_WITH_IDS_URL
+            for key in self.favouriteShops.keys {
+                ids = "\(key),\(ids)"
+            }
+            if ids.count > 0 {
+                ids.remove(at: ids.endIndex)
+            }
         }
         if !self.internetConnected() {
             response.error = GBError()
@@ -48,10 +73,10 @@ class ShopManager: AbstractManager {
             handler(response)
             return
         }
-        if let url = URL.init(string: URLS.FAV_URL) {
+        if let url = URL.init(string: urlString) {
             
             let headers = getHeader(auth: true) as! HTTPHeaders
-            let params : [String : Any] = [:]
+            let params : [String : Any] = ["ids":ids]
             Alamofire.request(url, method: HTTPMethod.get, parameters: params, headers: headers).responseJSON(completionHandler: { (serverResponse) in
                 if let error = serverResponse.error {
                     response.error = GBError()
@@ -71,13 +96,15 @@ class ShopManager: AbstractManager {
                         if let _ = dict["data"] as? NSDictionary, let shopsDict = (dict["data"] as! [String: Any])["favourites"] as? [[String : Any]] {
                             // Success
                             var shops : [Int : Shop] = [:]
+                            var favShops : [Int : Int] = [:]
                             for shopDict in shopsDict {
                                 let shop = Shop()
                                 shop.bindDictionary(dict: shopDict)
                                 shops[shop.id] = shop
+                                favShops[shop.id] = shop.id
                             }
                             
-                            self.favouriteShops = shops
+                            self.favouriteShops = favShops
                             response.result = shops
                             handler(response)
                             return
@@ -178,6 +205,21 @@ class ShopManager: AbstractManager {
     
     
     func favouriteShopState(shop: Shop, state: Bool, handler: @escaping (Response) -> Void) {
+        if !UserSession.sharedInstant.userLoggedIn(){
+            if state {
+                favouriteShops[shop.id] = shop.id
+                
+            }else{
+                favouriteShops.removeValue(forKey: shop.id)
+            }
+            cacheFavourite()
+            let response = Response.init()
+            response.error = nil
+            response.status = true
+            handler(response)
+            return
+        }
+        
         var response = Response()
         if !self.internetConnected() {
             response.error = GBError()
@@ -185,6 +227,7 @@ class ShopManager: AbstractManager {
             handler(response)
             return
         }
+        
         let url = URL.init(string: String.init(format: URLS.FAV_STATE_URL, shop.id))
         let httpMethod : HTTPMethod = (state) ? .post:.delete
         

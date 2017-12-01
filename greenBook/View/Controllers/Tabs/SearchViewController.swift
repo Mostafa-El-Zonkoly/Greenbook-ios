@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import CoreLocation
 enum SearchState {
     case noSearch
     case noResults
@@ -29,7 +29,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     // MARK: Outlets
     @IBOutlet weak var categorySearchView: RoundedView!
-    
+    var location : CLLocationCoordinate2D = CLLocationCoordinate2D()
     @IBOutlet weak var searchViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var searchTF: UITextField!
@@ -82,6 +82,11 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         self.navigationController?.isNavigationBarHidden = true
         self.filterTable.rowHeight = 40.0
         
+        if AbstractManager().locationEnabled() {
+            if let loc = AbstractManager.locationManager.location {
+                self.location = loc.coordinate
+            }
+        }
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -204,7 +209,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         self.locationTF.resignFirstResponder()
         if let category = self.selectedCategory {
             self.startLoading()
-            CategoryManager.sharedInistance.loadCategoryShops(category: category, lat: 0, long: 0, handler: { (response) in
+            CategoryManager.sharedInistance.loadCategoryShops(category: category, lat: self.location.latitude, long: self.location.longitude, handler: { (response) in
                 self.endLoading()
                 if response.status {
                     if let newShops = response.result as? [Shop] {

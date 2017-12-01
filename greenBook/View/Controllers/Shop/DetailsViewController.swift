@@ -71,7 +71,20 @@ class DetailsViewController: AbstractViewController,IndicatorInfoProvider, UITab
         return UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section < cellIdentifiers.count, cellIdentifiers[indexPath.section] == .phone{
+            if let url = URL(string: "tel://\(self.shop.phone_number)") {
+                UIApplication.shared.open(url, options: [:], completionHandler: { (result) in
+                    if !result {
+                        self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+                    }
+                })
+            }else{
+                self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+            }
+
+        }
+    }
     
 }
 

@@ -34,6 +34,9 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
     
     func toggleAddReview(){
         var addedReview = false
+        if !UserSession.sharedInstant.userLoggedIn(){
+            addedReview = true
+        }
         for review in reviews {
             if review.user.id == UserSession.sharedInstant.currUser.id {
                 addedReview = true

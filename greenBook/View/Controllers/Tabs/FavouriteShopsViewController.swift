@@ -103,11 +103,11 @@ class FavouriteShopsViewController: AbstractViewController, UITableViewDelegate,
     @objc func reloadData(){
         ShopManager.sharedInstance.loadFavouriteShops { (response) in
             var favShops : [Shop] = []
-            let favDict = ShopManager.sharedInstance.favouriteShops
-        
-            for shopID in favDict.keys {
-                if let shop = favDict[shopID]{
-                    favShops.append(shop)
+            if let favShopsDict = response.result as? [Int : Shop] {
+                for shopID in favShopsDict.keys {
+                    if let shop = favShopsDict[shopID]{
+                        favShops.append(shop)
+                    }
                 }
             }
             self.shops = favShops

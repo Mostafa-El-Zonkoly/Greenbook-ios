@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 import ReachabilitySwift
-
+import CoreLocation
 enum RestfulStatus {
     case not_found
     case success
@@ -37,11 +37,22 @@ enum RestfulStatus {
     }
 }
 class AbstractManager : NSObject{
-    
+    static let locationManager : CLLocationManager = CLLocationManager()
     
     func internetConnected() -> Bool {
+        
         if let reachability = Reachability.init() {
             return reachability.isReachable
+        }
+        return false
+    }
+    
+    func locationEnabled() -> Bool {
+        let authorizationState =  CLLocationManager.authorizationStatus()
+        if authorizationState == CLAuthorizationStatus.authorizedAlways || authorizationState == CLAuthorizationStatus.authorizedWhenInUse {
+            return true
+        }else{
+            AbstractManager.locationManager.requestWhenInUseAuthorization()
         }
         return false
     }

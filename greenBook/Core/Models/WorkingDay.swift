@@ -34,14 +34,15 @@ class WorkingDay : BaseModel {
     static let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     func liesWithin() -> Bool {
         let date = Date() // time utc
-        let calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
+        var calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
+        if let timeZone = TimeZone.init(secondsFromGMT: 0) {
+            calendar.timeZone = timeZone
+        }
         let components = calendar.dateComponents([.weekday, .hour, .minute], from: date)
-        if let weekDay = components.weekday, WorkingDay.weekDays.count > components.weekday! {
-            if WorkingDay.weekDays[weekDay] == self.day_name {
+        if let weekDay = components.weekday, WorkingDay.weekDays.count >= components.weekday! {
+            if WorkingDay.weekDays[weekDay-1] == self.day_name {
                 // Same Day, Start Parsing Time
-                let dateFormatter = DateFormatter.init()
-                dateFormatter.dateFormat = "hh:mm a"
-                if let startDate = dateFormatter.date(from: self.opened_at), let closeDate = dateFormatter.date(from: self.closed_at) {
+                if let startDate = self.opened_at.dateForHours(), let closeDate = self.closed_at.dateForHours() {
                     if date.compare(startDate).rawValue != CFComparisonResult.compareLessThan.rawValue, date.compare(closeDate).rawValue != CFComparisonResult.compareGreaterThan.rawValue {
                         return true
                     }

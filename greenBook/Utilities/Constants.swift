@@ -18,6 +18,7 @@ struct URLS {
     static let CATEGORIES_URL = "\(SERVER_URL)categories"
     static let SEARCH_URL = "\(SERVER_URL)shops/search"
     static let FAV_URL = "\(SERVER_URL)shops/favourites"
+    static let SHOPS_WITH_IDS_URL = "\(SERVER_URL)shops"
     static let SHOP_REVIEWS_URL = "\(SERVER_URL)shops/%d/reviews"
     static let FAV_STATE_URL = "\(SERVER_URL)shops/%d/favourite"
     static let ADD_REVIEW_URL = "\(SERVER_URL)shops/%d/reviews"

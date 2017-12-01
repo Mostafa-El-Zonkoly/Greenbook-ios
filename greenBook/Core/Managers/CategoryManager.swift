@@ -105,6 +105,12 @@ class CategoryManager: AbstractManager {
             handler(response)
             return
         }
+        if !self.locationEnabled() {
+            response.error = GBError()
+            response.error?.error_type = .location_service
+            handler(response)
+            return
+        }
         if let url = URL.init(string: URLS.SEARCH_URL) {
             
             let headers = getHeader(auth: false) as! HTTPHeaders
