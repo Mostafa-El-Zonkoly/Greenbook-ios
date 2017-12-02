@@ -88,6 +88,8 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             }
         }
     }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.selectedShop = nil
@@ -97,6 +99,8 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             self.tableView.reloadData()
         }
     }
+    
+    
     override func viewDidLayoutSubviews() {
         
     }
@@ -286,6 +290,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             if let dest = segue.destination as? ShopViewController {
                 if let shop = self.selectedShop {
                     dest.shop = shop
+                    dest.keepNavBar = false
                 }
             }
         }

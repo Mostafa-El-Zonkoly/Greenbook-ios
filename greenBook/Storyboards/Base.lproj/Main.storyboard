@@ -332,7 +332,7 @@
         <!--Favourite-->
         <scene sceneID="W6P-2J-443">
             <objects>
-                <viewController title="Favourite" id="Exf-FG-yEs" customClass="FavouriteShopsViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Favourite" automaticallyAdjustsScrollViewInsets="NO" id="Exf-FG-yEs" customClass="FavouriteShopsViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mfU-9L-1f7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1597,7 +1597,7 @@
                                     <constraint firstAttribute="height" constant="1.5" id="42g-UZ-A4K"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-zc-7zM" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-zc-7zM" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="115" y="301" width="145" height="25"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1624,8 +1624,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a Star to Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-Cm-B3v">
-                                <rect key="frame" x="127.5" y="347" width="121" height="17.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tap a Star to Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-Cm-B3v">
+                                <rect key="frame" x="128" y="347" width="121" height="17.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

@@ -20,7 +20,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     var shopViewAdded = false
     let redColor = UIColor(red: 221/255.0, green: 0/255.0, blue: 19/255.0, alpha: 1.0)
     let unselectedIconColor = UIColor(red: 73/255.0, green: 8/255.0, blue: 10/255.0, alpha: 1.0)
-    
+    var keepNavBar = true
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -132,7 +132,10 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
+        if !keepNavBar{
+            self.navigationController?.isNavigationBarHidden = true
+        }
+        
     }
     
     func toggleFavState(shop: Shop) {
@@ -218,5 +221,12 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
         alertView.addAction(editAction)
         
         self.present(alertView, animated: true, completion: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if !keepNavBar{
+            self.navigationController?.isNavigationBarHidden = true
+        }
     }
 }
