@@ -88,7 +88,7 @@ class CategoryManager: AbstractManager {
         var filtered : [Category] = []
         if prefix.count > 0 {
             for category in self.categories {
-                if category.name.contains(prefix) {
+                if category.name.lowercased().contains(prefix.lowercased()) {
                     filtered.append(category)
                 }
             }

@@ -18,7 +18,7 @@ class Location : BaseModel {
         if let value = dict["lat"] as? Double {
             self.lat = value
         }
-        if let value = dict["lng"] as? Double {
+        if let value = dict["long"] as? Double {
             self.long = value
         }
         if let value = dict["address"] as? String {

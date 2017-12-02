@@ -76,6 +76,10 @@
 		06C87F031FC10C1400EE7A97 /* ShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C87F021FC10C1400EE7A97 /* ShopDetailCell.swift */; };
 		06C87F051FC1178800EE7A97 /* ShopGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C87F041FC1178800EE7A97 /* ShopGalleryViewController.swift */; };
 		06DB954F1FC7AFAA0012ED2F /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB954E1FC7AFAA0012ED2F /* UpdateProfileViewController.swift */; };
+		06ECB4F51FD2340E00B48B53 /* SearchMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ECB4F41FD2340E00B48B53 /* SearchMapViewController.swift */; };
+		06ECB4F71FD23F3300B48B53 /* ShopMarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ECB4F61FD23F3300B48B53 /* ShopMarkerInfoView.swift */; };
+		06ECB4F91FD23F5D00B48B53 /* ShopMarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06ECB4F81FD23F5D00B48B53 /* ShopMarkerInfoView.xib */; };
+		06ECB4FB1FD24A7100B48B53 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06ECB4FA1FD24A7100B48B53 /* MapKit.framework */; };
 		06FCAFA01FB901C60099685A /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAF9F1FB901C60099685A /* CategoryManager.swift */; };
 		06FCAFA21FB901D00099685A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAFA11FB901D00099685A /* Category.swift */; };
 		06FCAFA51FB906880099685A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAFA41FB906880099685A /* SearchViewController.swift */; };
@@ -154,6 +158,10 @@
 		06C87F021FC10C1400EE7A97 /* ShopDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailCell.swift; sourceTree = "<group>"; };
 		06C87F041FC1178800EE7A97 /* ShopGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopGalleryViewController.swift; sourceTree = "<group>"; };
 		06DB954E1FC7AFAA0012ED2F /* UpdateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileViewController.swift; sourceTree = "<group>"; };
+		06ECB4F41FD2340E00B48B53 /* SearchMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapViewController.swift; sourceTree = "<group>"; };
+		06ECB4F61FD23F3300B48B53 /* ShopMarkerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopMarkerInfoView.swift; sourceTree = "<group>"; };
+		06ECB4F81FD23F5D00B48B53 /* ShopMarkerInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopMarkerInfoView.xib; sourceTree = "<group>"; };
+		06ECB4FA1FD24A7100B48B53 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		06FCAF9F1FB901C60099685A /* CategoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		06FCAFA11FB901D00099685A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		06FCAFA41FB906880099685A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06ECB4FB1FD24A7100B48B53 /* MapKit.framework in Frameworks */,
 				7F3C49E2CFA9FC3D78E87E03 /* Pods_greenBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +240,7 @@
 				06C87F041FC1178800EE7A97 /* ShopGalleryViewController.swift */,
 				0695772C1FC2287100DCB24D /* ShopReviewsViewController.swift */,
 				0615D4AA1FC7776B0097313A /* AddReviewViewController.swift */,
+				06ECB4F41FD2340E00B48B53 /* SearchMapViewController.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -303,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				06A1E2731FBFDABB005F618A /* ShopView.swift */,
+				06ECB4F61FD23F3300B48B53 /* ShopMarkerInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,6 +402,7 @@
 				06A1E2711FBFDA55005F618A /* ShopView.xib */,
 				06B952E51FC03DB400DF556F /* SegmentCollectionCell.xib */,
 				069577251FC21D0200DCB24D /* ShopReviewCell.xib */,
+				06ECB4F81FD23F5D00B48B53 /* ShopMarkerInfoView.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -428,6 +440,7 @@
 		D64FB349E02D46D269F318BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06ECB4FA1FD24A7100B48B53 /* MapKit.framework */,
 				A5D1424DDD0B6708674BC58E /* Pods_greenBook.framework */,
 			);
 			name = Frameworks;
@@ -469,6 +482,11 @@
 					06B3C4081FA7E88500D02947 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -499,6 +517,7 @@
 				069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */,
 				066670C41FAE76BA00739695 /* OpenSans-BoldItalic.ttf in Resources */,
 				06B3C4171FA7E88600D02947 /* LaunchScreen.storyboard in Resources */,
+				06ECB4F91FD23F5D00B48B53 /* ShopMarkerInfoView.xib in Resources */,
 				06A1E2721FBFDA55005F618A /* ShopView.xib in Resources */,
 				066670CB1FAE76BA00739695 /* OpenSans-Semibold.ttf in Resources */,
 				066670C51FAE76BA00739695 /* OpenSans-ExtraBold.ttf in Resources */,
@@ -638,6 +657,7 @@
 				06386C5E1FC797580036E8DE /* ProfileHeaderCell.swift in Sources */,
 				0695772F1FC22A2700DCB24D /* ShopReviewCell.swift in Sources */,
 				069577281FC2258D00DCB24D /* ShopReview.swift in Sources */,
+				06ECB4F71FD23F3300B48B53 /* ShopMarkerInfoView.swift in Sources */,
 				0615D4AB1FC7776B0097313A /* AddReviewViewController.swift in Sources */,
 				06B3C4301FA7F14F00D02947 /* UserManager.swift in Sources */,
 				060E716C1FBA61AD00898592 /* DoubleHandler.swift in Sources */,
@@ -669,6 +689,7 @@
 				06B3C4321FA7F1B500D02947 /* AbstractManager.swift in Sources */,
 				060E71601FBA4BE300898592 /* Shop.swift in Sources */,
 				066670D11FAE7A3800739695 /* RoundedButton.swift in Sources */,
+				06ECB4F51FD2340E00B48B53 /* SearchMapViewController.swift in Sources */,
 				06FCAFA21FB901D00099685A /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

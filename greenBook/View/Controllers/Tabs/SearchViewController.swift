@@ -193,7 +193,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                 if  indexPath.row < self.shops.count {
                     self.selectedShop = self.shops[indexPath.row]
                     performSegue(withIdentifier: "showShopSegue", sender: self)
-
+                    
                 }
             }
         }else{
@@ -212,7 +212,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     
     // MARK: User Actions
     @objc func showOnMap(){
-        
+        self.performSegue(withIdentifier: "showMapSegue", sender: self)
     }
     
     func loadData(){
@@ -306,6 +306,11 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                     dest.keepNavBar = false
                 }
             }
+        }else if segue.identifier == "showMapSegue" {
+            if let mapView = segue.destination as? SearchMapViewController {
+                mapView.startLocation = self.location
+                mapView.shops = self.shops
+            }
         }
     }
     
@@ -322,4 +327,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             }
         }
     }
+    
+    
+    
 }

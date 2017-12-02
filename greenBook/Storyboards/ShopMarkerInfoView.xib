@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShopMarkerInfoView" customModule="greenBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="markerInfoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="wJt-K9-5vO">
+                    <rect key="frame" x="0.0" y="0.0" width="290" height="100"/>
+                </imageView>
+                <view userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6n5-e5-yoX" customClass="CosmosView" customModule="Cosmos">
+                    <rect key="frame" x="70" y="42" width="64" height="12"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="GOh-HT-07O"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                            <real key="value" value="3.6000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                            <real key="value" value="12"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                            <color key="value" red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                            <integer key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                            <real key="value" value="7"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textMargin">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                            <color key="value" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0b-9f-7Oa" userLabel="Rate Label">
+                    <rect key="frame" x="144" y="41" width="23" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="P4I-DQ-otU"/>
+                        <constraint firstAttribute="width" constant="23" id="WJM-Qd-6dq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="12"/>
+                    <color key="textColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-fL-sVT" customClass="CircularImage" customModule="greenBook" customModuleProvider="target">
+                    <rect key="frame" x="17" y="15.5" width="47" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="47" id="UdW-Nm-Neh"/>
+                        <constraint firstAttribute="height" constant="47" id="YUc-45-Xks"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shop Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVA-5X-n7Q">
+                    <rect key="frame" x="70" y="16" width="179" height="21"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
+                    <color key="textColor" red="0.047058823529411764" green="0.6470588235294118" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJg-J9-hI5">
+                    <rect key="frame" x="252" y="7" width="34" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="Jj7-ix-Nqh"/>
+                        <constraint firstAttribute="width" constant="34" id="WMr-2A-Q7G"/>
+                    </constraints>
+                    <state key="normal" image="btnClose"/>
+                    <connections>
+                        <action selector="dismissMarkerInfo:" destination="iN0-l3-epB" eventType="touchUpInside" id="rzV-g4-vdR"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wJt-K9-5vO" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="4J9-Fc-KTU"/>
+                <constraint firstItem="A0b-9f-7Oa" firstAttribute="leading" secondItem="6n5-e5-yoX" secondAttribute="trailing" constant="10" id="B3J-WN-fa9"/>
+                <constraint firstItem="ebf-fL-sVT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="17" id="Dfo-f8-fVR"/>
+                <constraint firstItem="wJt-K9-5vO" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="E80-rx-oOJ"/>
+                <constraint firstItem="6n5-e5-yoX" firstAttribute="top" secondItem="zVA-5X-n7Q" secondAttribute="bottom" constant="5" id="GjS-s6-XVP"/>
+                <constraint firstItem="ebf-fL-sVT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15.5" id="Iu4-Uj-yR6"/>
+                <constraint firstItem="yJg-J9-hI5" firstAttribute="leading" secondItem="zVA-5X-n7Q" secondAttribute="trailing" constant="3" id="QVw-ha-f59"/>
+                <constraint firstItem="zVA-5X-n7Q" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="Rwj-f9-D4E"/>
+                <constraint firstItem="yJg-J9-hI5" firstAttribute="centerY" secondItem="zVA-5X-n7Q" secondAttribute="centerY" id="f2w-B7-tAE"/>
+                <constraint firstItem="A0b-9f-7Oa" firstAttribute="centerY" secondItem="6n5-e5-yoX" secondAttribute="centerY" id="gpv-BF-zcG"/>
+                <constraint firstItem="wJt-K9-5vO" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="hez-Xy-vvm"/>
+                <constraint firstItem="wJt-K9-5vO" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="mVB-EY-rqx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="yJg-J9-hI5" secondAttribute="trailing" constant="4" id="t1X-Ss-CfZ"/>
+                <constraint firstItem="zVA-5X-n7Q" firstAttribute="leading" secondItem="ebf-fL-sVT" secondAttribute="trailing" constant="6" id="u2E-Uv-AsU"/>
+                <constraint firstItem="zVA-5X-n7Q" firstAttribute="leading" secondItem="6n5-e5-yoX" secondAttribute="trailing" constant="-64" id="wKA-gz-Oos"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="shopImageView" destination="ebf-fL-sVT" id="NSg-9X-8p6"/>
+                <outlet property="shopNameLabel" destination="zVA-5X-n7Q" id="Gne-Fw-bUR"/>
+                <outlet property="shopRateLabel" destination="A0b-9f-7Oa" id="YJ3-0c-7Wh"/>
+                <outlet property="shopRateView" destination="6n5-e5-yoX" id="PxH-bU-G9k"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="btnClose" width="13" height="13"/>
+        <image name="markerInfoBackground" width="314" height="122"/>
+    </resources>
+</document>

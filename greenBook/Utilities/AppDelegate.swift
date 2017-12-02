@@ -12,6 +12,7 @@ import FirebaseInstanceID
 import FirebaseMessaging
 import FirebaseDatabase
 import GooglePlaces
+import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         loadCategories()
         GMSPlacesClient.provideAPIKey("AIzaSyDkwcSMj8diFAtWR9_Fiue4ceqKnxcGe0I")
+        GMSServices.provideAPIKey("AIzaSyDw6Lr27FzIZX5vqLvIyt_XqxqtI6bb3ZE")
+        
+
         FIRApp.configure()
         return true
     }
