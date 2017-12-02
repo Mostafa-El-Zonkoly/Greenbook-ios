@@ -23,6 +23,8 @@
 		0646ACB91FB3D25B007760EE /* StringCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0646ACB81FB3D25B007760EE /* StringCheckers.swift */; };
 		0650F3141FB5CE65006A00F7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650F3131FB5CE65006A00F7 /* SignupViewController.swift */; };
 		0650F3161FB5CE73006A00F7 /* AbstractScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650F3151FB5CE73006A00F7 /* AbstractScrollableViewController.swift */; };
+		0662060E1FD225E70044C1F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0662060D1FD225E60044C1F6 /* GoogleService-Info.plist */; };
+		066206101FD227E10044C1F6 /* GMSPlaceAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0662060F1FD227E10044C1F6 /* GMSPlaceAutoComplete.swift */; };
 		066670C21FAE76BA00739695 /* Apache License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 066670B71FAE76BA00739695 /* Apache License.txt */; };
 		066670C31FAE76BA00739695 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670B81FAE76BA00739695 /* OpenSans-Bold.ttf */; };
 		066670C41FAE76BA00739695 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670B91FAE76BA00739695 /* OpenSans-BoldItalic.ttf */; };
@@ -41,7 +43,6 @@
 		066670D91FAE7E2000739695 /* CircularLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D41FAE7E1F00739695 /* CircularLabel.swift */; };
 		066670DA1FAE7E2000739695 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D51FAE7E1F00739695 /* RoundedView.swift */; };
 		066670DB1FAE7E2000739695 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D61FAE7E1F00739695 /* BorderedView.swift */; };
-		0678530F1FC43CEB007D4884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0678530E1FC43CEB007D4884 /* GoogleService-Info.plist */; };
 		067853131FC43F49007D4884 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067853121FC43F49007D4884 /* ImageUploader.swift */; };
 		0691241F1FBA6E700022D063 /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691241E1FBA6E700022D063 /* ShopManager.swift */; };
 		069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069577251FC21D0200DCB24D /* ShopReviewCell.xib */; };
@@ -98,6 +99,8 @@
 		0646ACB81FB3D25B007760EE /* StringCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCheckers.swift; sourceTree = "<group>"; };
 		0650F3131FB5CE65006A00F7 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0650F3151FB5CE73006A00F7 /* AbstractScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractScrollableViewController.swift; sourceTree = "<group>"; };
+		0662060D1FD225E60044C1F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0662060F1FD227E10044C1F6 /* GMSPlaceAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSPlaceAutoComplete.swift; sourceTree = "<group>"; };
 		066670B71FAE76BA00739695 /* Apache License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License.txt"; sourceTree = "<group>"; };
 		066670B81FAE76BA00739695 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		066670B91FAE76BA00739695 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -116,7 +119,6 @@
 		066670D41FAE7E1F00739695 /* CircularLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLabel.swift; sourceTree = "<group>"; };
 		066670D51FAE7E1F00739695 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		066670D61FAE7E1F00739695 /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
-		0678530E1FC43CEB007D4884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		067853121FC43F49007D4884 /* ImageUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		0691241E1FBA6E700022D063 /* ShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopManager.swift; sourceTree = "<group>"; };
 		069577251FC21D0200DCB24D /* ShopReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopReviewCell.xib; sourceTree = "<group>"; };
@@ -236,7 +238,7 @@
 		06B3C4001FA7E88500D02947 = {
 			isa = PBXGroup;
 			children = (
-				0678530E1FC43CEB007D4884 /* GoogleService-Info.plist */,
+				0662060D1FD225E60044C1F6 /* GoogleService-Info.plist */,
 				06B3C40B1FA7E88600D02947 /* greenBook */,
 				06B3C40A1FA7E88600D02947 /* Products */,
 				69122AD6D69D3EC3349CE450 /* Pods */,
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				06B952E91FC0447600DF556F /* ViewControllerExtension.swift */,
+				0662060F1FD227E10044C1F6 /* GMSPlaceAutoComplete.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -496,10 +499,10 @@
 				069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */,
 				066670C41FAE76BA00739695 /* OpenSans-BoldItalic.ttf in Resources */,
 				06B3C4171FA7E88600D02947 /* LaunchScreen.storyboard in Resources */,
-				0678530F1FC43CEB007D4884 /* GoogleService-Info.plist in Resources */,
 				06A1E2721FBFDA55005F618A /* ShopView.xib in Resources */,
 				066670CB1FAE76BA00739695 /* OpenSans-Semibold.ttf in Resources */,
 				066670C51FAE76BA00739695 /* OpenSans-ExtraBold.ttf in Resources */,
+				0662060E1FD225E70044C1F6 /* GoogleService-Info.plist in Resources */,
 				066670C21FAE76BA00739695 /* Apache License.txt in Resources */,
 				066670C91FAE76BA00739695 /* OpenSans-LightItalic.ttf in Resources */,
 				06B3C4141FA7E88600D02947 /* Assets.xcassets in Resources */,
@@ -626,6 +629,7 @@
 				06A1E2741FBFDABB005F618A /* ShopView.swift in Sources */,
 				060E71681FBA5D9D00898592 /* WorkingDay.swift in Sources */,
 				06A1E27B1FBFE78B005F618A /* DetailsViewController.swift in Sources */,
+				066206101FD227E10044C1F6 /* GMSPlaceAutoComplete.swift in Sources */,
 				0615D4A91FC771000097313A /* PlaceholderTextView.swift in Sources */,
 				06B3C43A1FA7F2C700D02947 /* GBError.swift in Sources */,
 				06C87F031FC10C1400EE7A97 /* ShopDetailCell.swift in Sources */,

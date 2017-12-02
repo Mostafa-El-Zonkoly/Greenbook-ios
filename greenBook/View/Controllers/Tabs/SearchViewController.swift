@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import CoreLocation
+import GooglePlaces
+
 enum SearchState {
     case noSearch
     case noResults
@@ -39,6 +41,11 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     var filteredCategories : [Category] = []
     var shops : [Shop] = []
     var selectedCategory : Category?
+    
+    
+    // MARK: Google Places Search
+    let autocompleteController = GMSAutocompleteViewController()
+
     var viewState : SearchState = .noSearch {
         didSet{
             self.adjustView()
@@ -87,6 +94,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                 self.location = loc.coordinate
             }
         }
+        
     }
     
     
@@ -249,11 +257,16 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         }
         return true
     }
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.isEqual(searchTF){
             self.searchType = .category
         }else{
             self.searchType = .location
+            autocompleteController.delegate = self
+            present(autocompleteController, animated: true, completion: nil)
+            textField.inputView = nil
+
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
