@@ -9,8 +9,22 @@
 import Foundation
 import UIKit
 
+struct KEYS {
+    #if PROD
+        static let GMSPLacesKey = "AIzaSyDkwcSMj8diFAtWR9_Fiue4ceqKnxcGe0I"
+        static let GMSServiceKey = "AIzaSyDw6Lr27FzIZX5vqLvIyt_XqxqtI6bb3ZE"
+    #else
+        static let GMSPLacesKey = "AIzaSyDkwcSMj8diFAtWR9_Fiue4ceqKnxcGe0I"
+        static let GMSServiceKey = "AIzaSyDw6Lr27FzIZX5vqLvIyt_XqxqtI6bb3ZE"
+    #endif
+}
 struct URLS {
-    static let SERVER_URL = "https://staging-greenbook.herokuapp.com/api/v1/"
+    #if PROD
+        static let SERVER_URL = "https://staging-greenbook.herokuapp.com/api/v1/"
+    
+    #else
+        static let SERVER_URL = "https://staging-greenbook.herokuapp.com/api/v1/"
+    #endif
     static let SIGNUP_URL = "\(SERVER_URL)users"
     
     static let LOGIN_URL = "\(SERVER_URL)users/sign_in"

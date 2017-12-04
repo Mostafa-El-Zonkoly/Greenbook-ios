@@ -23,7 +23,84 @@
 		0646ACB91FB3D25B007760EE /* StringCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0646ACB81FB3D25B007760EE /* StringCheckers.swift */; };
 		0650F3141FB5CE65006A00F7 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650F3131FB5CE65006A00F7 /* SignupViewController.swift */; };
 		0650F3161FB5CE73006A00F7 /* AbstractScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650F3151FB5CE73006A00F7 /* AbstractScrollableViewController.swift */; };
-		0662060E1FD225E70044C1F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0662060D1FD225E60044C1F6 /* GoogleService-Info.plist */; };
+		0661F1AA1FD5FEAE00EA9F14 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E71651FBA5D8500898592 /* Photo.swift */; };
+		0661F1AB1FD5FEAE00EA9F14 /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691241E1FBA6E700022D063 /* ShopManager.swift */; };
+		0661F1AC1FD5FEAE00EA9F14 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670CE1FAE780600739695 /* LoginViewController.swift */; };
+		0661F1AD1FD5FEAE00EA9F14 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D61FAE7E1F00739695 /* BorderedView.swift */; };
+		0661F1AE1FD5FEAE00EA9F14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C40E1FA7E88600D02947 /* ViewController.swift */; };
+		0661F1AF1FD5FEAE00EA9F14 /* CircularImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D31FAE7E1F00739695 /* CircularImage.swift */; };
+		0661F1B01FD5FEAE00EA9F14 /* ProfileMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06386C611FC79A7F0036E8DE /* ProfileMenuCell.swift */; };
+		0661F1B11FD5FEAE00EA9F14 /* CircularLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D41FAE7E1F00739695 /* CircularLabel.swift */; };
+		0661F1B21FD5FEAE00EA9F14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C43D1FA7F44F00D02947 /* Constants.swift */; };
+		0661F1B31FD5FEAE00EA9F14 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C4201FA7E8FC00D02947 /* AbstractViewController.swift */; };
+		0661F1B41FD5FEAE00EA9F14 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A1E2731FBFDABB005F618A /* ShopView.swift */; };
+		0661F1B51FD5FEAE00EA9F14 /* WorkingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E71671FBA5D9D00898592 /* WorkingDay.swift */; };
+		0661F1B61FD5FEAE00EA9F14 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A1E27A1FBFE78B005F618A /* DetailsViewController.swift */; };
+		0661F1B71FD5FEAE00EA9F14 /* GMSPlaceAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0662060F1FD227E10044C1F6 /* GMSPlaceAutoComplete.swift */; };
+		0661F1B81FD5FEAE00EA9F14 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4A81FC771000097313A /* PlaceholderTextView.swift */; };
+		0661F1B91FD5FEAE00EA9F14 /* GBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C4391FA7F2C700D02947 /* GBError.swift */; };
+		0661F1BA1FD5FEAE00EA9F14 /* ShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C87F021FC10C1400EE7A97 /* ShopDetailCell.swift */; };
+		0661F1BB1FD5FEAE00EA9F14 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A1E2771FBFE444005F618A /* ShopViewController.swift */; };
+		0661F1BC1FD5FEAE00EA9F14 /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB954E1FC7AFAA0012ED2F /* UpdateProfileViewController.swift */; };
+		0661F1BD1FD5FEAE00EA9F14 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06386C5D1FC797580036E8DE /* ProfileHeaderCell.swift */; };
+		0661F1BE1FD5FEAE00EA9F14 /* ShopReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695772E1FC22A2700DCB24D /* ShopReviewCell.swift */; };
+		0661F1BF1FD5FEAE00EA9F14 /* ShopReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069577271FC2258D00DCB24D /* ShopReview.swift */; };
+		0661F1C01FD5FEAE00EA9F14 /* ShopMarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ECB4F61FD23F3300B48B53 /* ShopMarkerInfoView.swift */; };
+		0661F1C11FD5FEAE00EA9F14 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AA1FC7776B0097313A /* AddReviewViewController.swift */; };
+		0661F1C21FD5FEAE00EA9F14 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C42F1FA7F14F00D02947 /* UserManager.swift */; };
+		0661F1C31FD5FEAE00EA9F14 /* DoubleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E716B1FBA61AD00898592 /* DoubleHandler.swift */; };
+		0661F1C41FD5FEAE00EA9F14 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C43B1FA7F3DA00D02947 /* Response.swift */; };
+		0661F1C51FD5FEAE00EA9F14 /* SegmentCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B952E71FC03E3F00DF556F /* SegmentCollectionCell.swift */; };
+		0661F1C61FD5FEAE00EA9F14 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06386C5F1FC797FB0036E8DE /* ProfileViewController.swift */; };
+		0661F1C71FD5FEAE00EA9F14 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695772A1FC2270D00DCB24D /* DateFormat.swift */; };
+		0661F1C81FD5FEAE00EA9F14 /* StringCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0646ACB81FB3D25B007760EE /* StringCheckers.swift */; };
+		0661F1C91FD5FEAE00EA9F14 /* AbstractScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650F3151FB5CE73006A00F7 /* AbstractScrollableViewController.swift */; };
+		0661F1CA1FD5FEAE00EA9F14 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B952E91FC0447600DF556F /* ViewControllerExtension.swift */; };
+		0661F1CB1FD5FEAE00EA9F14 /* AbstractSegmentedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A1E2751FBFE37F005F618A /* AbstractSegmentedBarViewController.swift */; };
+		0661F1CC1FD5FEAE00EA9F14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C42D1FA7EAD100D02947 /* User.swift */; };
+		0661F1CD1FD5FEAE00EA9F14 /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E715D1FBA4BBF00898592 /* ShopCell.swift */; };
+		0661F1CE1FD5FEAE00EA9F14 /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAF9F1FB901C60099685A /* CategoryManager.swift */; };
+		0661F1CF1FD5FEAE00EA9F14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C40C1FA7E88600D02947 /* AppDelegate.swift */; };
+		0661F1D01FD5FEAE00EA9F14 /* ShopGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C87F041FC1178800EE7A97 /* ShopGalleryViewController.swift */; };
+		0661F1D11FD5FEAE00EA9F14 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAFA41FB906880099685A /* SearchViewController.swift */; };
+		0661F1D21FD5FEAE00EA9F14 /* FavouriteShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C276D51FC764D50062F09E /* FavouriteShopsViewController.swift */; };
+		0661F1D31FD5FEAE00EA9F14 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067853121FC43F49007D4884 /* ImageUploader.swift */; };
+		0661F1D41FD5FEAE00EA9F14 /* ShopReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0695772C1FC2287100DCB24D /* ShopReviewsViewController.swift */; };
+		0661F1D51FD5FEAE00EA9F14 /* ReviewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AC1FC77BA70097313A /* ReviewsManager.swift */; };
+		0661F1D61FD5FEAE00EA9F14 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D51FAE7E1F00739695 /* RoundedView.swift */; };
+		0661F1D71FD5FEAE00EA9F14 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C4291FA7E9F800D02947 /* UserSession.swift */; };
+		0661F1D81FD5FEAE00EA9F14 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0650F3131FB5CE65006A00F7 /* SignupViewController.swift */; };
+		0661F1D91FD5FEAE00EA9F14 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E71691FBA5E0600898592 /* Location.swift */; };
+		0661F1DA1FD5FEAE00EA9F14 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C42B1FA7EA6200D02947 /* BaseModel.swift */; };
+		0661F1DB1FD5FEAE00EA9F14 /* BorderlessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D21FAE7E1F00739695 /* BorderlessView.swift */; };
+		0661F1DC1FD5FEAE00EA9F14 /* AbstractFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0646ACB61FB3D078007760EE /* AbstractFormViewController.swift */; };
+		0661F1DD1FD5FEAE00EA9F14 /* AbstractManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B3C4311FA7F1B500D02947 /* AbstractManager.swift */; };
+		0661F1DE1FD5FEAE00EA9F14 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E715F1FBA4BE300898592 /* Shop.swift */; };
+		0661F1DF1FD5FEAE00EA9F14 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D01FAE7A3800739695 /* RoundedButton.swift */; };
+		0661F1E01FD5FEAE00EA9F14 /* SearchMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ECB4F41FD2340E00B48B53 /* SearchMapViewController.swift */; };
+		0661F1E11FD5FEAE00EA9F14 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAFA11FB901D00099685A /* Category.swift */; };
+		0661F1E31FD5FEAE00EA9F14 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06ECB4FA1FD24A7100B48B53 /* MapKit.framework */; };
+		0661F1E41FD5FEAE00EA9F14 /* Pods_greenBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D1424DDD0B6708674BC58E /* Pods_greenBook.framework */; };
+		0661F1E61FD5FEAE00EA9F14 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670BC1FAE76BA00739695 /* OpenSans-Italic.ttf */; };
+		0661F1E71FD5FEAE00EA9F14 /* ShopReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069577251FC21D0200DCB24D /* ShopReviewCell.xib */; };
+		0661F1E81FD5FEAE00EA9F14 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670B91FAE76BA00739695 /* OpenSans-BoldItalic.ttf */; };
+		0661F1E91FD5FEAE00EA9F14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C4151FA7E88600D02947 /* LaunchScreen.storyboard */; };
+		0661F1EA1FD5FEAE00EA9F14 /* ShopMarkerInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06ECB4F81FD23F5D00B48B53 /* ShopMarkerInfoView.xib */; };
+		0661F1EB1FD5FEAE00EA9F14 /* ShopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A1E2711FBFDA55005F618A /* ShopView.xib */; };
+		0661F1EC1FD5FEAE00EA9F14 /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670C01FAE76BA00739695 /* OpenSans-Semibold.ttf */; };
+		0661F1ED1FD5FEAE00EA9F14 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670BA1FAE76BA00739695 /* OpenSans-ExtraBold.ttf */; };
+		0661F1EF1FD5FEAE00EA9F14 /* Apache License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 066670B71FAE76BA00739695 /* Apache License.txt */; };
+		0661F1F01FD5FEAE00EA9F14 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670BE1FAE76BA00739695 /* OpenSans-LightItalic.ttf */; };
+		0661F1F11FD5FEAE00EA9F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C4131FA7E88600D02947 /* Assets.xcassets */; };
+		0661F1F21FD5FEAE00EA9F14 /* SegmentCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06B952E51FC03DB400DF556F /* SegmentCollectionCell.xib */; };
+		0661F1F31FD5FEAE00EA9F14 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670B81FAE76BA00739695 /* OpenSans-Bold.ttf */; };
+		0661F1F41FD5FEAE00EA9F14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C4101FA7E88600D02947 /* Main.storyboard */; };
+		0661F1F51FD5FEAE00EA9F14 /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670C11FAE76BA00739695 /* OpenSans-SemiboldItalic.ttf */; };
+		0661F1F61FD5FEAE00EA9F14 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670BD1FAE76BA00739695 /* OpenSans-Light.ttf */; };
+		0661F1F71FD5FEAE00EA9F14 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670BF1FAE76BA00739695 /* OpenSans-Regular.ttf */; };
+		0661F1F81FD5FEAE00EA9F14 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670BB1FAE76BA00739695 /* OpenSans-ExtraBoldItalic.ttf */; };
+		0661F2011FD5FEEA00EA9F14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0661F2001FD5FEEA00EA9F14 /* GoogleService-Info.plist */; };
+		0661F2031FD5FF0800EA9F14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0661F2021FD5FF0800EA9F14 /* GoogleService-Info.plist */; };
 		066206101FD227E10044C1F6 /* GMSPlaceAutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0662060F1FD227E10044C1F6 /* GMSPlaceAutoComplete.swift */; };
 		066670C21FAE76BA00739695 /* Apache License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 066670B71FAE76BA00739695 /* Apache License.txt */; };
 		066670C31FAE76BA00739695 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066670B81FAE76BA00739695 /* OpenSans-Bold.ttf */; };
@@ -103,7 +180,10 @@
 		0646ACB81FB3D25B007760EE /* StringCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCheckers.swift; sourceTree = "<group>"; };
 		0650F3131FB5CE65006A00F7 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0650F3151FB5CE73006A00F7 /* AbstractScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractScrollableViewController.swift; sourceTree = "<group>"; };
-		0662060D1FD225E60044C1F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0661F1FE1FD5FEAE00EA9F14 /* greenBook-staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "greenBook-staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0661F1FF1FD5FEAE00EA9F14 /* greenBook copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "greenBook copy-Info.plist"; path = "/Users/mostafa/ios/Badeeb/greenBook/greenBook copy-Info.plist"; sourceTree = "<absolute>"; };
+		0661F2001FD5FEEA00EA9F14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "prod/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0661F2021FD5FF0800EA9F14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "staging/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0662060F1FD227E10044C1F6 /* GMSPlaceAutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSPlaceAutoComplete.swift; sourceTree = "<group>"; };
 		066670B71FAE76BA00739695 /* Apache License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License.txt"; sourceTree = "<group>"; };
 		066670B81FAE76BA00739695 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -171,6 +251,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0661F1E21FD5FEAE00EA9F14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0661F1E31FD5FEAE00EA9F14 /* MapKit.framework in Frameworks */,
+				0661F1E41FD5FEAE00EA9F14 /* Pods_greenBook.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		06B3C4061FA7E88500D02947 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,11 +337,13 @@
 		06B3C4001FA7E88500D02947 = {
 			isa = PBXGroup;
 			children = (
-				0662060D1FD225E60044C1F6 /* GoogleService-Info.plist */,
+				0661F2001FD5FEEA00EA9F14 /* GoogleService-Info.plist */,
+				0661F2021FD5FF0800EA9F14 /* GoogleService-Info.plist */,
 				06B3C40B1FA7E88600D02947 /* greenBook */,
 				06B3C40A1FA7E88600D02947 /* Products */,
 				69122AD6D69D3EC3349CE450 /* Pods */,
 				D64FB349E02D46D269F318BB /* Frameworks */,
+				0661F1FF1FD5FEAE00EA9F14 /* greenBook copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -260,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				06B3C4091FA7E88600D02947 /* greenBook.app */,
+				0661F1FE1FD5FEAE00EA9F14 /* greenBook-staging.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -449,6 +541,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0661F1A71FD5FEAE00EA9F14 /* greenBook-staging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0661F1FB1FD5FEAE00EA9F14 /* Build configuration list for PBXNativeTarget "greenBook-staging" */;
+			buildPhases = (
+				0661F1A81FD5FEAE00EA9F14 /* [CP] Check Pods Manifest.lock */,
+				0661F1A91FD5FEAE00EA9F14 /* Sources */,
+				0661F1E21FD5FEAE00EA9F14 /* Frameworks */,
+				0661F1E51FD5FEAE00EA9F14 /* Resources */,
+				0661F1F91FD5FEAE00EA9F14 /* [CP] Embed Pods Frameworks */,
+				0661F1FA1FD5FEAE00EA9F14 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "greenBook-staging";
+			productName = greenBook;
+			productReference = 0661F1FE1FD5FEAE00EA9F14 /* greenBook-staging.app */;
+			productType = "com.apple.product-type.application";
+		};
 		06B3C4081FA7E88500D02947 /* greenBook */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06B3C41B1FA7E88600D02947 /* Build configuration list for PBXNativeTarget "greenBook" */;
@@ -479,6 +591,9 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Badeeb;
 				TargetAttributes = {
+					0661F1A71FD5FEAE00EA9F14 = {
+						ProvisioningStyle = Automatic;
+					};
 					06B3C4081FA7E88500D02947 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -504,11 +619,38 @@
 			projectRoot = "";
 			targets = (
 				06B3C4081FA7E88500D02947 /* greenBook */,
+				0661F1A71FD5FEAE00EA9F14 /* greenBook-staging */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0661F1E51FD5FEAE00EA9F14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0661F1E61FD5FEAE00EA9F14 /* OpenSans-Italic.ttf in Resources */,
+				0661F1E71FD5FEAE00EA9F14 /* ShopReviewCell.xib in Resources */,
+				0661F1E81FD5FEAE00EA9F14 /* OpenSans-BoldItalic.ttf in Resources */,
+				0661F1E91FD5FEAE00EA9F14 /* LaunchScreen.storyboard in Resources */,
+				0661F1EA1FD5FEAE00EA9F14 /* ShopMarkerInfoView.xib in Resources */,
+				0661F1EB1FD5FEAE00EA9F14 /* ShopView.xib in Resources */,
+				0661F1EC1FD5FEAE00EA9F14 /* OpenSans-Semibold.ttf in Resources */,
+				0661F1ED1FD5FEAE00EA9F14 /* OpenSans-ExtraBold.ttf in Resources */,
+				0661F1EF1FD5FEAE00EA9F14 /* Apache License.txt in Resources */,
+				0661F1F01FD5FEAE00EA9F14 /* OpenSans-LightItalic.ttf in Resources */,
+				0661F1F11FD5FEAE00EA9F14 /* Assets.xcassets in Resources */,
+				0661F2031FD5FF0800EA9F14 /* GoogleService-Info.plist in Resources */,
+				0661F1F21FD5FEAE00EA9F14 /* SegmentCollectionCell.xib in Resources */,
+				0661F1F31FD5FEAE00EA9F14 /* OpenSans-Bold.ttf in Resources */,
+				0661F1F41FD5FEAE00EA9F14 /* Main.storyboard in Resources */,
+				0661F1F51FD5FEAE00EA9F14 /* OpenSans-SemiboldItalic.ttf in Resources */,
+				0661F1F61FD5FEAE00EA9F14 /* OpenSans-Light.ttf in Resources */,
+				0661F1F71FD5FEAE00EA9F14 /* OpenSans-Regular.ttf in Resources */,
+				0661F1F81FD5FEAE00EA9F14 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		06B3C4071FA7E88500D02947 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -521,10 +663,10 @@
 				06A1E2721FBFDA55005F618A /* ShopView.xib in Resources */,
 				066670CB1FAE76BA00739695 /* OpenSans-Semibold.ttf in Resources */,
 				066670C51FAE76BA00739695 /* OpenSans-ExtraBold.ttf in Resources */,
-				0662060E1FD225E70044C1F6 /* GoogleService-Info.plist in Resources */,
 				066670C21FAE76BA00739695 /* Apache License.txt in Resources */,
 				066670C91FAE76BA00739695 /* OpenSans-LightItalic.ttf in Resources */,
 				06B3C4141FA7E88600D02947 /* Assets.xcassets in Resources */,
+				0661F2011FD5FEEA00EA9F14 /* GoogleService-Info.plist in Resources */,
 				06B952E61FC03DB400DF556F /* SegmentCollectionCell.xib in Resources */,
 				066670C31FAE76BA00739695 /* OpenSans-Bold.ttf in Resources */,
 				06B3C4121FA7E88600D02947 /* Main.storyboard in Resources */,
@@ -538,6 +680,96 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0661F1A81FD5FEAE00EA9F14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-greenBook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0661F1F91FD5FEAE00EA9F14 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-greenBook/Pods-greenBook-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/FTImageViewer/FTImageViewer.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GooglePlacesAPI/GooglePlacesAPI.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FTImageViewer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GooglePlacesAPI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-greenBook/Pods-greenBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0661F1FA1FD5FEAE00EA9F14 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-greenBook/Pods-greenBook-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-greenBook/Pods-greenBook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2B8D026E2164997C224CFFDD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,6 +863,69 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0661F1A91FD5FEAE00EA9F14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0661F1AA1FD5FEAE00EA9F14 /* Photo.swift in Sources */,
+				0661F1AB1FD5FEAE00EA9F14 /* ShopManager.swift in Sources */,
+				0661F1AC1FD5FEAE00EA9F14 /* LoginViewController.swift in Sources */,
+				0661F1AD1FD5FEAE00EA9F14 /* BorderedView.swift in Sources */,
+				0661F1AE1FD5FEAE00EA9F14 /* ViewController.swift in Sources */,
+				0661F1AF1FD5FEAE00EA9F14 /* CircularImage.swift in Sources */,
+				0661F1B01FD5FEAE00EA9F14 /* ProfileMenuCell.swift in Sources */,
+				0661F1B11FD5FEAE00EA9F14 /* CircularLabel.swift in Sources */,
+				0661F1B21FD5FEAE00EA9F14 /* Constants.swift in Sources */,
+				0661F1B31FD5FEAE00EA9F14 /* AbstractViewController.swift in Sources */,
+				0661F1B41FD5FEAE00EA9F14 /* ShopView.swift in Sources */,
+				0661F1B51FD5FEAE00EA9F14 /* WorkingDay.swift in Sources */,
+				0661F1B61FD5FEAE00EA9F14 /* DetailsViewController.swift in Sources */,
+				0661F1B71FD5FEAE00EA9F14 /* GMSPlaceAutoComplete.swift in Sources */,
+				0661F1B81FD5FEAE00EA9F14 /* PlaceholderTextView.swift in Sources */,
+				0661F1B91FD5FEAE00EA9F14 /* GBError.swift in Sources */,
+				0661F1BA1FD5FEAE00EA9F14 /* ShopDetailCell.swift in Sources */,
+				0661F1BB1FD5FEAE00EA9F14 /* ShopViewController.swift in Sources */,
+				0661F1BC1FD5FEAE00EA9F14 /* UpdateProfileViewController.swift in Sources */,
+				0661F1BD1FD5FEAE00EA9F14 /* ProfileHeaderCell.swift in Sources */,
+				0661F1BE1FD5FEAE00EA9F14 /* ShopReviewCell.swift in Sources */,
+				0661F1BF1FD5FEAE00EA9F14 /* ShopReview.swift in Sources */,
+				0661F1C01FD5FEAE00EA9F14 /* ShopMarkerInfoView.swift in Sources */,
+				0661F1C11FD5FEAE00EA9F14 /* AddReviewViewController.swift in Sources */,
+				0661F1C21FD5FEAE00EA9F14 /* UserManager.swift in Sources */,
+				0661F1C31FD5FEAE00EA9F14 /* DoubleHandler.swift in Sources */,
+				0661F1C41FD5FEAE00EA9F14 /* Response.swift in Sources */,
+				0661F1C51FD5FEAE00EA9F14 /* SegmentCollectionCell.swift in Sources */,
+				0661F1C61FD5FEAE00EA9F14 /* ProfileViewController.swift in Sources */,
+				0661F1C71FD5FEAE00EA9F14 /* DateFormat.swift in Sources */,
+				0661F1C81FD5FEAE00EA9F14 /* StringCheckers.swift in Sources */,
+				0661F1C91FD5FEAE00EA9F14 /* AbstractScrollableViewController.swift in Sources */,
+				0661F1CA1FD5FEAE00EA9F14 /* ViewControllerExtension.swift in Sources */,
+				0661F1CB1FD5FEAE00EA9F14 /* AbstractSegmentedBarViewController.swift in Sources */,
+				0661F1CC1FD5FEAE00EA9F14 /* User.swift in Sources */,
+				0661F1CD1FD5FEAE00EA9F14 /* ShopCell.swift in Sources */,
+				0661F1CE1FD5FEAE00EA9F14 /* CategoryManager.swift in Sources */,
+				0661F1CF1FD5FEAE00EA9F14 /* AppDelegate.swift in Sources */,
+				0661F1D01FD5FEAE00EA9F14 /* ShopGalleryViewController.swift in Sources */,
+				0661F1D11FD5FEAE00EA9F14 /* SearchViewController.swift in Sources */,
+				0661F1D21FD5FEAE00EA9F14 /* FavouriteShopsViewController.swift in Sources */,
+				0661F1D31FD5FEAE00EA9F14 /* ImageUploader.swift in Sources */,
+				0661F1D41FD5FEAE00EA9F14 /* ShopReviewsViewController.swift in Sources */,
+				0661F1D51FD5FEAE00EA9F14 /* ReviewsManager.swift in Sources */,
+				0661F1D61FD5FEAE00EA9F14 /* RoundedView.swift in Sources */,
+				0661F1D71FD5FEAE00EA9F14 /* UserSession.swift in Sources */,
+				0661F1D81FD5FEAE00EA9F14 /* SignupViewController.swift in Sources */,
+				0661F1D91FD5FEAE00EA9F14 /* Location.swift in Sources */,
+				0661F1DA1FD5FEAE00EA9F14 /* BaseModel.swift in Sources */,
+				0661F1DB1FD5FEAE00EA9F14 /* BorderlessView.swift in Sources */,
+				0661F1DC1FD5FEAE00EA9F14 /* AbstractFormViewController.swift in Sources */,
+				0661F1DD1FD5FEAE00EA9F14 /* AbstractManager.swift in Sources */,
+				0661F1DE1FD5FEAE00EA9F14 /* Shop.swift in Sources */,
+				0661F1DF1FD5FEAE00EA9F14 /* RoundedButton.swift in Sources */,
+				0661F1E01FD5FEAE00EA9F14 /* SearchMapViewController.swift in Sources */,
+				0661F1E11FD5FEAE00EA9F14 /* Category.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		06B3C4051FA7E88500D02947 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -716,6 +1011,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0661F1FC1FD5FEAE00EA9F14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5293866A861ED8DA1DC5A3C0 /* Pods-greenBook.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KU96K9SSDU;
+				INFOPLIST_FILE = "greenBook copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.badeeb.greenbook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0661F1FD1FD5FEAE00EA9F14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3952B5D7111AFCAAACA09CD /* Pods-greenBook.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KU96K9SSDU;
+				INFOPLIST_FILE = "greenBook copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.badeeb.greenbook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		06B3C4191FA7E88600D02947 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -834,6 +1161,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.badeeb.greenbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = PROD;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -850,6 +1178,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.badeeb.greenbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = PROD;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -858,6 +1187,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0661F1FB1FD5FEAE00EA9F14 /* Build configuration list for PBXNativeTarget "greenBook-staging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0661F1FC1FD5FEAE00EA9F14 /* Debug */,
+				0661F1FD1FD5FEAE00EA9F14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		06B3C4041FA7E88500D02947 /* Build configuration list for PBXProject "greenBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
