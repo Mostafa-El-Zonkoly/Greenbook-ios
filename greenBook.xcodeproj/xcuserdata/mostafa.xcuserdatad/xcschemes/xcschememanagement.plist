@@ -4,20 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>greenBook-staging.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>21</integer>
-		</dict>
 		<key>greenBook.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>29</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0661F1A71FD5FEAE00EA9F14</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>06B3C4081FA7E88500D02947</key>
 		<dict>
 			<key>primary</key>
 			<true/>

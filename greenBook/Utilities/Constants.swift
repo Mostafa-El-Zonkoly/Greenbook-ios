@@ -28,6 +28,8 @@ struct URLS {
     static let SIGNUP_URL = "\(SERVER_URL)users"
     
     static let LOGIN_URL = "\(SERVER_URL)users/sign_in"
+    static let SOCIAL_LOGIN_URL = "\(SERVER_URL)users/social_login"
+
     static let FORGET_PASSWORD_URL = "\(SERVER_URL)users/password"
     static let CATEGORIES_URL = "\(SERVER_URL)categories"
     static let SEARCH_URL = "\(SERVER_URL)shops/search"

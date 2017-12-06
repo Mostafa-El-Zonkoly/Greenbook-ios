@@ -13,6 +13,9 @@ import FirebaseMessaging
 import FirebaseDatabase
 import GooglePlaces
 import GoogleMaps
+import FacebookCore
+import FacebookLogin
+import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var loginViewController : LoginViewController?
@@ -27,8 +30,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
         FIRApp.configure()
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
+    
+    
+
+public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    if GIDSignIn.sharedInstance().handle(url,
+                                         sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                         annotation: [:]) {
+        return true
+    }
+    
+    return SDKApplicationDelegate.shared.application(
+        app,
+        open: url as URL!,
+        sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String,
+        annotation: options[UIApplicationOpenURLOptionsKey.annotation]
+    )
+}
+
+public func application(_ application: UIApplication, open url: URL,     sourceApplication: String?, annotation: Any) -> Bool {
+    if GIDSignIn.sharedInstance().handle(url,sourceApplication: sourceApplication,annotation: annotation){
+        return true
+    }
+
+    return SDKApplicationDelegate.shared.application(
+        application,
+        open: url as URL!,
+        sourceApplication: sourceApplication,
+        annotation: annotation)
+}
+
     func loadCategories() {
         CategoryManager.sharedInistance.loadCategories { (response) in
             if !response.status {

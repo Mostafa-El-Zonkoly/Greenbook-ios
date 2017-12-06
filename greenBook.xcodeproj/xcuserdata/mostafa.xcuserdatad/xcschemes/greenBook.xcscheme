@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0661F1A71FD5FEAE00EA9F14"
-               BuildableName = "greenBook-staging.app"
-               BlueprintName = "greenBook-staging"
+               BlueprintIdentifier = "06B3C4081FA7E88500D02947"
+               BuildableName = "greenBook.app"
+               BlueprintName = "greenBook"
                ReferencedContainer = "container:greenBook.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0661F1A71FD5FEAE00EA9F14"
-            BuildableName = "greenBook-staging.app"
-            BlueprintName = "greenBook-staging"
+            BlueprintIdentifier = "06B3C4081FA7E88500D02947"
+            BuildableName = "greenBook.app"
+            BlueprintName = "greenBook"
             ReferencedContainer = "container:greenBook.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -57,9 +57,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0661F1A71FD5FEAE00EA9F14"
-            BuildableName = "greenBook-staging.app"
-            BlueprintName = "greenBook-staging"
+            BlueprintIdentifier = "06B3C4081FA7E88500D02947"
+            BuildableName = "greenBook.app"
+            BlueprintName = "greenBook"
             ReferencedContainer = "container:greenBook.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -76,9 +76,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0661F1A71FD5FEAE00EA9F14"
-            BuildableName = "greenBook-staging.app"
-            BlueprintName = "greenBook-staging"
+            BlueprintIdentifier = "06B3C4081FA7E88500D02947"
+            BuildableName = "greenBook.app"
+            BlueprintName = "greenBook"
             ReferencedContainer = "container:greenBook.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

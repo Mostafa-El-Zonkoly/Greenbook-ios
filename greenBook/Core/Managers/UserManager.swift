@@ -197,6 +197,71 @@ class UserManager : AbstractManager {
         }
     }
     
+    func socialLogin(accountType : String, accountID : String, accountToken : String ,image_url : String, name : String, email : String,handler: @escaping (Response) -> Void) {
+        // First check connectivity
+        var response = Response()
+        if !self.internetConnected() {
+            response.error = GBError()
+            response.error?.error_type = .connection
+            handler(response)
+            return
+        }
+        if let url = URL.init(string: URLS.SOCIAL_LOGIN_URL) {
+            
+            let headers = getHeader(auth: false) as! HTTPHeaders
+            let params : [String : Any] = ["data[user][account_type]":accountType,
+                                           "data[user][account_id]": accountID,
+                                           "data[user][account_token]": accountToken,
+                                           "data[user][image_url]": image_url,
+                                           "data[user][name]":name,
+                                           "data[user][email]":email]
+            Alamofire.request(url, method: HTTPMethod.post, parameters: params, headers: headers).responseJSON(completionHandler: { (serverResponse) in
+                if let error = serverResponse.error {
+                    response.error = GBError()
+                    response.error?.error_type = .server_error
+                    response.error?.error = error
+                    handler(response)
+                    return
+                }else {
+                    // TODO Parse User Returned
+                    if let dict = serverResponse.result.value as? NSDictionary {
+                        response = self.parseMeta(dict: dict as! [String : Any])
+                        if !response.status {
+                            handler(response)
+                            return
+                        }
+                        
+                        
+                        if let _ = dict["data"] as? NSDictionary, let userDict = (dict["data"] as! [String: Any])["user"] as? [String : Any] {
+                            // Success
+                            let user = User()
+                            user.bindDictionary(dict: userDict)
+                            response.result = user
+                            handler(response)
+                            return
+                        }else{
+                            response.error = GBError()
+                            response.error?.error_type = .server_error
+                            handler(response)
+                            return
+                        }
+                        
+                        
+                    }else{
+                        response.error = GBError()
+                        response.error?.error_type = .server_error
+                        handler(response)
+                        return
+                        
+                    }
+                }
+            })
+        }else{
+            response.error = GBError()
+            response.error?.error_type = .server_error
+            handler(response)
+        }
+    }
     func forgetPassword(email: String,handler: @escaping (Response) -> Void) {
         // First check connectivity
         var response = Response()
