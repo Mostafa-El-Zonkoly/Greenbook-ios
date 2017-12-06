@@ -20,7 +20,9 @@ class LoginViewController: AbstractFormViewController {
         super.viewDidLoad()
         self.addTextField(textField: emailTF)
         self.addTextField(textField: passwordTF)
-       
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.loginViewController = self
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,6 +47,11 @@ class LoginViewController: AbstractFormViewController {
     @IBAction func signup(_ sender: UIButton) {
 //        self.showMessage(message: "Signup")
     }
+    
+    func signupUser(){
+        self.performSegue(withIdentifier: "signupUser", sender: self)
+    }
+    
     @IBAction func forgetPassword(_ sender: UIButton) {
         
         let alertController = UIAlertController(title: "Forget password", message: "Please enter your email", preferredStyle: .alert)

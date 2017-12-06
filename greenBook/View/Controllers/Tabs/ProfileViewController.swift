@@ -17,6 +17,8 @@ enum ProfileCellTypes{
     case logout
     case supportUS
     case rateApp
+    case loginButtons
+    case headerClientless
 }
 class ProfileViewController: AbstractViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -25,6 +27,7 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
     
     
     var loggedInCellTypes : [ProfileCellTypes] = [.header, .accountSeparator, .edit, .password, .logout, .supportUS, .invite, .rateApp]
+    var clientLessCellTypes : [ProfileCellTypes] = [.headerClientless, .supportUS, .invite, .rateApp, .loginButtons]
     override func viewDidLoad() {
         super.viewDidLoad()
         customizeNavigationBar()
@@ -36,8 +39,8 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row < loggedInCellTypes.count {
-            let cellType = loggedInCellTypes[indexPath.row]
+        if indexPath.row < getCellTypes().count {
+            let cellType = getCellTypes()[indexPath.row]
             switch cellType {
             case .accountSeparator:
                 return 31.0
@@ -45,6 +48,10 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
                 return 51.0
             case .header:
                return 230.0
+            case .headerClientless:
+                return 230.0
+            case .loginButtons:
+                return 180.0
             default:
                 return 62.0
             }
@@ -55,13 +62,20 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
         return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return loggedInCellTypes.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+       return getCellTypes().count
     }
-    
+    func getCellTypes() -> [ProfileCellTypes]{
+        if UserSession.sharedInstant.userLoggedIn() {
+            return loggedInCellTypes
+        }else{
+            return clientLessCellTypes
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row < loggedInCellTypes.count {
-            let cellType = loggedInCellTypes[indexPath.row]
+        if indexPath.row < getCellTypes().count {
+            let cellType = getCellTypes()[indexPath.row]
             switch cellType {
             case .accountSeparator:
                 return tableView.dequeueReusableCell(withIdentifier: "AccountCell", for: indexPath)
@@ -70,6 +84,12 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
             case .header:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell", for: indexPath) as! ProfileHeaderCell
                 cell.bindUser(user: UserSession.sharedInstant.currUser)
+                return cell
+            case .headerClientless:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "headerCell_clientless", for: indexPath)
+                return cell
+            case .loginButtons:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "loginCell", for: indexPath)
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! ProfileMenuCell
@@ -81,8 +101,8 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row < loggedInCellTypes.count {
-            let cellType = loggedInCellTypes[indexPath.row]
+        if indexPath.row < getCellTypes().count {
+            let cellType = getCellTypes()[indexPath.row]
             switch cellType {
                 case .edit:
                     self.editProfile()
@@ -221,5 +241,32 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
         })
 
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        self.openLoginScreen()
+    }
+    
+    @IBAction func signupButtonPressed(_ sender: Any) {
+        self.openSignupScreen()
+    }
+    @IBAction func googlePlusLogin(_ sender: UITapGestureRecognizer) {
+        self.openLoginScreen()
+    }
+    @IBAction func facebookLogin(_ sender: UITapGestureRecognizer) {
+        self.openLoginScreen()
+    }
+    
+    func openLoginScreen(){
+        self.navigationController?.tabBarController?.dismiss(animated: true, completion: nil)
+    }
+    func openSignupScreen(){
+        self.navigationController?.tabBarController?.dismiss(animated: true, completion: {
+            if let delegate = UIApplication.shared.delegate as? AppDelegate {
+                if let loginController = delegate.loginViewController {
+                    loginController.signupUser()
+                }
+            }
+        })
     }
 }

@@ -75,7 +75,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X6u-Bh-ctL"/>
-                                    <segue destination="olb-7F-Ul4" kind="show" id="6Wt-Ko-2D2"/>
+                                    <segue destination="olb-7F-Ul4" kind="show" identifier="signupUser" id="6Wt-Ko-2D2"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VN4-Es-XkA" userLabel="Facebook Login" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
@@ -1271,7 +1271,7 @@
         <!--Profile-->
         <scene sceneID="LS8-Km-BCw">
             <objects>
-                <viewController id="Jqo-BV-2xt" customClass="ProfileViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Jqo-BV-2xt" customClass="ProfileViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UaX-NC-eOf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1348,8 +1348,137 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="loginCell" rowHeight="180" id="AXt-cw-zhR" userLabel="loginCell">
+                                        <rect key="frame" x="0.0" y="289" width="375" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AXt-cw-zhR" id="Wwz-rk-CEo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjJ-TB-hXW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-UI-QSA" userLabel="Google+ Login" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                                            <rect key="frame" x="192.5" y="94" width="148.5" height="48"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icGoogle" translatesAutoresizingMaskIntoConstraints="NO" id="1XV-EP-5iW">
+                                                                    <rect key="frame" x="15.5" y="11.5" width="14" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="25" id="ljE-NO-tSd"/>
+                                                                        <constraint firstAttribute="width" constant="14" id="wgT-P4-iko"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with Google+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0t1-gx-y6M">
+                                                                    <rect key="frame" x="34" y="15.5" width="107.5" height="16.5"/>
+                                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.87450980389999999" green="0.28627450980000002" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <gestureRecognizers/>
+                                                            <constraints>
+                                                                <constraint firstItem="0t1-gx-y6M" firstAttribute="centerY" secondItem="5Nd-UI-QSA" secondAttribute="centerY" id="3zF-YM-Kne"/>
+                                                                <constraint firstAttribute="height" constant="48" id="Ato-vx-zBz"/>
+                                                                <constraint firstItem="0t1-gx-y6M" firstAttribute="leading" secondItem="1XV-EP-5iW" secondAttribute="trailing" constant="4" id="IHA-kA-JdR"/>
+                                                                <constraint firstAttribute="trailing" secondItem="0t1-gx-y6M" secondAttribute="trailing" constant="7" id="S6h-zM-MRB"/>
+                                                                <constraint firstItem="1XV-EP-5iW" firstAttribute="centerY" secondItem="5Nd-UI-QSA" secondAttribute="centerY" id="h3m-Xq-GS6"/>
+                                                                <constraint firstItem="1XV-EP-5iW" firstAttribute="leading" secondItem="5Nd-UI-QSA" secondAttribute="leading" constant="15.5" id="hiG-9H-cAi"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="a4e-Mx-IID" appends="YES" id="xZ3-cR-guC"/>
+                                                            </connections>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Znp-yy-2zN" userLabel="Facebook Login" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                                            <rect key="frame" x="34" y="94" width="148.5" height="48"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFacebook" translatesAutoresizingMaskIntoConstraints="NO" id="v1c-nC-4KX">
+                                                                    <rect key="frame" x="15.5" y="11.5" width="14" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="14" id="ckp-mM-BTy"/>
+                                                                        <constraint firstAttribute="height" constant="25" id="nlI-ER-zq6"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ApF-YN-amC">
+                                                                    <rect key="frame" x="34" y="15.5" width="112.5" height="16.5"/>
+                                                                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.31372549020000001" green="0.48627450979999998" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <gestureRecognizers/>
+                                                            <constraints>
+                                                                <constraint firstItem="v1c-nC-4KX" firstAttribute="leading" secondItem="Znp-yy-2zN" secondAttribute="leading" constant="15.5" id="Ob8-OS-1hA"/>
+                                                                <constraint firstItem="ApF-YN-amC" firstAttribute="leading" secondItem="v1c-nC-4KX" secondAttribute="trailing" constant="4" id="WGC-NR-6KP"/>
+                                                                <constraint firstAttribute="height" constant="48" id="XgH-cm-jds"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ApF-YN-amC" secondAttribute="trailing" constant="2" id="bId-iQ-wWA"/>
+                                                                <constraint firstItem="ApF-YN-amC" firstAttribute="centerY" secondItem="Znp-yy-2zN" secondAttribute="centerY" id="jKy-Yr-Dwp"/>
+                                                                <constraint firstItem="v1c-nC-4KX" firstAttribute="centerY" secondItem="Znp-yy-2zN" secondAttribute="centerY" id="t28-r2-FCh"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="rvR-D6-z0L" appends="YES" id="mJ6-aD-uSk"/>
+                                                            </connections>
+                                                        </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZH-Qf-Bkv" customClass="RoundedButton" customModule="greenBook" customModuleProvider="target">
+                                                            <rect key="frame" x="34" y="38" width="148.5" height="48"/>
+                                                            <color key="backgroundColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="NRO-bB-VKY"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
+                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <state key="normal" title="LOGIN">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="loginButtonPressed:" destination="Jqo-BV-2xt" eventType="touchUpInside" id="WuJ-vR-InN"/>
+                                                                <action selector="loginEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tbz-kx-gxN"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVI-Ud-GJf" customClass="RoundedButton" customModule="greenBook" customModuleProvider="target">
+                                                            <rect key="frame" x="192.5" y="38" width="148.5" height="48"/>
+                                                            <color key="backgroundColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
+                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <state key="normal" title="SIGN UP">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N1W-IL-j7l"/>
+                                                                <action selector="signupButtonPressed:" destination="Jqo-BV-2xt" eventType="touchUpInside" id="4z4-aY-uJt"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="5Nd-UI-QSA" firstAttribute="centerY" secondItem="Znp-yy-2zN" secondAttribute="centerY" id="7CI-n0-KCW"/>
+                                                        <constraint firstItem="DZH-Qf-Bkv" firstAttribute="leading" secondItem="TjJ-TB-hXW" secondAttribute="leading" constant="34" id="7PW-Fk-i95"/>
+                                                        <constraint firstItem="DZH-Qf-Bkv" firstAttribute="top" secondItem="TjJ-TB-hXW" secondAttribute="top" constant="38" id="8Aq-Um-3GB"/>
+                                                        <constraint firstItem="Znp-yy-2zN" firstAttribute="top" secondItem="DZH-Qf-Bkv" secondAttribute="bottom" constant="8" id="9m3-tV-aVP"/>
+                                                        <constraint firstItem="gVI-Ud-GJf" firstAttribute="centerY" secondItem="DZH-Qf-Bkv" secondAttribute="centerY" id="EPr-JG-SWb"/>
+                                                        <constraint firstItem="DZH-Qf-Bkv" firstAttribute="width" secondItem="gVI-Ud-GJf" secondAttribute="width" id="ac2-Sz-yHF"/>
+                                                        <constraint firstItem="Znp-yy-2zN" firstAttribute="leading" secondItem="DZH-Qf-Bkv" secondAttribute="leading" id="dC8-PC-z9D"/>
+                                                        <constraint firstItem="gVI-Ud-GJf" firstAttribute="leading" secondItem="DZH-Qf-Bkv" secondAttribute="trailing" constant="10" id="eKB-nx-OZa"/>
+                                                        <constraint firstItem="5Nd-UI-QSA" firstAttribute="trailing" secondItem="gVI-Ud-GJf" secondAttribute="trailing" id="gMT-Gd-uGa"/>
+                                                        <constraint firstItem="5Nd-UI-QSA" firstAttribute="height" secondItem="Znp-yy-2zN" secondAttribute="height" id="hMH-hb-SrC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="gVI-Ud-GJf" secondAttribute="trailing" constant="34" id="mrh-Xt-sLF"/>
+                                                        <constraint firstItem="5Nd-UI-QSA" firstAttribute="leading" secondItem="Znp-yy-2zN" secondAttribute="trailing" constant="10" id="oLu-0y-7OD"/>
+                                                        <constraint firstItem="5Nd-UI-QSA" firstAttribute="width" secondItem="Znp-yy-2zN" secondAttribute="width" id="vwq-Ag-kpk"/>
+                                                        <constraint firstItem="gVI-Ud-GJf" firstAttribute="height" secondItem="DZH-Qf-Bkv" secondAttribute="height" id="zvW-KF-AEW"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="TjJ-TB-hXW" secondAttribute="trailing" id="73N-NU-YfZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="TjJ-TB-hXW" secondAttribute="bottom" id="gAL-BV-PTB"/>
+                                                <constraint firstItem="TjJ-TB-hXW" firstAttribute="leading" secondItem="Wwz-rk-CEo" secondAttribute="leading" id="i6F-P6-IW6"/>
+                                                <constraint firstItem="TjJ-TB-hXW" firstAttribute="top" secondItem="Wwz-rk-CEo" secondAttribute="top" id="kE0-9s-2tt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SupportCell" rowHeight="51" id="UZS-Eg-6n9" userLabel="SupportCell">
-                                        <rect key="frame" x="0.0" y="289" width="375" height="51"/>
+                                        <rect key="frame" x="0.0" y="469" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UZS-Eg-6n9" id="5zm-bN-QuR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
@@ -1382,7 +1511,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="62" id="BLu-8I-4gI" customClass="ProfileMenuCell" customModule="greenBook" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="340" width="375" height="62"/>
+                                        <rect key="frame" x="0.0" y="520" width="375" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BLu-8I-4gI" id="9Au-GI-gEI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
@@ -1415,6 +1544,39 @@
                                             <outlet property="titleLabel" destination="4ua-4X-D8a" id="WS5-PD-83R"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="headerCell_clientless" rowHeight="230" id="Y33-WL-ja6">
+                                        <rect key="frame" x="0.0" y="582" width="375" height="230"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y33-WL-ja6" id="SYa-3C-6O3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="bn2-rs-Uvd">
+                                                    <rect key="frame" x="135" y="43" width="104" height="145"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="104" id="jx5-gt-HkK"/>
+                                                        <constraint firstAttribute="height" constant="145" id="mQf-KC-g7C"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNs-2p-6gb">
+                                                    <rect key="frame" x="132" y="188" width="110" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="26" id="C8t-LS-PWe"/>
+                                                        <constraint firstAttribute="width" constant="110" id="HUm-Bm-a7A"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="19"/>
+                                                    <color key="textColor" red="0.84705882349999995" green="0.27450980390000002" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bn2-rs-Uvd" firstAttribute="top" secondItem="SYa-3C-6O3" secondAttribute="top" constant="43" id="gPY-3q-7G1"/>
+                                                <constraint firstItem="iNs-2p-6gb" firstAttribute="top" secondItem="bn2-rs-Uvd" secondAttribute="bottom" id="kCO-l9-bGu"/>
+                                                <constraint firstItem="iNs-2p-6gb" firstAttribute="centerX" secondItem="SYa-3C-6O3" secondAttribute="centerX" id="uhX-93-10y"/>
+                                                <constraint firstItem="bn2-rs-Uvd" firstAttribute="centerX" secondItem="SYa-3C-6O3" secondAttribute="centerX" id="yOM-fv-gIM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Jqo-BV-2xt" id="fwQ-ho-Df7"/>
@@ -1438,6 +1600,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOc-oh-sVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="a4e-Mx-IID">
+                    <connections>
+                        <action selector="googlePlusLogin:" destination="Jqo-BV-2xt" id="PvH-vA-uuA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="rvR-D6-z0L">
+                    <connections>
+                        <action selector="facebookLogin:" destination="Jqo-BV-2xt" id="cds-qg-w38"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1472.8" y="891.90404797601207"/>
         </scene>
@@ -1698,7 +1870,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a Star to Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-Cm-B3v">
-                                <rect key="frame" x="127.5" y="303" width="121" height="17.5"/>
+                                <rect key="frame" x="128" y="303" width="121" height="17.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

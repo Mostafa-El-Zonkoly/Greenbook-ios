@@ -28,9 +28,9 @@ class AbstractViewController : UIViewController, UIImagePickerControllerDelegate
         let frame = CGRect.init(origin: CGPoint.init(x: (viewFrame.width - activityIndicatorSize.width)/2.0, y: (viewFrame.height - activityIndicatorSize.height)/2.0), size: activityIndicatorSize)
         activityIndicator = NVActivityIndicatorView.init(frame: frame)
         activityIndicator.type = .ballClipRotateMultiple
-        activityIndicator.color = UIColor.white
-        activityIndicator.backgroundColor = UIColor.init(red: 236.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 0.7)
-        
+        activityIndicator.color = Colors.NAVIGATION_COLOR
+//        activityIndicator.backgroundColor = UIColor.init(red: 236.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 0.7)
+        activityIndicator.backgroundColor = UIColor.white
         view.addSubview(activityIndicator)
     }
     

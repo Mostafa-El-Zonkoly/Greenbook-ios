@@ -15,7 +15,7 @@ import GooglePlaces
 import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var loginViewController : LoginViewController?
     var window: UIWindow?
 
 

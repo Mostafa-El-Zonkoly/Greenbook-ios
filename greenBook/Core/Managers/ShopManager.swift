@@ -19,11 +19,9 @@ class ShopManager: AbstractManager {
         if !UserSession.sharedInstant.userLoggedIn(){
             let userDefaults = UserDefaults.standard
             var newFav : [Int : Int] = [:]
-            if let dict = userDefaults.value(forKey: "FavouriteCache") as? [String : [String : Any]] {
+            if let dict = userDefaults.value(forKey: "FavouriteCache") as? [String : String] {
                 for key in dict.keys {
-                    if let shopDict = dict[key], let intKey = Int(key) {
-                        let shop = Shop()
-                        shop.bindDictionary(dict: shopDict)
+                    if let intKey = Int(key) {
                         newFav[intKey] = intKey
                     }
                 }
@@ -32,10 +30,10 @@ class ShopManager: AbstractManager {
             self.cacheFavourite()
         }
     }
-    func shopsDictionary() -> [Int : Int] {
-        var dict : [Int : Int] = [:]
+    func shopsDictionary() -> [String : String] {
+        var dict : [String : String] = [:]
         for key in favouriteShops.keys {
-            dict[key] = key
+            dict["\(key)"] = "\(key)"
         }
         return dict
     }
@@ -64,7 +62,8 @@ class ShopManager: AbstractManager {
                 ids = "\(key),\(ids)"
             }
             if ids.count > 0 {
-                ids.remove(at: ids.endIndex)
+                ids = "\(ids)A"
+                ids = ids.replacingOccurrences(of: ",A", with: "")
             }
         }
         if !self.internetConnected() {
@@ -93,7 +92,7 @@ class ShopManager: AbstractManager {
                             handler(response)
                             return
                         }
-                        if let _ = dict["data"] as? NSDictionary, let shopsDict = (dict["data"] as! [String: Any])["favourites"] as? [[String : Any]] {
+                        if let _ = dict["data"] as? NSDictionary, let shopsDict = (dict["data"] as! [String: Any])["shops"] as? [[String : Any]] {
                             // Success
                             var shops : [Int : Shop] = [:]
                             var favShops : [Int : Int] = [:]

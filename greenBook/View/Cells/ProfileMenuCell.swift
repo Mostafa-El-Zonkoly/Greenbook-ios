@@ -14,7 +14,7 @@ class ProfileMenuCell: UITableViewCell {
     
     func bindCell(type : ProfileCellTypes){
         switch type {
-        case .accountSeparator,.header,.supportUS:
+        case .accountSeparator,.header,.supportUS,.headerClientless,.loginButtons:
             self.titleLabel.text = ""
             break
         case .edit:
@@ -32,6 +32,7 @@ class ProfileMenuCell: UITableViewCell {
         case .rateApp:
             self.titleLabel.text = "Rate our app"
             break
+        
         }
     }
 }

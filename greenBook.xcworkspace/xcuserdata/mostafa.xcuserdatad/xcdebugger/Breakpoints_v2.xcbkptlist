@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "greenBook/Utilities/AppDelegate.swift"
-            timestampString = "533877478.520193"
+            timestampString = "534211126.056783"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -358,11 +358,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "greenBook.ShopReviewsViewController.reloadData() -&gt; ()"
-                  moduleName = "greenBook"
+                  symbolName = "greenBook_staging.ShopReviewsViewController.reloadData() -&gt; ()"
+                  moduleName = "greenBook-staging"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mostafa/ios/Badeeb/greenBook/greenBook/View/Controllers/Shop/ShopReviewsViewController.swift"
-                  timestampString = "533877233.397653"
+                  timestampString = "534211126.35149"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "68"
@@ -373,11 +373,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (greenBook.Response) -&gt; () in greenBook.ShopReviewsViewController.reloadData() -&gt; ()"
-                  moduleName = "greenBook"
+                  symbolName = "closure #1 (greenBook_staging.Response) -&gt; () in greenBook_staging.ShopReviewsViewController.reloadData() -&gt; ()"
+                  moduleName = "greenBook-staging"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mostafa/ios/Badeeb/greenBook/greenBook/View/Controllers/Shop/ShopReviewsViewController.swift"
-                  timestampString = "533877233.399222"
+                  timestampString = "534211126.354529"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "greenBook/View/Controllers/Tabs/ProfileViewController.swift"
-            timestampString = "533183770.899637"
+            timestampString = "534211126.05704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "changePassword()"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "greenBook/View/Controllers/Abstract Controllers/AbstractViewController.swift"
-            timestampString = "533877414.892677"
+            timestampString = "534211126.057143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
@@ -474,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "greenBook/View/Controllers/Abstract Controllers/AbstractViewController.swift"
-            timestampString = "533877414.892749"
+            timestampString = "534211126.057194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "greenBook/View/Controllers/Abstract Controllers/AbstractViewController.swift"
-            timestampString = "533877414.892852"
+            timestampString = "534211126.057264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
@@ -534,11 +534,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "greenBook.UserManager.forgetPassword(email: Swift.String, handler: (greenBook.Response) -&gt; ()) -&gt; ()"
-                  moduleName = "greenBook"
+                  symbolName = "greenBook_staging.UserManager.forgetPassword(email: Swift.String, handler: (greenBook_staging.Response) -&gt; ()) -&gt; ()"
+                  moduleName = "greenBook-staging"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mostafa/ios/Badeeb/greenBook/greenBook/Core/Managers/UserManager.swift"
-                  timestampString = "533877233.431728"
+                  timestampString = "534211126.405424"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "213"
@@ -549,11 +549,11 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in greenBook.UserManager.forgetPassword(email: Swift.String, handler: (greenBook.Response) -&gt; ()) -&gt; ()"
-                  moduleName = "greenBook"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in greenBook_staging.UserManager.forgetPassword(email: Swift.String, handler: (greenBook_staging.Response) -&gt; ()) -&gt; ()"
+                  moduleName = "greenBook-staging"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mostafa/ios/Badeeb/greenBook/greenBook/Core/Managers/UserManager.swift"
-                  timestampString = "533877233.433411"
+                  timestampString = "534211126.40863"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "202"
@@ -586,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "greenBook/Core/Managers/ShopManager.swift"
-            timestampString = "533326136.647934"
+            timestampString = "534211126.057354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "favouriteShopState(shop:state:handler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "greenBook/Core/Managers/ShopManager.swift"
-            timestampString = "533326136.648317"
+            timestampString = "534211126.057809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "favouriteShopState(shop:state:handler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -640,22 +640,6 @@
             startingLineNumber = "52"
             endingLineNumber = "52"
             landmarkName = "locationEnabled()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "greenBook/View/Controllers/Shop/ShopViewController.swift"
-            timestampString = "533871248.098593"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "viewWillDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -721,6 +705,198 @@
             endingLineNumber = "28"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/View/Controllers/Tabs/ProfileViewController.swift"
+            timestampString = "534211126.058244"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "loginButtonPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/View/Controllers/Tabs/ProfileViewController.swift"
+            timestampString = "534211126.058301"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "openLoginScreen()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/Core/Managers/ShopManager.swift"
+            timestampString = "534211126.058353"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "loadCachedFavourite()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/Core/Managers/ShopManager.swift"
+            timestampString = "534211126.058675"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "cacheFavourite()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/Core/Managers/ShopManager.swift"
+            timestampString = "534211126.058992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "shopsDictionary()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/Core/Managers/ShopManager.swift"
+            timestampString = "534211126.059314"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "cacheFavourite()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/Core/Managers/ShopManager.swift"
+            timestampString = "534211126.059626"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "loadFavouriteShops(handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/Core/Managers/ShopManager.swift"
+            timestampString = "534211126.059942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "loadFavouriteShops(handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/Core/Managers/ShopManager.swift"
+            timestampString = "534211126.060251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "loadFavouriteShops(handler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "greenBook/Core/Managers/ShopManager.swift"
+            timestampString = "534211126.060562"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "loadFavouriteShops(handler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "greenBook_staging.ShopManager.loadFavouriteShops(handler: (greenBook_staging.Response) -&gt; ()) -&gt; ()"
+                  moduleName = "greenBook-staging"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mostafa/ios/Badeeb/greenBook/greenBook/Core/Managers/ShopManager.swift"
+                  timestampString = "534211126.456739"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "2852">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in greenBook_staging.ShopManager.loadFavouriteShops(handler: (greenBook_staging.Response) -&gt; ()) -&gt; ()"
+                  moduleName = "greenBook-staging"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mostafa/ios/Badeeb/greenBook/greenBook/Core/Managers/ShopManager.swift"
+                  timestampString = "534211126.458454"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
