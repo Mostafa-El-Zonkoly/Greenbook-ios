@@ -125,7 +125,7 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
         }
     }
     
-    let appURL = "https://itunes.apple.com/us/app/id1185250904"
+    let appURL = "https://itunes.apple.com/us/app/greenbook-shops/id1322693527?ls=1&mt=8"
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editProfileSegue", let dest = segue.destination as? UpdateProfileViewController {
