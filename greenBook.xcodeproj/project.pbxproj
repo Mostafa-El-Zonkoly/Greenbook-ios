@@ -16,6 +16,8 @@
 		0615D4A91FC771000097313A /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4A81FC771000097313A /* PlaceholderTextView.swift */; };
 		0615D4AB1FC7776B0097313A /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AA1FC7776B0097313A /* AddReviewViewController.swift */; };
 		0615D4AD1FC77BA70097313A /* ReviewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AC1FC77BA70097313A /* ReviewsManager.swift */; };
+		061B1AF71FD8A8B600499817 /* ShopReviewCellWithReply.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061B1AF61FD8A8B600499817 /* ShopReviewCellWithReply.xib */; };
+		061B1AF91FD8B0D300499817 /* ShopReviewCellWriteReply.xib in Resources */ = {isa = PBXBuildFile; fileRef = 061B1AF81FD8B0D300499817 /* ShopReviewCellWriteReply.xib */; };
 		06386C5E1FC797580036E8DE /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06386C5D1FC797580036E8DE /* ProfileHeaderCell.swift */; };
 		06386C601FC797FB0036E8DE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06386C5F1FC797FB0036E8DE /* ProfileViewController.swift */; };
 		06386C621FC79A7F0036E8DE /* ProfileMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06386C611FC79A7F0036E8DE /* ProfileMenuCell.swift */; };
@@ -173,6 +175,8 @@
 		0615D4A81FC771000097313A /* PlaceholderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		0615D4AA1FC7776B0097313A /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		0615D4AC1FC77BA70097313A /* ReviewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsManager.swift; sourceTree = "<group>"; };
+		061B1AF61FD8A8B600499817 /* ShopReviewCellWithReply.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopReviewCellWithReply.xib; sourceTree = "<group>"; };
+		061B1AF81FD8B0D300499817 /* ShopReviewCellWriteReply.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShopReviewCellWriteReply.xib; sourceTree = "<group>"; };
 		06386C5D1FC797580036E8DE /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
 		06386C5F1FC797FB0036E8DE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		06386C611FC79A7F0036E8DE /* ProfileMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuCell.swift; sourceTree = "<group>"; };
@@ -489,6 +493,8 @@
 		06B3C4371FA7F2AD00D02947 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				061B1AF81FD8B0D300499817 /* ShopReviewCellWriteReply.xib */,
+				061B1AF61FD8A8B600499817 /* ShopReviewCellWithReply.xib */,
 				06B3C4101FA7E88600D02947 /* Main.storyboard */,
 				06B3C4151FA7E88600D02947 /* LaunchScreen.storyboard */,
 				06A1E2711FBFDA55005F618A /* ShopView.xib */,
@@ -660,10 +666,12 @@
 				06A1E2721FBFDA55005F618A /* ShopView.xib in Resources */,
 				066670CB1FAE76BA00739695 /* OpenSans-Semibold.ttf in Resources */,
 				066670C51FAE76BA00739695 /* OpenSans-ExtraBold.ttf in Resources */,
+				061B1AF71FD8A8B600499817 /* ShopReviewCellWithReply.xib in Resources */,
 				066670C21FAE76BA00739695 /* Apache License.txt in Resources */,
 				066670C91FAE76BA00739695 /* OpenSans-LightItalic.ttf in Resources */,
 				06B3C4141FA7E88600D02947 /* Assets.xcassets in Resources */,
 				0661F2011FD5FEEA00EA9F14 /* GoogleService-Info.plist in Resources */,
+				061B1AF91FD8B0D300499817 /* ShopReviewCellWriteReply.xib in Resources */,
 				06B952E61FC03DB400DF556F /* SegmentCollectionCell.xib in Resources */,
 				066670C31FAE76BA00739695 /* OpenSans-Bold.ttf in Resources */,
 				06B3C4121FA7E88600D02947 /* Main.storyboard in Resources */,

@@ -39,6 +39,7 @@ struct URLS {
     static let FAV_STATE_URL = "\(SERVER_URL)shops/%d/favourite"
     static let ADD_REVIEW_URL = "\(SERVER_URL)shops/%d/reviews"
     static let EDIT_REVIEW_URL = "\(SERVER_URL)shops/%d/reviews/%d"
+    static let REPLY_REVIEW_URL = "\(SERVER_URL)shops/%d/reviews/%d/reply"
 }
 struct Messages {
     static let DEFAULT_ERROR_MSG = "Something went wrong"

@@ -13,6 +13,7 @@ import SDWebImage
 
 class ShopReviewCell: UITableViewCell {
     
+    @IBOutlet weak var replyLabel: UILabel?
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
     var shopReview : ShopReview?
@@ -43,6 +44,9 @@ class ShopReviewCell: UITableViewCell {
         let hideButtons = !(review.user.id == UserSession.sharedInstant.currUser.id)
         self.editButton.isHidden = hideButtons
         self.deleteButton.isHidden = hideButtons
+        if review.haveReply() {
+            self.replyLabel?.text = review.reply
+        }
     }
     
     @IBAction func editReview(_ sender: UIButton) {
@@ -56,6 +60,11 @@ class ShopReviewCell: UITableViewCell {
         }
     }
     
+    @IBAction func writeReplyForReview(_ sender: UIButton) {
+        if let review = self.shopReview{
+            self.delegate?.replyReviewPressed(review: review)
+        }
+    }
     
 }
 

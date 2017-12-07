@@ -27,6 +27,7 @@ class ShopReview: BaseModel {
     var created_at : String = ""
     var user : User = User()
     var date : Date = Date()
+    var reply : String?
     override func bindDictionary(dict: [String : Any]) {
         super.bindDictionary(dict: dict)
         if let value = dict["rate"] as? Int {
@@ -45,6 +46,17 @@ class ShopReview: BaseModel {
             user = User()
             user.bindDictionary(dict: userDict)
         }
+        if let value = dict["reply"] as? String {
+            reply = value
+        }else{
+            reply = nil
+        }
+    }
+    func haveReply() -> Bool {
+        if let repl = reply {
+            return repl.count > 0
+        }
+        return false
     }
     
     func getDateFormatted() -> String {

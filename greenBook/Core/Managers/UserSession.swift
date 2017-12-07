@@ -26,6 +26,7 @@ class UserSession {
         currUser.password = password
         userDefaults.setValue(currUser.toDict(), forKey: userKey)
         userDefaults.setValue(token, forKey: tokenKey)
+        userDefaults.setValue(currUser.userShops(), forKey: "userShops")
         return userDefaults.synchronize()
     }
     
@@ -38,11 +39,14 @@ class UserSession {
             self.currUser.bindDictionary(dict: [:])
         }
         
+        
         if let value = userDefaults.value(forKey: tokenKey) as? String {
             self.token = value
             self.currUser.token = value
         }
-        
+        if let value = userDefaults.value(forKey: "userShops") as? [String : String]{
+            self.currUser.bindShops(shops: value)
+        }
     }
     
     func logoutUser(){
@@ -52,6 +56,7 @@ class UserSession {
         ShopManager.sharedInstance.favouriteShops = [:]
         userDefualts.removeObject(forKey: userKey)
         userDefualts.removeObject(forKey: tokenKey)
+        userDefualts.removeObject(forKey: "userShops")
         userDefualts.synchronize()
     }
 }

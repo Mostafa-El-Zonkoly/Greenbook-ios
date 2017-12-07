@@ -18,7 +18,7 @@ class User: BaseModel {
     var saved : Bool {
         return id != -1
     }
-
+    var owned_shops_ids : [Int] = []
     override func bindDictionary(dict: [String : Any]) {
         super.bindDictionary(dict: dict)
         if let value = dict["name"] as? String {
@@ -39,6 +39,39 @@ class User: BaseModel {
         if let value = dict["token"] as? String {
             self.token = value
         }
+        if let values = dict["owned_shops"] as? [[String : Int]] {
+            self.owned_shops_ids = []
+            for value in values {
+                if let _id = value["id"] as? Int {
+                    self.owned_shops_ids.append(_id)
+                }
+            }
+        }
        
+    }
+    
+    func shopOwned(shop : Shop ) -> Bool {
+        for shopId in self.owned_shops_ids {
+            if shopId == shop.id {
+                return true
+            }
+        }
+        return false
+    }
+    func userShops() -> [String : String] {
+        var  shops : [String : String] = [:]
+        for shop in self.owned_shops_ids {
+            shops["\(shop)"] = "\(shop)"
+        }
+        return shops
+    }
+    func bindShops(shops : [String : String]) {
+        self.owned_shops_ids = []
+        for shop_id in shops.keys {
+            
+            if let _id = Int(shop_id){
+                self.owned_shops_ids.append(_id)
+            }
+        }
     }
 }

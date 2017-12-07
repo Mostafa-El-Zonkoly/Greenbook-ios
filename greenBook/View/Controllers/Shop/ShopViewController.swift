@@ -24,7 +24,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    
+    var forwardSegue = false
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -71,7 +71,9 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
         if !shopViewAdded {
             addShopView()
         }
+        forwardSegue = false
         self.selectedReview = nil
+        replyToReview = false
         shopContainerView.backgroundColor = UIColor.red
         bindShopView()
         self.navigationController?.isNavigationBarHidden = false
@@ -132,7 +134,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if !keepNavBar{
+        if !keepNavBar, !forwardSegue{
             self.navigationController?.isNavigationBarHidden = true
         }
         
@@ -155,6 +157,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     }
     
     func writeReviewPressed() {
+        forwardSegue = true
         self.performSegue(withIdentifier: "addReviewSegue", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -165,7 +168,12 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
             if let review = self.selectedReview {
                 dest.review = review
                 dest.state = .edit
+                if replyToReview {
+                    dest.replyToReview = true
+                    dest.state = .reply
+                }
             }
+            
         }
     }
     
@@ -225,8 +233,15 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        if !keepNavBar{
+        if !keepNavBar, !forwardSegue{
             self.navigationController?.isNavigationBarHidden = true
         }
+    }
+    var replyToReview = false
+    func replyReviewPressed(review: ShopReview) {
+        selectedReview = review
+        replyToReview = true
+        forwardSegue = true
+        self.performSegue(withIdentifier: "addReviewSegue", sender: self)
     }
 }

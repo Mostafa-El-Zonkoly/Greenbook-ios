@@ -92,7 +92,7 @@ class ShopManager: AbstractManager {
                             handler(response)
                             return
                         }
-                        if let _ = dict["data"] as? NSDictionary, let shopsDict = (dict["data"] as! [String: Any])["shops"] as? [[String : Any]] {
+                        if let _ = dict["data"] as? NSDictionary, let shopsDict = (dict["data"] as! [String: Any])["favourites"] as? [[String : Any]] {
                             // Success
                             var shops : [Int : Shop] = [:]
                             var favShops : [Int : Int] = [:]

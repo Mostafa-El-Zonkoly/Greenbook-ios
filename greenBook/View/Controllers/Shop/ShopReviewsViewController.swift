@@ -13,10 +13,11 @@ protocol ShopReviewDelegate {
     func writeReviewPressed()
     func deleteReview(review : ShopReview)
     func editReview(review : ShopReview)
+    func replyReviewPressed(review : ShopReview)
 }
 class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var addReviwButton: UIButton!
-    
+    var isAdmin = false
     @IBAction func writeReviewPressed(_ sender: UIButton) {
         self.delegate?.writeReviewPressed()
     }
@@ -37,6 +38,9 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
         if !UserSession.sharedInstant.userLoggedIn(){
             addedReview = true
         }
+        if self.isAdmin {
+            addedReview = true
+        }
         for review in reviews {
             if review.user.id == UserSession.sharedInstant.currUser.id {
                 addedReview = true
@@ -48,8 +52,13 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
     var shop : Shop!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserSession.sharedInstant.currUser.shopOwned(shop: self.shop) {
+            self.isAdmin = true
+        }
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.register(UINib(nibName: "ShopReviewCell", bundle: Bundle.main), forCellReuseIdentifier: "ReviewCell")
+        self.tableView.register(UINib(nibName: "ShopReviewCellWriteReply", bundle: Bundle.main), forCellReuseIdentifier: "ReviewCellWriteReply")
+        self.tableView.register(UINib(nibName: "ShopReviewCellWithReply", bundle: Bundle.main), forCellReuseIdentifier: "ReviewCellWithReply")
         refreshControl.addTarget(self, action: #selector(reloadData), for: UIControlEvents.allEvents)
         self.tableView.refreshControl = self.refreshControl
         let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(closeKeyboard))
@@ -95,7 +104,13 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section < reviews.count {
             let review = reviews[indexPath.section]
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as? ShopReviewCell {
+            var identifier = "ReviewCell"
+            if self.isAdmin, !review.haveReply(){
+                identifier = "ReviewCellWriteReply"
+            }else if review.haveReply() {
+                identifier = "ReviewCellWithReply"
+            }
+            if let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? ShopReviewCell {
                 cell.bindReview(review: review)
                 cell.delegate = self.delegate
                 return cell

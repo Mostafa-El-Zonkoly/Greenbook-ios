@@ -76,7 +76,64 @@ class ReviewsManager: AbstractManager {
             handler(response)
         }
     }
-    
+    func replyReview (review : ShopReview, message: String, shop: Shop, handler: @escaping (Response) -> Void) {
+        // First check connectivity
+        var response = Response()
+        
+        if !self.internetConnected() {
+            response.error = GBError()
+            response.error?.error_type = .connection
+            handler(response)
+            return
+        }
+        let urlString =  String.init(format: URLS.REPLY_REVIEW_URL, shop.id, review.id)
+        if let url = URL.init(string: urlString) {
+            
+            let headers = getHeader(auth: true) as! HTTPHeaders
+            let params : [String : Any] = ["data[reply_description]" : message]
+            let httpMethod = HTTPMethod.post
+            Alamofire.request(url, method: httpMethod, parameters: params, headers: headers).responseJSON(completionHandler: { (serverResponse) in
+                if let error = serverResponse.error {
+                    response.error = GBError()
+                    response.error?.error_type = .server_error
+                    response.error?.error = error
+                    handler(response)
+                    return
+                }else {
+                    // TODO Parse User Returned
+                    if let dict = serverResponse.result.value as? NSDictionary {
+                        response = self.parseMeta(dict: dict as! [String : Any])
+                        if !response.status {
+                            
+                            handler(response)
+                            return
+                        }
+                        if let data = dict["data"] as? [String: Any] {
+                            ShopManager().loadShopReviews(shop: shop, handler: handler)
+                            return
+                        }else{
+                            response.error = GBError()
+                            response.error?.error_type = .server_error
+                            handler(response)
+                            return
+                        }
+                        
+                        
+                    }else{
+                        response.error = GBError()
+                        response.error?.error_type = .server_error
+                        handler(response)
+                        return
+                        
+                    }
+                }
+            })
+        }else{
+            response.error = GBError()
+            response.error?.error_type = .server_error
+            handler(response)
+        }
+    }
     func deleteReview (review : ShopReview, shop: Shop, handler: @escaping (Response) -> Void) {
         // First check connectivity
         var response = Response()

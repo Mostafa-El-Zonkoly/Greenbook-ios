@@ -37,30 +37,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
 public func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    
+    if SDKApplicationDelegate.shared.application(
+        app,
+        open: url as URL!,
+        sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String,
+        annotation: options[UIApplicationOpenURLOptionsKey.annotation]
+        ){
+        return true
+        
+    }
     if GIDSignIn.sharedInstance().handle(url,
                                          sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                          annotation: [:]) {
         return true
     }
     
-    return SDKApplicationDelegate.shared.application(
-        app,
-        open: url as URL!,
-        sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String,
-        annotation: options[UIApplicationOpenURLOptionsKey.annotation]
-    )
+    
+    return false
 }
 
 public func application(_ application: UIApplication, open url: URL,     sourceApplication: String?, annotation: Any) -> Bool {
+
+    if  SDKApplicationDelegate.shared.application(
+        application,
+        open: url as URL!,
+        sourceApplication: sourceApplication,
+        annotation: annotation){
+        return true
+    }
     if GIDSignIn.sharedInstance().handle(url,sourceApplication: sourceApplication,annotation: annotation){
         return true
     }
 
-    return SDKApplicationDelegate.shared.application(
-        application,
-        open: url as URL!,
-        sourceApplication: sourceApplication,
-        annotation: annotation)
+
+    return false
 }
 
     func loadCategories() {

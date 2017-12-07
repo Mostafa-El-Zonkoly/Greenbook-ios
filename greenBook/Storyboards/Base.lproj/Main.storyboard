@@ -1870,7 +1870,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a Star to Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-Cm-B3v">
-                                <rect key="frame" x="127" y="303" width="121" height="17.5"/>
+                                <rect key="frame" x="127.5" y="303" width="121" height="17.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1901,6 +1901,7 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="guideLabel" destination="Htt-Cm-B3v" id="x5E-LM-ngm"/>
                         <outlet property="profileImageView" destination="V16-h8-cuV" id="fyM-AO-zPK"/>
                         <outlet property="rateView" destination="Cs2-zc-7zM" id="vQd-aW-GZQ"/>
                         <outlet property="reviewTextView" destination="Q7v-lU-aVe" id="Yac-yx-p3T"/>
