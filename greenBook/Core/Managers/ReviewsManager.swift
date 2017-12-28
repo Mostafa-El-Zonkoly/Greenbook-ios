@@ -86,7 +86,7 @@ class ReviewsManager: AbstractManager {
             handler(response)
             return
         }
-        let urlString =  String.init(format: URLS.REPLY_REVIEW_URL, shop.id, review.id)
+        let urlString =  String.init(format: URLS.REPLY_REVIEW_URL, shop.google_place_id, review.id)
         if let url = URL.init(string: urlString) {
             
             let headers = getHeader(auth: true) as! HTTPHeaders
@@ -166,7 +166,7 @@ class ReviewsManager: AbstractManager {
                             handler(response)
                             return
                         }
-                        if let data = dict["data"] as? [String: Any], let _ = (dict["data"] as! [String: Any])["shop_rate"] as? Double, let _ = (dict["data"] as! [String: Any])["num_of_reviews"] as? Int {
+                        if let data = dict["data"] as? [String: Any], let _ = (dict["data"] as! [String: Any])["num_of_reviews"] as? Int {
                             // Success
                             
                             response.result = data

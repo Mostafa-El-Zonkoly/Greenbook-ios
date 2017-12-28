@@ -13,17 +13,15 @@ import CoreLocation
 
 class ShopManager: AbstractManager {
     static let sharedInstance : ShopManager = ShopManager()
-    var favouriteShops : [Int: Int] = [:]
+    var favouriteShops : [String: String] = [:]
     
     func loadCachedFavourite() {
         if !UserSession.sharedInstant.userLoggedIn(){
             let userDefaults = UserDefaults.standard
-            var newFav : [Int : Int] = [:]
+            var newFav : [String : String] = [:]
             if let dict = userDefaults.value(forKey: "FavouriteCache") as? [String : String] {
                 for key in dict.keys {
-                    if let intKey = Int(key) {
-                        newFav[intKey] = intKey
-                    }
+                        newFav[key] = key
                 }
             }
             self.favouriteShops = newFav
@@ -92,15 +90,16 @@ class ShopManager: AbstractManager {
                             handler(response)
                             return
                         }
-                        if let _ = dict["data"] as? NSDictionary, let shopsDict = (dict["data"] as! [String: Any])["favourites"] as? [[String : Any]] {
+                        let key = UserSession.sharedInstant.userLoggedIn() ? "favourites":"shops"
+                        if let _ = dict["data"] as? NSDictionary, let shopsDict = (dict["data"] as! [String: Any])[key] as? [[String : Any]] {
                             // Success
-                            var shops : [Int : Shop] = [:]
-                            var favShops : [Int : Int] = [:]
+                            var shops : [String : Shop] = [:]
+                            var favShops : [String : String] = [:]
                             for shopDict in shopsDict {
                                 let shop = Shop()
                                 shop.bindDictionary(dict: shopDict)
-                                shops[shop.id] = shop
-                                favShops[shop.id] = shop.id
+                                shops[shop.google_place_id] = shop
+                                favShops[shop.google_place_id] = shop.google_place_id
                             }
                             
                             self.favouriteShops = favShops
@@ -130,7 +129,70 @@ class ShopManager: AbstractManager {
             handler(response)
         }
     }
-    
+    func loadShopDetails(shop : Shop, handler: @escaping (Response) -> Void) {
+        // First check connectivity
+        var response = Response()
+        
+        
+        var urlString = String.init(format: URLS.SHOP_DETAILS_URL, shop.google_place_id)
+
+        if !self.internetConnected() {
+            response.error = GBError()
+            response.error?.error_type = .connection
+            handler(response)
+            return
+        }
+        if let url = URL.init(string: urlString) {
+            
+            let headers = getHeader(auth: true) as! HTTPHeaders
+            let params : [String : Any] = [:]
+            Alamofire.request(url, method: HTTPMethod.get, parameters: params, headers: headers).responseJSON(completionHandler: { (serverResponse) in
+                if let error = serverResponse.error {
+                    response.error = GBError()
+                    response.error?.error_type = .server_error
+                    response.error?.error = error
+                    handler(response)
+                    return
+                }else {
+                    // TODO Parse User Returned
+                    if let dict = serverResponse.result.value as? NSDictionary {
+                        response = self.parseMeta(dict: dict as! [String : Any])
+                        if !response.status {
+                            
+                            handler(response)
+                            return
+                        }
+                        if let shopDict = dict["data"] as? [String: Any] {
+                            // Success
+                                let shop = Shop()
+                                shop.bindDictionary(dict: shopDict)
+                            
+                            response.result = shop
+                            handler(response)
+                            return
+                        }else{
+                            response.error = GBError()
+                            response.error?.error_type = .server_error
+                            handler(response)
+                            return
+                        }
+                        
+                        
+                    }else{
+                        response.error = GBError()
+                        response.error?.error_type = .server_error
+                        handler(response)
+                        return
+                        
+                    }
+                }
+            })
+        }else{
+            response.error = GBError()
+            response.error?.error_type = .server_error
+            handler(response)
+        }
+    }
     func loadShopReviews(shop: Shop, handler: @escaping (Response) -> Void) {
         // First check connectivity
         var response = Response()
@@ -206,10 +268,10 @@ class ShopManager: AbstractManager {
     func favouriteShopState(shop: Shop, state: Bool, handler: @escaping (Response) -> Void) {
         if !UserSession.sharedInstant.userLoggedIn(){
             if state {
-                favouriteShops[shop.id] = shop.id
+                favouriteShops[shop.google_place_id] = shop.google_place_id
                 
             }else{
-                favouriteShops.removeValue(forKey: shop.id)
+                favouriteShops.removeValue(forKey: shop.google_place_id)
             }
             cacheFavourite()
             let response = Response.init()
@@ -227,7 +289,7 @@ class ShopManager: AbstractManager {
             return
         }
         
-        let url = URL.init(string: String.init(format: URLS.FAV_STATE_URL, shop.id))
+        let url = URL.init(string: String.init(format: URLS.FAV_STATE_URL, shop.google_place_id))
         let httpMethod : HTTPMethod = (state) ? .post:.delete
         
         let headers = getHeader(auth: true) as! HTTPHeaders

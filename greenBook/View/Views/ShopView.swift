@@ -32,7 +32,7 @@ class ShopView: UIView {
     }
     func bindShop(shop : Shop){
         self.shop = shop
-        self.shopDetailsLabel.text = shop.shopDescription
+        self.shopDetailsLabel.text = shop.location.address
         self.shopTitleLabel.text = shop.name
         self.rateLabel.text = "\(shop.rate.toString(decimals: 1))  (\(shop.num_of_reviews))"
         self.rateView.rating = shop.rate

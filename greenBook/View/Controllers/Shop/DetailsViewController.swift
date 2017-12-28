@@ -40,12 +40,14 @@ class DetailsViewController: AbstractViewController,IndicatorInfoProvider, UITab
         super.viewDidLoad()
         detailsTableView.rowHeight = UITableViewAutomaticDimension
     }
-    
+    func reloadData(){
+        detailsTableView.reloadData()
+    }
     
     // MARK: Tableview datasource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +62,7 @@ class DetailsViewController: AbstractViewController,IndicatorInfoProvider, UITab
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
-    let cellIdentifiers : [ShopDetailsCellIDs] = [.address,.hours,.phone]
+    let cellIdentifiers : [ShopDetailsCellIDs] = [.hours,.phone]
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section < cellIdentifiers.count, let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifiers[indexPath.section].cellID(), for: indexPath) as? ShopDetailCell {

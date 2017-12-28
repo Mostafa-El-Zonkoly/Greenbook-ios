@@ -57,6 +57,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
         self.navigationController?.isNavigationBarHidden = false
         customizeNavigationBar()
         overrideBackButton()
+        loadShop()
 
     }
     override func configure(cell: UICollectionViewCell, for indicatorInfo: IndicatorInfo) {
@@ -88,6 +89,29 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
         self.shopContainerHeight.constant = self.shopView.frame.height
         self.view.layoutSubviews()
     }
+    
+    func loadShop(){
+        if let shop = self.shop {
+            ShopManager.sharedInstance.loadShopDetails(shop: shop, handler: { (response) in
+                if response.status{
+                    if let newShop = response.result as? Shop {
+                        self.shop = newShop
+                        self.shopReviewView.shop = newShop
+                        self.shopGalleryView.shop = newShop
+                        self.detailsView.shop = newShop
+                        DispatchQueue.main.async {
+                            if self.shopViewAdded {
+                                self.bindShopView()
+                            }
+                            self.shopGalleryView.reloadData()
+                            self.detailsView.reloadData()
+                        }
+
+                    }
+                }
+            })
+        }
+    }
     func addShopView(){
         if let _shopView = Bundle.main.loadNibNamed("ShopView", owner: self, options: nil)?.first as? ShopView{
             shopViewAdded = true
@@ -108,18 +132,18 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
         }
         
     }
-    
+    let detailsView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopDetailsView") as! DetailsViewController
+    let shopGalleryView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopGalleryView") as! ShopGalleryViewController
+    let shopReviewView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopReviewView") as! ShopReviewsViewController
+
     override public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-       let detailsView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopDetailsView") as! DetailsViewController
         if let shop = self.shop {
             detailsView.shop = shop
         }
-        let shopGalleryView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopGalleryView") as! ShopGalleryViewController
         if let shop = self.shop {
             shopGalleryView.shop = shop
         }
         
-        let shopReviewView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShopReviewView") as! ShopReviewsViewController
         if let shop = self.shop {
             shopReviewView.shop = shop
         }
@@ -201,6 +225,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
                 self.endLoading()
                 if response.status {
                     self.showMessage(message: "Review Deleted")
+                    self.selectedReview = nil
                     for controller in self.viewControllers {
                         if let reviews = controller as? ShopReviewsViewController {
                             reviews.startLoading()

@@ -36,10 +36,11 @@ struct URLS {
     static let FAV_URL = "\(SERVER_URL)shops/favourites"
     static let SHOPS_WITH_IDS_URL = "\(SERVER_URL)shops"
     static let SHOP_REVIEWS_URL = "\(SERVER_URL)shops/%d/reviews"
-    static let FAV_STATE_URL = "\(SERVER_URL)shops/%d/favourite"
+    static let FAV_STATE_URL = "\(SERVER_URL)shops/%@/favourite"
     static let ADD_REVIEW_URL = "\(SERVER_URL)shops/%d/reviews"
     static let EDIT_REVIEW_URL = "\(SERVER_URL)shops/%d/reviews/%d"
-    static let REPLY_REVIEW_URL = "\(SERVER_URL)shops/%d/reviews/%d/reply"
+    static let REPLY_REVIEW_URL = "\(SERVER_URL)shops/%f/reviews/%d/reply"
+    static let SHOP_DETAILS_URL = "\(SERVER_URL)shops/%@"
 }
 struct Messages {
     static let DEFAULT_ERROR_MSG = "Something went wrong"
