@@ -96,7 +96,7 @@ class CategoryManager: AbstractManager {
         return filtered
     }
     
-    func loadCategoryShops(category : Category, lat: Double, long : Double, handler: @escaping (Response) -> Void) {
+    func loadCategoryShops(query : String, lat: Double, long : Double, handler: @escaping (Response) -> Void) {
         // First check connectivity
         var response = Response()
         if !self.internetConnected() {
@@ -114,7 +114,7 @@ class CategoryManager: AbstractManager {
         if let url = URL.init(string: URLS.SEARCH_URL) {
             
             let headers = getHeader(auth: false) as! HTTPHeaders
-            let params : [String : Any] = ["category_id" : category.id, "lat" : lat, "lng" : long]
+            let params : [String : Any] = ["query" : query, "lat" : lat, "lng" : long]
             Alamofire.request(url, method: HTTPMethod.get, parameters: params, headers: headers).responseJSON(completionHandler: { (serverResponse) in
                 if let error = serverResponse.error {
                     response.error = GBError()

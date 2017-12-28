@@ -46,7 +46,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     // MARK: Google Places Search
     let autocompleteController = GMSAutocompleteViewController()
 
-    var viewState : SearchState = .noSearch {
+    var viewState : SearchState = .results {
         didSet{
             self.adjustView()
         }
@@ -76,7 +76,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
-        self.viewState = .noSearch
+        self.viewState = .results
         
         // Capture location On map action
         let gestureRecong = UITapGestureRecognizer.init(target: self, action: #selector(showOnMap))
@@ -102,7 +102,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         super.viewDidAppear(animated)
         self.selectedShop = nil
         self.navigationController?.isNavigationBarHidden = true
-
+        loadData()
         ShopManager.sharedInstance.loadFavouriteShops { (response) in
             self.tableView.reloadData()
         }
@@ -131,9 +131,9 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                 return self.shops.count
             }
         }else{
-            if self.searchType == .category {
-                return self.filteredCategories.count
-            }
+//            if self.searchType == .category {
+//                return self.filteredCategories.count
+//            }
         }
         return 0
     }
@@ -219,9 +219,11 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         // TODO Load Data related to category
         self.searchTF.resignFirstResponder()
         self.locationTF.resignFirstResponder()
-        if let category = self.selectedCategory {
             self.startLoading()
-            CategoryManager.sharedInistance.loadCategoryShops(category: category, lat: self.location.latitude, long: self.location.longitude, handler: { (response) in
+        if let text = self.searchTF.text {
+            self.query = text
+        }
+            CategoryManager.sharedInistance.loadCategoryShops(query: self.query, lat: self.location.latitude, long: self.location.longitude, handler: { (response) in
                 self.endLoading()
                 if response.status {
                     if let newShops = response.result as? [Shop] {
@@ -240,11 +242,6 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                     self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
                 }
             })
-        }else{
-            self.shops = []
-            self.viewState = .noResults
-            self.tableView.reloadData()
-        }
     }
     
     // MARK : textfield delegate
@@ -257,7 +254,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         }
         return true
     }
-
+    var query = ""
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.isEqual(searchTF){
             self.searchType = .category
@@ -293,9 +290,10 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         return true
     }
     func filterCategories(prefix : String){
-        self.filteredCategories =  CategoryManager.sharedInistance.getCategoriesWithPrefix(prefix: prefix)
-        self.filterViewHeightConstraint.constant = CGFloat(self.filteredCategories.count) * self.filterTable.rowHeight
-        self.filterTable.reloadData()
+        self.query = prefix
+//        self.filteredCategories =  CategoryManager.sharedInistance.getCategoriesWithPrefix(prefix: prefix)
+//        self.filterViewHeightConstraint.constant = CGFloat(self.filteredCategories.count) * self.filterTable.rowHeight
+//        self.filterTable.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
