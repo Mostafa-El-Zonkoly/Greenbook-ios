@@ -16,6 +16,8 @@ import GoogleMaps
 import FacebookCore
 import FacebookLogin
 import GoogleSignIn
+import Fabric
+import Crashlytics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var loginViewController : LoginViewController?
@@ -28,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSPlacesClient.provideAPIKey(KEYS.GMSPLacesKey)
         GMSServices.provideAPIKey(KEYS.GMSServiceKey)
         
-
+        Fabric.with([Crashlytics.self])
         FIRApp.configure()
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         return true

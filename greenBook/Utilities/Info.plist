@@ -16,6 +16,20 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+    <key>Fabric</key>
+    <dict>
+        <key>APIKey</key>
+        <string>8093707cc1ca71a39ff0a03182e34ba0e2378756</string>
+        <key>Kits</key>
+        <array>
+            <dict>
+                <key>KitInfo</key>
+                <dict/>
+                <key>KitName</key>
+                <string>Crashlytics</string>
+            </dict>
+        </array>
+    </dict>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
