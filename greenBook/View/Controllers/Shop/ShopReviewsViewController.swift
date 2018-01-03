@@ -19,6 +19,7 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
     @IBOutlet weak var addReviwButton: UIButton!
     var isAdmin = false
     @IBAction func writeReviewPressed(_ sender: UIButton) {
+        
         self.delegate?.writeReviewPressed()
     }
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
@@ -35,9 +36,9 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
     
     func toggleAddReview(){
         var addedReview = false
-        if !UserSession.sharedInstant.userLoggedIn(){
-            addedReview = true
-        }
+//        if !UserSession.sharedInstant.userLoggedIn(){
+//            addedReview = true
+//        }
         if self.isAdmin {
             addedReview = true
         }

@@ -181,8 +181,23 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     }
     
     func writeReviewPressed() {
-        forwardSegue = true
-        self.performSegue(withIdentifier: "addReviewSegue", sender: self)
+        if UserSession.sharedInstant.userLoggedIn() {
+            forwardSegue = true
+            self.performSegue(withIdentifier: "addReviewSegue", sender: self)
+        }else{
+            // TODO show popup
+            let alertView = UIAlertController(title: "Please Login", message: "You have to login first to be able to add a review", preferredStyle: .alert)
+            let registerAction = UIAlertAction(title: "Ok", style: .default, handler: { (alert) in
+                self.navigationController?.tabBarController?.dismiss(animated: true, completion: nil)
+            })
+            let backAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (alert) in
+                
+            })
+            alertView.addAction(backAction)
+            alertView.addAction(registerAction)
+
+            self.present(alertView, animated: true, completion: nil)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addReviewSegue", let dest = segue.destination as? AddReviewViewController {
@@ -212,6 +227,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     var selectedReview : ShopReview?
     
     func editReview(review: ShopReview) {
+        forwardSegue = true
         self.selectedReview = review
         self.performSegue(withIdentifier: "addReviewSegue", sender: self)
     }

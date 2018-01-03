@@ -37,13 +37,17 @@ class AddReviewViewController: AbstractViewController {
         
         if replyToReview {
             self.reviewTextView.placeholderText = "Write a Reply"
-            
         }
         self.reviewTextView.text = self.reviewTextView.placeholderText
         bindUser()
         let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(closeKeyboard))
         self.view.addGestureRecognizer(gestureRecognizer)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Add", style: .done, target: self, action: #selector(saveReview))
+        var title = "Add"
+        if state == .edit {
+            title = "Update"
+        }
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: title, style: .done, target: self, action: #selector(saveReview))
+        
         self.rateView.rating = 1.0
         self.rateView.isHidden = replyToReview
         self.guideLabel.isHidden = replyToReview

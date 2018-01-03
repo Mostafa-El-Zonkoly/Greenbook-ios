@@ -21,6 +21,7 @@ class Shop: BaseModel {
     var photos : [Photo] = []
     var phone_number : String = ""
     var google_place_id : String = ""
+    var open_now : Bool = false
     override func bindDictionary(dict: [String : Any]) {
         super.bindDictionary(dict: dict)
         if let value = dict["photos"] as? [[String : Any]] {
@@ -46,7 +47,9 @@ class Shop: BaseModel {
             self.location = Location()
             self.location.bindDictionary(dict: value)
         }
-
+        if let value = dict["open_now"] as? Bool {
+            self.open_now = value
+        }
         if let value = dict["working_days"] as? [[String : Any]] {
             self.workingDays = []
             for wdDict in value {
@@ -88,12 +91,13 @@ class Shop: BaseModel {
     }
     
     func isOpen() -> Bool {
-        for workDay in workingDays {
-            if workDay.liesWithin() {
-                return workDay.isOpen()
-            }
-        }
-        return false
+//        for workDay in workingDays {
+//            if workDay.liesWithin() {
+//                return workDay.isOpen()
+//            }
+//        }
+//        return false
+        return open_now
     }
     
     func isOpenText() -> String {
