@@ -19,7 +19,7 @@ extension SearchViewController: GMSAutocompleteViewControllerDelegate {
         self.location = place.coordinate
         self.locationTF.text = place.formattedAddress
         if let _ = self.selectedCategory{
-            self.loadData()
+            self.loadData(showLoading: true)
         }
         dismiss(animated: true, completion: nil)
     }
@@ -37,7 +37,7 @@ extension SearchViewController: GMSAutocompleteViewControllerDelegate {
         }
         
         if let _ = self.selectedCategory {
-            self.loadData()
+            self.loadData(showLoading: true)
         }
         dismiss(animated: true, completion: nil)
     }

@@ -25,7 +25,7 @@ class ShopReviewsViewController: AbstractViewController,IndicatorInfoProvider, U
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return "Reviews"
     }
-    let refreshControl = UIRefreshControl()
+    
     var delegate : ShopReviewDelegate?
     @IBOutlet weak var tableView: UITableView!
     var reviews : [ShopReview] = [] {

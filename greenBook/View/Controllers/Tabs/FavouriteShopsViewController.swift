@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class FavouriteShopsViewController: AbstractViewController, UITableViewDelegate, UITableViewDataSource, ShopViewDelegate {
-    let refreshControl = UIRefreshControl()
 
     @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var tableView: UITableView!

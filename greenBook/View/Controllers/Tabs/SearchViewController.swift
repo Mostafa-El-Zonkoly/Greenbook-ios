@@ -34,6 +34,8 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     var location : CLLocationCoordinate2D = CLLocationCoordinate2D()
     @IBOutlet weak var searchViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var noResultLabel: UILabel!
+    @IBOutlet weak var noResultScreen: UIView!
     @IBOutlet weak var searchTF: UITextField!
     @IBOutlet weak var locationMapImgView: UIImageView!
     @IBOutlet weak var locationTF: UITextField!
@@ -42,7 +44,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     var shops : [Shop] = []
     var selectedCategory : Category?
     
-    
+    var loadOnAppear = false
     // MARK: Google Places Search
     let autocompleteController = GMSAutocompleteViewController()
 
@@ -73,6 +75,22 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         self.view.layoutIfNeeded()
         
     }
+    
+    func showScreen(type : ScreenType){
+        switch type {
+        case .none:
+            self.noResultScreen.isHidden = true
+            break
+        case .hint:
+            self.noResultScreen.isHidden = false
+            self.noResultLabel.text = "Pull down or type keyword to search."
+            break
+        case .noResult:
+            self.noResultScreen.isHidden = false
+            self.noResultLabel.text = "No Shops found."
+            break
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -94,15 +112,26 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                 self.location = loc.coordinate
             }
         }
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        self.noResultLabel.text = "Pull down or type keyword to search."
+        self.view.sendSubview(toBack: self.noResultScreen)
         
     }
-    
+    @objc func didPullToRefresh() {
+        self.loadData(showLoading: false)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.selectedShop = nil
         self.navigationController?.isNavigationBarHidden = true
-        loadData()
+        if loadOnAppear {
+            self.loadData(showLoading: true)
+        }else{
+            showScreen(type: .hint)
+        }
+        loadOnAppear = true
         ShopManager.sharedInstance.loadFavouriteShops { (response) in
             self.tableView.reloadData()
         }
@@ -186,7 +215,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                     self.searchTF.text = category.name
                     self.selectedCategory = category
                     self.viewState = .searching
-                    self.loadData()
+                    self.loadData(showLoading: true)
                 }
             }else{
                 // Result is of a shop
@@ -204,7 +233,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
                     self.selectedCategory = category
                     self.viewState = .searching
                     self.filterCategories(prefix: "")
-                    self.loadData()
+                    self.loadData(showLoading: true)
                 }
             }
         }
@@ -215,23 +244,28 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         self.performSegue(withIdentifier: "showMapSegue", sender: self)
     }
     
-    func loadData(){
+    func loadData(showLoading : Bool){
         // TODO Load Data related to category
         self.searchTF.resignFirstResponder()
         self.locationTF.resignFirstResponder()
+        if showLoading {
             self.startLoading()
+        }
         if let text = self.searchTF.text {
             self.query = text
         }
             CategoryManager.sharedInistance.loadCategoryShops(query: self.query, lat: self.location.latitude, long: self.location.longitude, handler: { (response) in
                 self.endLoading()
+                self.refreshControl.endRefreshing()
                 if response.status {
                     if let newShops = response.result as? [Shop] {
                         self.shops = newShops
                         if self.shops.count > 0 {
                             self.viewState = .results
+                            self.showScreen(type: .none)
                         }else{
                             self.viewState = .noResults
+                            self.showScreen(type: .noResult)
                         }
                         self.tableView.reloadData()
                     }
@@ -278,7 +312,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             }
         }
         self.filterCategories(prefix: "")
-        self.loadData()
+        self.loadData(showLoading: true)
         return true
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {

@@ -21,7 +21,13 @@ class AbstractViewController : UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
         addActivityIndicator()
     }
-    
+    let refreshControl = UIRefreshControl()
+
+    enum ScreenType {
+        case hint
+        case noResult
+        case none
+    }
     private func addActivityIndicator(){
         // Initialize Activity Indicator
         let viewFrame = self.view.bounds
