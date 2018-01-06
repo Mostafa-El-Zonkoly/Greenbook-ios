@@ -12,6 +12,7 @@ class WorkingDay : BaseModel {
     var opened_at : String = ""
     var closed_at : String = ""
     var state : String = ""
+    var opening_hours : String = ""
     
     override func bindDictionary(dict: [String : Any]) {
         super.bindDictionary(dict: dict)
@@ -30,23 +31,28 @@ class WorkingDay : BaseModel {
         if let value = dict ["state"] as? String {
             self.state = value
         }
+        if let value = dict["opening_hours"] as? String {
+            self.opening_hours = value
+        }
     }
     static let weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     func liesWithin() -> Bool {
         let date = Date() // time utc
         var calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
-        if let timeZone = TimeZone.init(secondsFromGMT: 0) {
-            calendar.timeZone = timeZone
-        }
+        // Keep local time zone
+        //        if let timeZone = TimeZone.init(secondsFromGMT: 0) {
+//            calendar.timeZone = timeZone
+//        }
         let components = calendar.dateComponents([.weekday, .hour, .minute], from: date)
         if let weekDay = components.weekday, WorkingDay.weekDays.count >= components.weekday! {
-            if WorkingDay.weekDays[weekDay-1] == self.day_name {
+            if WorkingDay.weekDays[weekDay-1].lowercased() == self.day_name.lowercased() {
                 // Same Day, Start Parsing Time
-                if let startDate = self.opened_at.dateForHours(), let closeDate = self.closed_at.dateForHours() {
-                    if date.compare(startDate).rawValue != CFComparisonResult.compareLessThan.rawValue, date.compare(closeDate).rawValue != CFComparisonResult.compareGreaterThan.rawValue {
-                        return true
-                    }
-                }
+//                if let startDate = self.opened_at.dateForHours(), let closeDate = self.closed_at.dateForHours() {
+//                    if date.compare(startDate).rawValue != CFComparisonResult.compareLessThan.rawValue, date.compare(closeDate).rawValue != CFComparisonResult.compareGreaterThan.rawValue {
+//                        return true
+//                    }
+//                }
+                return true
             }
         }
         return false

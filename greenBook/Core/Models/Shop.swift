@@ -101,10 +101,16 @@ class Shop: BaseModel {
     }
     
     func isOpenText() -> String {
+                for workDay in workingDays {
+                    if workDay.liesWithin() {
+                        return workDay.opening_hours
+                    }
+                }
+        
         if isOpen() {
-            return "Opened now"
+            return "Not Determined"
         }else{
-            return "Closed now"
+            return "Not Determined"
         }
     }
     override func toDict() -> [String : Any] {
