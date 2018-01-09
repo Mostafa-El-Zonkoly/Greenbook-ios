@@ -100,6 +100,9 @@ public func application(_ application: UIApplication, open url: URL,     sourceA
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        let notification : Notification = Notification.init(name: Notification.Name.UIApplicationWillEnterForeground)
+        NotificationCenter.default.post(notification)
+
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

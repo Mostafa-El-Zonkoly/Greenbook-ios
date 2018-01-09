@@ -32,9 +32,9 @@ extension SearchViewController: GMSAutocompleteViewControllerDelegate {
     // User canceled the operation.
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         self.locationTF.text = ""
-        if let loc = AbstractManager.locationManager.location?.coordinate {
-            self.location = loc
-        }
+//        if let loc = AbstractManager.locationManager.location?.coordinate {
+            self.location = nil
+//        }
         
         if let _ = self.selectedCategory {
             self.loadData(showLoading: true)

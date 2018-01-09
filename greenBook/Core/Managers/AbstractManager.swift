@@ -50,6 +50,7 @@ class AbstractManager : NSObject{
     func locationEnabled() -> Bool {
         let authorizationState =  CLLocationManager.authorizationStatus()
         if authorizationState == CLAuthorizationStatus.authorizedAlways || authorizationState == CLAuthorizationStatus.authorizedWhenInUse {
+            AbstractManager.locationManager.startUpdatingLocation()
             return true
         }else{
             AbstractManager.locationManager.requestWhenInUseAuthorization()

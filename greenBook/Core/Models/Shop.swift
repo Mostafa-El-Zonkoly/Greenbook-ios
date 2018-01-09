@@ -81,11 +81,14 @@ class Shop: BaseModel {
     func favourited() -> Bool {
         return ShopManager.sharedInstance.favouriteShops[self.google_place_id] != nil
     }
+    
+    
     func getDistance() -> String {
         if let location = CLLocationManager().location {
             
-           let distance =  (location.distance(from: CLLocation.init(latitude: self.location.lat, longitude: self.location.long)) / 1000.0)
-            return "\(max(distance, 0).toString(decimals: 2)) KM near you"
+           let distance =  (location.distance(from: CLLocation.init(latitude: self.location.lat, longitude: self.location.long)) / 1000.0).toMile()
+            
+            return "\(max(distance, 0).toString(decimals: 2)) Mile near you"
         }
         return "Unkown"
     }
@@ -129,4 +132,10 @@ class Shop: BaseModel {
         return dict
     }
     
+}
+
+extension Double {
+    func toMile() -> Double {
+        return self * 0.621371
+    }
 }

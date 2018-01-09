@@ -31,7 +31,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     // MARK: Outlets
     @IBOutlet weak var categorySearchView: RoundedView!
-    var location : CLLocationCoordinate2D = CLLocationCoordinate2D()
+    var location : CLLocationCoordinate2D?
     @IBOutlet weak var searchViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var noResultLabel: UILabel!
@@ -108,8 +108,8 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         self.filterTable.rowHeight = 40.0
         
         if AbstractManager().locationEnabled() {
-            if let loc = AbstractManager.locationManager.location {
-                self.location = loc.coordinate
+            if let _ = AbstractManager.locationManager.location {
+//                self.location = loc.coordinate
             }
         }
         refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
@@ -122,8 +122,27 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         self.loadData(showLoading: false)
     }
     
+    @objc func applicationWillEnterForeground() {
+        if loadOnAppear {
+            self.loadData(showLoading: true)
+        }
+    }
+    func getLocation() -> CLLocationCoordinate2D {
+        if let searchLocation = self.location {
+            return searchLocation
+        }else{
+            if AbstractManager().locationEnabled() {
+                if let loc = AbstractManager.locationManager.location {
+                    return loc.coordinate
+                }
+            }
+        }
+        return CLLocationCoordinate2D.init()
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+
         self.selectedShop = nil
         self.navigationController?.isNavigationBarHidden = true
         if loadOnAppear {
@@ -137,7 +156,9 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         }
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     override func viewDidLayoutSubviews() {
         
     }
@@ -254,7 +275,8 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         if let text = self.searchTF.text {
             self.query = text
         }
-            CategoryManager.sharedInistance.loadCategoryShops(query: self.query, lat: self.location.latitude, long: self.location.longitude, handler: { (response) in
+        let loc = self.getLocation()
+            CategoryManager.sharedInistance.loadCategoryShops(query: self.query, lat: loc.latitude, long: loc.longitude, handler: { (response) in
                 self.endLoading()
                 self.refreshControl.endRefreshing()
                 if response.status {
@@ -340,7 +362,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             }
         }else if segue.identifier == "showMapSegue" {
             if let mapView = segue.destination as? SearchMapViewController {
-                mapView.startLocation = self.location
+                mapView.startLocation = self.getLocation()
                 mapView.shops = self.shops
             }
         }
@@ -360,6 +382,9 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         }
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
     
 }
