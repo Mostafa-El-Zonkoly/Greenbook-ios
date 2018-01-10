@@ -17,22 +17,58 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
     @IBOutlet weak var googleMapContainer: UIView!
     var shops : [Shop] = []
     var startLocation : CLLocationCoordinate2D = AbstractManager.locationManager.location!.coordinate
-    
+    var delegate : SearchControllerProtocol?
     var googleMapView : GMSMapView!
     let userMarker = GMSMarker()
     var shopMarkers : [GMSMarker] = []
+    
+    @IBOutlet weak var redoButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
     self.navigationController?.isNavigationBarHidden = false
         customizeNavigationBar()
+        self.redoButton.isHidden = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "icSwitchSearch"), style: .done, target: self, action: #selector(backToInitial(_:)))
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "icSwitchSearch"), style: .done, target: self, action: #selector(refineSearch(_:)))
+
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
         self.navigationItem.title = "Maps"
 
         self.initMap()
         self.buttonsView.isHidden = true
     }
-    
+    @IBAction func refineSearchButtonPressed(_ sender: UIButton) {
+        self.refineSearch(sender)
+    }
+    @objc func refineSearch(_ sender: AnyObject) {
+        if let parent = self.delegate {
+            self.redoButton.isHidden = true
+            self.startLoading()
+            userMarker.position = self.googleMapView.camera.target
+            parent.searchInLocation(location: self.googleMapView.camera.target, handler: { (response) in
+                self.endLoading()
+                var newShops : [Shop] = []
+                if response.status {
+                    if let newResults = response.result as? [Shop] {
+                        newShops = newResults
+                    }
+                }else{
+                    if let error = response.error {
+                        self.showGBError(error: error)
+                    }else{
+                        self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+                    }
+                }
+                self.shops = newShops
+                self.showShops()
+            })
+        }
+    }
+    deinit {
+        if let parent = self.delegate {
+            parent.destroyCalls()
+        }
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.navigationController?.isNavigationBarHidden = true
@@ -48,7 +84,6 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
         print(googleMapContainer.frame)
         userMarker.position = startLocation
         let camera = GMSCameraPosition.camera(withLatitude: startLocation.latitude, longitude: startLocation.longitude, zoom: 6.0)
-        var bounds = GMSCoordinateBounds()
 
         googleMapView = GMSMapView.map(withFrame: googleMapContainer.bounds, camera: camera)
         googleMapView.delegate = self
@@ -63,8 +98,19 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
         userMarker.groundAnchor = CGPoint.init(x: 0.5, y: 0.5) // For image to be centered
         
         googleMapView.isMyLocationEnabled = true
+        self.googleMapContainer.bringSubview(toFront: self.redoButton)
+        showShops()
+
+    }
+    
+    
+    func showShops(){
+        var bounds = GMSCoordinateBounds()
         bounds = bounds.includingCoordinate(userMarker.position)
         var index  = 0
+        for marker in shopMarkers {
+            marker.map = nil
+        }
         for shop in shops {
             let marker = GMSMarker.init(position: CLLocationCoordinate2D.init(latitude: shop.location.lat, longitude: shop.location.long))
             marker.userData = index
@@ -83,9 +129,7 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
         }
         // To fit map to show all shops
         googleMapView.animate(with: GMSCameraUpdate.fit(bounds, with: UIEdgeInsetsMake(50.0 , 50.0 ,50.0 ,50.0)))
-
     }
-    
     
     var selectedMarker : GMSMarker? {
         didSet {
@@ -127,7 +171,26 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
     func closeInfo() {
         googleMapView.selectedMarker = nil
     }
-    
+    let minDistance : Double = 100 // in meters
+    var cameraTarget : GMSCameraPosition?
+    var dragChange : Bool = false
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        if let oldTarget = cameraTarget, dragChange {
+            let oldLocation  = CLLocation.init(latitude: oldTarget.target.latitude, longitude: oldTarget.target.longitude)
+            let newLocation = CLLocation.init(latitude: position.target.latitude, longitude: position.target.longitude)
+            let distance = oldLocation.distance(from: newLocation)
+            if oldLocation.distance(from: newLocation) > minDistance {
+                self.redoButton.isHidden = false
+            }
+        }else{
+            print("Update Target")
+            cameraTarget = position
+        }
+    }
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        print("Will move with Gesture \(gesture)")
+        dragChange = gesture
+    }
     @IBAction func showDirection(_ sender: UIButton) {
         var coordinates = CLLocationCoordinate2D()
         var title = "Item"

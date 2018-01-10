@@ -81,7 +81,11 @@ class AbstractViewController : UIViewController, UIImagePickerControllerDelegate
     }
     
     func showGBError(error : GBError){
-        self.showErrorMessage(errorMessage: error.description)
+        if error.error_type == .server_error {
+            self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
+        }else{
+            self.showErrorMessage(errorMessage: error.description)
+        }
     }
     func showError(error : Error) {
         // TODO Show error

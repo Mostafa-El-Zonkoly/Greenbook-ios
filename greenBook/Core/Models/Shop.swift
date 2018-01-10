@@ -131,7 +131,37 @@ class Shop: BaseModel {
         
         return dict
     }
-    
+    func getHours() -> [String] {
+        var hours : [String] = []
+        var hoursDict : [String : WorkingDay] = [:]
+        for workingDay in workingDays {
+            hoursDict[workingDay.day_name.lowercased()] = workingDay
+        }
+        var calendar = Calendar.init(identifier: Calendar.Identifier.gregorian)
+        // Keep local time zone
+        //        if let timeZone = TimeZone.init(secondsFromGMT: 0) {
+        //            calendar.timeZone = timeZone
+        //        }
+        let date = Date() // time utc
+        let components = calendar.dateComponents([.weekday, .hour, .minute], from: date)
+        if let weekDay = components.weekday, WorkingDay.weekDays.count >= components.weekday! {
+            let startingIndex = weekDay - 1
+            var index = startingIndex
+            while hoursDict.keys.count > 0 {
+                let workDay = WorkingDay.weekDays[index]
+                if let day = hoursDict[workDay.lowercased()] {
+                    hours.append(day.opening_hours)
+                    hoursDict.removeValue(forKey: workDay.lowercased())
+                }
+                index = (index + 1) % WorkingDay.weekDays.count
+                if index == startingIndex {
+                    break
+                }
+            }
+        }
+        
+        return hours
+    }
 }
 
 extension Double {

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import DropDown
 
 class ShopDetailCell: UITableViewCell {
     var shop : Shop?
@@ -28,6 +29,27 @@ class ShopDetailCell: UITableViewCell {
             
             break
             
+        }
+    }
+    let dropDown = DropDown()
+
+    func didSelectCell(){
+        if detailsType == .hours {
+            
+            DispatchQueue.main.async {
+                
+                // The view to which the drop down will appear on
+                self.dropDown.anchorView = self.detailsLabel // UIView or UIBarButtonItem
+                
+                // The list of items to display. Can be changed dynamically
+                if let hours = self.shop?.getHours() {
+                    if hours.count > 0 {
+                        self.dropDown.dataSource = hours
+                        self.dropDown.show()
+                    }
+                }
+
+            }
         }
     }
 }

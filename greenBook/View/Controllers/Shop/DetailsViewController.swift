@@ -90,6 +90,10 @@ class DetailsViewController: AbstractViewController,IndicatorInfoProvider, UITab
                 self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
             }
 
+        }else if indexPath.section < cellIdentifiers.count, cellIdentifiers[indexPath.section] == .hours {
+            if let cell = tableView.cellForRow(at: indexPath) as? ShopDetailCell {
+                cell.didSelectCell()
+            }
         }
     }
     

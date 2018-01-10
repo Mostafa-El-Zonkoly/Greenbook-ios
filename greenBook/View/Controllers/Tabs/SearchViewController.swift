@@ -22,7 +22,13 @@ enum SearchType {
     case category
     case location
 }
-class SearchViewController: AbstractViewController, UITextFieldDelegate, UITableViewDataSource,UITableViewDelegate,ShopViewDelegate {
+
+
+protocol SearchControllerProtocol {
+    func searchInLocation(location : CLLocationCoordinate2D, handler: @escaping (Response) -> Void)
+    func destroyCalls()
+}
+class SearchViewController: AbstractViewController, UITextFieldDelegate, UITableViewDataSource,UITableViewDelegate,ShopViewDelegate, SearchControllerProtocol {
     var searchType : SearchType = .location
     var selectedShop : Shop?
     @IBOutlet weak var filterViewHeightConstraint: NSLayoutConstraint!
@@ -83,7 +89,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             break
         case .hint:
             self.noResultScreen.isHidden = false
-            self.noResultLabel.text = "Pull down or type keyword to search."
+            self.noResultLabel.text = "Pull down or\n type keyword to search."
             break
         case .noResult:
             self.noResultScreen.isHidden = false
@@ -94,7 +100,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
-        self.viewState = .results
+        self.viewState = .noResults
         
         // Capture location On map action
         let gestureRecong = UITapGestureRecognizer.init(target: self, action: #selector(showOnMap))
@@ -279,6 +285,10 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
             CategoryManager.sharedInistance.loadCategoryShops(query: self.query, lat: loc.latitude, long: loc.longitude, handler: { (response) in
                 self.endLoading()
                 self.refreshControl.endRefreshing()
+                if let compHandler = self.completionHandler {
+                    compHandler(response)
+                    self.completionHandler = nil
+                }
                 if response.status {
                     if let newShops = response.result as? [Shop] {
                         self.shops = newShops
@@ -363,6 +373,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         }else if segue.identifier == "showMapSegue" {
             if let mapView = segue.destination as? SearchMapViewController {
                 mapView.startLocation = self.getLocation()
+                mapView.delegate = self
                 mapView.shops = self.shops
             }
         }
@@ -386,5 +397,14 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
     }
-    
+    var completionHandler: ((Response)->Void)?
+    func searchInLocation(location: CLLocationCoordinate2D, handler: @escaping (Response) -> Void) {
+        self.location = location
+        self.locationTF.text = "Current Map Area"
+        self.completionHandler = handler
+        self.loadData(showLoading: false)
+    }
+    func destroyCalls() {
+        self.completionHandler = nil
+    }
 }

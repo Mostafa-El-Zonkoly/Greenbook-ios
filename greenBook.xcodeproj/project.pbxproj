@@ -13,6 +13,7 @@
 		060E71681FBA5D9D00898592 /* WorkingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E71671FBA5D9D00898592 /* WorkingDay.swift */; };
 		060E716A1FBA5E0600898592 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E71691FBA5E0600898592 /* Location.swift */; };
 		060E716C1FBA61AD00898592 /* DoubleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E716B1FBA61AD00898592 /* DoubleHandler.swift */; };
+		0612E92C20058FE60063E806 /* Pods_greenBook.framework in Resources */ = {isa = PBXBuildFile; fileRef = A5D1424DDD0B6708674BC58E /* Pods_greenBook.framework */; };
 		0615D4A91FC771000097313A /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4A81FC771000097313A /* PlaceholderTextView.swift */; };
 		0615D4AB1FC7776B0097313A /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AA1FC7776B0097313A /* AddReviewViewController.swift */; };
 		0615D4AD1FC77BA70097313A /* ReviewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AC1FC77BA70097313A /* ReviewsManager.swift */; };
@@ -153,7 +154,6 @@
 		06C276D61FC764D50062F09E /* FavouriteShopsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C276D51FC764D50062F09E /* FavouriteShopsViewController.swift */; };
 		06C87F031FC10C1400EE7A97 /* ShopDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C87F021FC10C1400EE7A97 /* ShopDetailCell.swift */; };
 		06C87F051FC1178800EE7A97 /* ShopGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C87F041FC1178800EE7A97 /* ShopGalleryViewController.swift */; };
-		06D219D21FD772350046BDB1 /* Pods_greenBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D1424DDD0B6708674BC58E /* Pods_greenBook.framework */; };
 		06DB954F1FC7AFAA0012ED2F /* UpdateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB954E1FC7AFAA0012ED2F /* UpdateProfileViewController.swift */; };
 		06ECB4F51FD2340E00B48B53 /* SearchMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ECB4F41FD2340E00B48B53 /* SearchMapViewController.swift */; };
 		06ECB4F71FD23F3300B48B53 /* ShopMarkerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06ECB4F61FD23F3300B48B53 /* ShopMarkerInfoView.swift */; };
@@ -163,6 +163,7 @@
 		06FCAFA21FB901D00099685A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAFA11FB901D00099685A /* Category.swift */; };
 		06FCAFA51FB906880099685A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FCAFA41FB906880099685A /* SearchViewController.swift */; };
 		7F3C49E2CFA9FC3D78E87E03 /* Pods_greenBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D1424DDD0B6708674BC58E /* Pods_greenBook.framework */; };
+		D52DE84886DB9D27C197B2E1 /* Pods_greenBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D1424DDD0B6708674BC58E /* Pods_greenBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -261,7 +262,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06D219D21FD772350046BDB1 /* Pods_greenBook.framework in Frameworks */,
 				0661F1E31FD5FEAE00EA9F14 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +272,7 @@
 			files = (
 				06ECB4FB1FD24A7100B48B53 /* MapKit.framework in Frameworks */,
 				7F3C49E2CFA9FC3D78E87E03 /* Pods_greenBook.framework in Frameworks */,
+				D52DE84886DB9D27C197B2E1 /* Pods_greenBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +675,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0612E92C20058FE60063E806 /* Pods_greenBook.framework in Resources */,
 				066670C71FAE76BA00739695 /* OpenSans-Italic.ttf in Resources */,
 				069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */,
 				066670C41FAE76BA00739695 /* OpenSans-BoldItalic.ttf in Resources */,
@@ -724,6 +726,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
@@ -752,6 +755,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
