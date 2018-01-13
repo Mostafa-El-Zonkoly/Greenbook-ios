@@ -13,7 +13,6 @@
 		060E71681FBA5D9D00898592 /* WorkingDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E71671FBA5D9D00898592 /* WorkingDay.swift */; };
 		060E716A1FBA5E0600898592 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E71691FBA5E0600898592 /* Location.swift */; };
 		060E716C1FBA61AD00898592 /* DoubleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E716B1FBA61AD00898592 /* DoubleHandler.swift */; };
-		0612E92C20058FE60063E806 /* Pods_greenBook.framework in Resources */ = {isa = PBXBuildFile; fileRef = A5D1424DDD0B6708674BC58E /* Pods_greenBook.framework */; };
 		0615D4A91FC771000097313A /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4A81FC771000097313A /* PlaceholderTextView.swift */; };
 		0615D4AB1FC7776B0097313A /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AA1FC7776B0097313A /* AddReviewViewController.swift */; };
 		0615D4AD1FC77BA70097313A /* ReviewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615D4AC1FC77BA70097313A /* ReviewsManager.swift */; };
@@ -675,7 +674,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0612E92C20058FE60063E806 /* Pods_greenBook.framework in Resources */,
 				066670C71FAE76BA00739695 /* OpenSans-Italic.ttf in Resources */,
 				069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */,
 				066670C41FAE76BA00739695 /* OpenSans-BoldItalic.ttf in Resources */,
