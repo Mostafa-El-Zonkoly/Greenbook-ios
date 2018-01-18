@@ -26,7 +26,8 @@ class ShopDetailCell: UITableViewCell {
             break
         case .phone:
             self.detailsLabel.text = shop.phone_number
-            
+        case .website:
+            self.detailsLabel.text = shop.website
             break
             
         }

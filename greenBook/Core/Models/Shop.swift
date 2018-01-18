@@ -22,6 +22,7 @@ class Shop: BaseModel {
     var phone_number : String = ""
     var google_place_id : String = ""
     var open_now : Bool = false
+    var website : String = ""
     override func bindDictionary(dict: [String : Any]) {
         super.bindDictionary(dict: dict)
         if let value = dict["photos"] as? [[String : Any]] {
@@ -71,6 +72,11 @@ class Shop: BaseModel {
         }
         if let value = dict["rate"] as? Double {
             self.rate = value
+        }
+        if let value = dict["website"] as? String {
+            self.website = value
+        }else{
+            self.website = "   "
         }
         if let _ = ShopManager.sharedInstance.favouriteShops[self.google_place_id] {
             ShopManager.sharedInstance.favouriteShops[self.google_place_id] = self.google_place_id

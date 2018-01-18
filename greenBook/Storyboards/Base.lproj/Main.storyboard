@@ -604,7 +604,7 @@
                                 <rect key="frame" x="0.0" y="94" width="375" height="524"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtO-6g-46V">
-                                        <rect key="frame" x="16" y="250.5" width="343" height="23.5"/>
+                                        <rect key="frame" x="16" y="251" width="343" height="23.5"/>
                                         <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -925,6 +925,57 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="detailsLabel" destination="8is-ms-0ZA" id="UQD-Y7-U2e"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WebsiteCell" rowHeight="40" id="8NK-cw-FKf" customClass="ShopDetailCell" customModule="greenBook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="148" width="375" height="40"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8NK-cw-FKf" id="lNh-IN-HuF">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4E-Au-tgq" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                                    <rect key="frame" x="6" y="0.0" width="363" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iah-2N-T5n">
+                                                            <rect key="frame" x="32" y="10" width="69" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="FUn-Ey-AJs"/>
+                                                                <constraint firstAttribute="width" constant="69" id="oOf-Jk-Xl4"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="15"/>
+                                                            <color key="textColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://www.google.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deA-8T-POy">
+                                                            <rect key="frame" x="101" y="10" width="254" height="20"/>
+                                                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                                                            <color key="textColor" red="0.1215686275" green="0.57254901960000004" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Iah-2N-T5n" firstAttribute="leading" secondItem="u4E-Au-tgq" secondAttribute="leading" constant="32" id="CiH-wz-lkW"/>
+                                                        <constraint firstItem="Iah-2N-T5n" firstAttribute="top" secondItem="u4E-Au-tgq" secondAttribute="top" constant="10" id="UDC-GV-6HZ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="deA-8T-POy" secondAttribute="trailing" constant="8" id="UQ5-k6-xay"/>
+                                                        <constraint firstAttribute="bottom" secondItem="deA-8T-POy" secondAttribute="bottom" constant="10" id="fO9-Ev-uAD"/>
+                                                        <constraint firstItem="deA-8T-POy" firstAttribute="leading" secondItem="Iah-2N-T5n" secondAttribute="trailing" id="jQD-Q0-yif"/>
+                                                        <constraint firstItem="deA-8T-POy" firstAttribute="top" secondItem="u4E-Au-tgq" secondAttribute="top" constant="10" id="nej-7D-jCX"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="u4E-Au-tgq" firstAttribute="height" secondItem="lNh-IN-HuF" secondAttribute="height" id="GMj-db-YMJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="u4E-Au-tgq" secondAttribute="trailing" constant="6" id="GfE-uO-jSt"/>
+                                                <constraint firstItem="u4E-Au-tgq" firstAttribute="centerY" secondItem="lNh-IN-HuF" secondAttribute="centerY" id="v3N-W4-pK2"/>
+                                                <constraint firstItem="u4E-Au-tgq" firstAttribute="leading" secondItem="lNh-IN-HuF" secondAttribute="leading" constant="6" id="znC-TG-gsH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="detailsLabel" destination="deA-8T-POy" id="eeP-R5-jKR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1912,7 +1963,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a Star to Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-Cm-B3v">
-                                <rect key="frame" x="126.5" y="347" width="122.5" height="20.5"/>
+                                <rect key="frame" x="127" y="347" width="122.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

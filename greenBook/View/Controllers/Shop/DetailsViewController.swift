@@ -14,7 +14,7 @@ enum ShopDetailsCellIDs {
     case address
     case hours
     case phone
-    
+    case website
     func cellID() -> String{
         switch self {
         case .address:
@@ -23,6 +23,8 @@ enum ShopDetailsCellIDs {
             return "HoursCell"
         case .phone:
             return "PhoneCell"
+        case .website:
+            return "WebsiteCell"
         }
     }
 }
@@ -47,7 +49,7 @@ class DetailsViewController: AbstractViewController,IndicatorInfoProvider, UITab
     // MARK: Tableview datasource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,7 +64,7 @@ class DetailsViewController: AbstractViewController,IndicatorInfoProvider, UITab
         headerView.backgroundColor = UIColor.clear
         return headerView
     }
-    let cellIdentifiers : [ShopDetailsCellIDs] = [.hours,.phone]
+    let cellIdentifiers : [ShopDetailsCellIDs] = [.hours,.phone, .website]
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section < cellIdentifiers.count, let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifiers[indexPath.section].cellID(), for: indexPath) as? ShopDetailCell {
@@ -94,6 +96,14 @@ class DetailsViewController: AbstractViewController,IndicatorInfoProvider, UITab
             if let cell = tableView.cellForRow(at: indexPath) as? ShopDetailCell {
                 cell.didSelectCell()
             }
+        }else if indexPath.section < cellIdentifiers.count, cellIdentifiers[indexPath.section] == .website{
+            // TODO open website
+            if let url = URL.init(string: self.shop.website) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }else{
+                self.showErrorMessage(errorMessage: "Can't open url")
+            }
+
         }
     }
     
