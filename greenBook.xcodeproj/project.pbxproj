@@ -186,7 +186,7 @@
 		0646ACB81FB3D25B007760EE /* StringCheckers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCheckers.swift; sourceTree = "<group>"; };
 		0650F3131FB5CE65006A00F7 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		0650F3151FB5CE73006A00F7 /* AbstractScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractScrollableViewController.swift; sourceTree = "<group>"; };
-		0661F1FE1FD5FEAE00EA9F14 /* greenBook-staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "greenBook-staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0661F1FE1FD5FEAE00EA9F14 /* Green Book Guide-staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Green Book Guide-staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0661F1FF1FD5FEAE00EA9F14 /* greenBook copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "greenBook copy-Info.plist"; path = "/Users/mostafa/ios/Badeeb/greenBook/greenBook copy-Info.plist"; sourceTree = "<absolute>"; };
 		0661F2001FD5FEEA00EA9F14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "prod/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0661F2021FD5FF0800EA9F14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "staging/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 		06A1E2751FBFE37F005F618A /* AbstractSegmentedBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractSegmentedBarViewController.swift; sourceTree = "<group>"; };
 		06A1E2771FBFE444005F618A /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		06A1E27A1FBFE78B005F618A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		06B3C4091FA7E88600D02947 /* greenBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = greenBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B3C4091FA7E88600D02947 /* Green Book Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Green Book Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B3C40C1FA7E88600D02947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06B3C40E1FA7E88600D02947 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		06B3C4111FA7E88600D02947 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -357,8 +357,8 @@
 		06B3C40A1FA7E88600D02947 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				06B3C4091FA7E88600D02947 /* greenBook.app */,
-				0661F1FE1FD5FEAE00EA9F14 /* greenBook-staging.app */,
+				06B3C4091FA7E88600D02947 /* Green Book Guide.app */,
+				0661F1FE1FD5FEAE00EA9F14 /* Green Book Guide-staging.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -551,9 +551,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0661F1A71FD5FEAE00EA9F14 /* greenBook-staging */ = {
+		0661F1A71FD5FEAE00EA9F14 /* Green Book Guide-staging */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0661F1FB1FD5FEAE00EA9F14 /* Build configuration list for PBXNativeTarget "greenBook-staging" */;
+			buildConfigurationList = 0661F1FB1FD5FEAE00EA9F14 /* Build configuration list for PBXNativeTarget "Green Book Guide-staging" */;
 			buildPhases = (
 				0661F1A91FD5FEAE00EA9F14 /* Sources */,
 				0661F1E21FD5FEAE00EA9F14 /* Frameworks */,
@@ -563,14 +563,14 @@
 			);
 			dependencies = (
 			);
-			name = "greenBook-staging";
+			name = "Green Book Guide-staging";
 			productName = greenBook;
-			productReference = 0661F1FE1FD5FEAE00EA9F14 /* greenBook-staging.app */;
+			productReference = 0661F1FE1FD5FEAE00EA9F14 /* Green Book Guide-staging.app */;
 			productType = "com.apple.product-type.application";
 		};
-		06B3C4081FA7E88500D02947 /* greenBook */ = {
+		06B3C4081FA7E88500D02947 /* Green Book Guide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 06B3C41B1FA7E88600D02947 /* Build configuration list for PBXNativeTarget "greenBook" */;
+			buildConfigurationList = 06B3C41B1FA7E88600D02947 /* Build configuration list for PBXNativeTarget "Green Book Guide" */;
 			buildPhases = (
 				B04DCD16C1749446D9FC190A /* [CP] Check Pods Manifest.lock */,
 				06B3C4051FA7E88500D02947 /* Sources */,
@@ -584,9 +584,9 @@
 			);
 			dependencies = (
 			);
-			name = greenBook;
+			name = "Green Book Guide";
 			productName = greenBook;
-			productReference = 06B3C4091FA7E88600D02947 /* greenBook.app */;
+			productReference = 06B3C4091FA7E88600D02947 /* Green Book Guide.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -637,8 +637,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				06B3C4081FA7E88500D02947 /* greenBook */,
-				0661F1A71FD5FEAE00EA9F14 /* greenBook-staging */,
+				06B3C4081FA7E88500D02947 /* Green Book Guide */,
+				0661F1A71FD5FEAE00EA9F14 /* Green Book Guide-staging */,
 			);
 		};
 /* End PBXProject section */
@@ -1149,7 +1149,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0661F1FB1FD5FEAE00EA9F14 /* Build configuration list for PBXNativeTarget "greenBook-staging" */ = {
+		0661F1FB1FD5FEAE00EA9F14 /* Build configuration list for PBXNativeTarget "Green Book Guide-staging" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0661F1FC1FD5FEAE00EA9F14 /* Debug */,
@@ -1167,7 +1167,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		06B3C41B1FA7E88600D02947 /* Build configuration list for PBXNativeTarget "greenBook" */ = {
+		06B3C41B1FA7E88600D02947 /* Build configuration list for PBXNativeTarget "Green Book Guide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06B3C41C1FA7E88600D02947 /* Debug */,

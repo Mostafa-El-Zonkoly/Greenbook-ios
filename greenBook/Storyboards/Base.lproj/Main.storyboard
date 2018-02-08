@@ -29,7 +29,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                                 <color key="textColor" red="0.84705882352941175" green="0.27450980392156865" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sT-wO-aFs" customClass="RoundedButton" customModule="greenBook" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sT-wO-aFs" customClass="RoundedButton" customModule="Green_Book_Guide" customModuleProvider="target">
                                 <rect key="frame" x="192" y="440" width="144" height="48"/>
                                 <color key="backgroundColor" red="0.0078431372549019607" green="0.47058823529411764" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
@@ -78,7 +78,7 @@
                                     <segue destination="olb-7F-Ul4" kind="show" identifier="signupUser" id="6Wt-Ko-2D2"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VN4-Es-XkA" userLabel="Facebook Login" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VN4-Es-XkA" userLabel="Facebook Login" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                 <rect key="frame" x="38" y="496" width="144" height="48"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFacebook" translatesAutoresizingMaskIntoConstraints="NO" id="ox3-tO-pbm">
@@ -109,7 +109,7 @@
                                     <outletCollection property="gestureRecognizers" destination="H3s-b9-Jt7" appends="YES" id="5HJ-Bd-wKD"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0p-fA-WFj" userLabel="Google+ Login" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0p-fA-WFj" userLabel="Google+ Login" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                 <rect key="frame" x="192" y="496" width="144" height="48"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icGoogle" translatesAutoresizingMaskIntoConstraints="NO" id="Ylh-Ah-fmc">
@@ -255,7 +255,7 @@
                                     <constraint firstItem="QIc-5w-hbA" firstAttribute="leading" secondItem="4Wt-Qx-lAe" secondAttribute="leading" constant="4" id="yFI-aP-Oib"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5L-eM-MMF" customClass="RoundedButton" customModule="greenBook" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5L-eM-MMF" customClass="RoundedButton" customModule="Green_Book_Guide" customModuleProvider="target">
                                 <rect key="frame" x="38" y="440" width="144" height="48"/>
                                 <color key="backgroundColor" red="0.0078431372549019607" green="0.47058823529411764" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -332,7 +332,7 @@
         <!--Favourite-->
         <scene sceneID="W6P-2J-443">
             <objects>
-                <viewController title="Favourite" automaticallyAdjustsScrollViewInsets="NO" id="Exf-FG-yEs" customClass="FavouriteShopsViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Favourite" automaticallyAdjustsScrollViewInsets="NO" id="Exf-FG-yEs" customClass="FavouriteShopsViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mfU-9L-1f7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -341,7 +341,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopCell" rowHeight="140" id="ZiU-n5-qed" customClass="ShopCell" customModule="greenBook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopCell" rowHeight="140" id="ZiU-n5-qed" customClass="ShopCell" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZiU-n5-qed" id="lVI-sE-9eZ">
@@ -376,7 +376,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIY-rH-qWT">
                                         <rect key="frame" x="16" y="202" width="343" height="151"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFavEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="SFl-pR-bfR" customClass="CircularImage" customModule="greenBook" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFavEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="SFl-pR-bfR" customClass="CircularImage" customModule="Green_Book_Guide" customModuleProvider="target">
                                                 <rect key="frame" x="123.5" y="0.0" width="96" height="96"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -451,7 +451,7 @@
         <!--Search-->
         <scene sceneID="xqR-eN-S2h">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mZW-nQ-l4U" customClass="SearchViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="mZW-nQ-l4U" customClass="SearchViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2h5-Mc-8uS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -459,7 +459,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKf-zS-hQr">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ah3-m1-18d" userLabel="CategorySearch View" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ah3-m1-18d" userLabel="CategorySearch View" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="13" y="18" width="350" height="30"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSearch" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-Q5-PKV">
@@ -502,7 +502,7 @@
                                             <constraint firstItem="XaW-1t-Sb8" firstAttribute="leading" secondItem="hwu-Q5-PKV" secondAttribute="trailing" constant="13" id="yBT-nM-Eiu"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCD-L8-EtT" userLabel="Location Search View" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCD-L8-EtT" userLabel="Location Search View" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="13" y="52.5" width="350" height="30"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLocation" translatesAutoresizingMaskIntoConstraints="NO" id="XKo-lI-lsk">
@@ -571,7 +571,7 @@
                                 <rect key="frame" x="0.0" y="94" width="375" height="524"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopCell" rowHeight="140" id="jWr-Kx-y4x" customClass="ShopCell" customModule="greenBook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopCell" rowHeight="140" id="jWr-Kx-y4x" customClass="ShopCell" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jWr-Kx-y4x" id="f3d-cn-w46">
@@ -618,7 +618,7 @@
                                     <constraint firstItem="jtO-6g-46V" firstAttribute="centerX" secondItem="R89-9z-mTL" secondAttribute="centerX" id="y1U-8g-rgv"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpG-tc-Jmj" userLabel="FilterView" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fpG-tc-Jmj" userLabel="FilterView" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="94" width="375" height="0.0"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XvU-Hd-rAe" userLabel="Filter Table View">
@@ -684,27 +684,27 @@
         <!--Shop-->
         <scene sceneID="K63-sf-BNt">
             <objects>
-                <viewController title="Shop" id="mwb-PN-f7h" customClass="ShopViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Shop" id="mwb-PN-f7h" customClass="ShopViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zQ0-kK-4Gg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7D-em-Swu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="uBp-3c-lek"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOl-nw-qgg">
-                                <rect key="frame" x="0.0" y="204" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.69803921570000005" green="0.69803921570000005" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="UXc-aB-F6c"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="42I-lW-XWC" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="205" width="375" height="45"/>
+                                <rect key="frame" x="0.0" y="161" width="375" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="b5r-J4-lnE"/>
@@ -718,7 +718,7 @@
                                 <cells/>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cHO-vP-35U">
-                                <rect key="frame" x="0.0" y="250" width="375" height="368"/>
+                                <rect key="frame" x="0.0" y="206" width="375" height="412"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
                         </subviews>
@@ -755,7 +755,7 @@
         <!--Details View Controller-->
         <scene sceneID="mWW-Sv-D9b">
             <objects>
-                <viewController restorationIdentifier="ShopDetailsView" storyboardIdentifier="ShopDetailsView" automaticallyAdjustsScrollViewInsets="NO" id="Eae-3b-09P" customClass="DetailsViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ShopDetailsView" storyboardIdentifier="ShopDetailsView" automaticallyAdjustsScrollViewInsets="NO" id="Eae-3b-09P" customClass="DetailsViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sNC-rb-YZ8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -764,14 +764,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddressCell" rowHeight="40" id="M7S-lN-UJc" customClass="ShopDetailCell" customModule="greenBook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddressCell" rowHeight="40" id="M7S-lN-UJc" customClass="ShopDetailCell" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M7S-lN-UJc" id="A9S-qB-QYU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rea-5G-lH4" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rea-5G-lH4" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                                     <rect key="frame" x="6" y="0.0" width="363" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC0-Hp-42d">
@@ -815,14 +815,14 @@
                                             <outlet property="detailsLabel" destination="Is8-qv-mi8" id="Aw7-B8-6ek"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HoursCell" rowHeight="40" id="4hn-jq-6vF" customClass="ShopDetailCell" customModule="greenBook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="HoursCell" rowHeight="40" id="4hn-jq-6vF" customClass="ShopDetailCell" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="68" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4hn-jq-6vF" id="ffX-a4-MEc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpA-K4-pF4" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vpA-K4-pF4" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                                     <rect key="frame" x="6" y="0.0" width="363" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nck-4M-Ta4">
@@ -866,14 +866,14 @@
                                             <outlet property="detailsLabel" destination="An9-tY-Z2G" id="ekd-Pk-AhY"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhoneCell" rowHeight="40" id="hUS-4q-Kso" customClass="ShopDetailCell" customModule="greenBook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PhoneCell" rowHeight="40" id="hUS-4q-Kso" customClass="ShopDetailCell" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="108" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hUS-4q-Kso" id="rus-lY-4M1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8j-p3-Aph" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8j-p3-Aph" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                                     <rect key="frame" x="6" y="0.0" width="363" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INm-Uw-J3P">
@@ -927,14 +927,14 @@
                                             <outlet property="detailsLabel" destination="8is-ms-0ZA" id="UQD-Y7-U2e"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WebsiteCell" rowHeight="40" id="8NK-cw-FKf" customClass="ShopDetailCell" customModule="greenBook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WebsiteCell" rowHeight="40" id="8NK-cw-FKf" customClass="ShopDetailCell" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="148" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8NK-cw-FKf" id="lNh-IN-HuF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4E-Au-tgq" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u4E-Au-tgq" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                                     <rect key="frame" x="6" y="0.0" width="363" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iah-2N-T5n">
@@ -1005,7 +1005,7 @@
         <!--Signup View Controller-->
         <scene sceneID="H9F-Z6-Wjt">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="olb-7F-Ul4" customClass="SignupViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="olb-7F-Ul4" customClass="SignupViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o1t-wP-6PY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1016,7 +1016,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5M-H8-LPp" userLabel="content view">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="667"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="06E-Ym-w9P" customClass="CircularImage" customModule="greenBook" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfilePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="06E-Ym-w9P" customClass="CircularImage" customModule="Green_Book_Guide" customModuleProvider="target">
                                                 <rect key="frame" x="141" y="69" width="92" height="92"/>
                                                 <color key="backgroundColor" red="0.90196078431372551" green="0.89803921568627454" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1213,7 +1213,7 @@
                                                     <constraint firstItem="dP5-FO-SZy" firstAttribute="top" secondItem="Feb-ak-ko2" secondAttribute="bottom" id="wOr-gR-YFo"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZM2-Lm-O0Q" customClass="RoundedButton" customModule="greenBook" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZM2-Lm-O0Q" customClass="RoundedButton" customModule="Green_Book_Guide" customModuleProvider="target">
                                                 <rect key="frame" x="38" y="576" width="299" height="37"/>
                                                 <color key="backgroundColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
@@ -1346,7 +1346,7 @@
         <!--Profile-->
         <scene sceneID="LS8-Km-BCw">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Jqo-BV-2xt" customClass="ProfileViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Jqo-BV-2xt" customClass="ProfileViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UaX-NC-eOf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1355,14 +1355,14 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="230" id="94E-YC-owp" customClass="ProfileHeaderCell" customModule="greenBook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="230" id="94E-YC-owp" customClass="ProfileHeaderCell" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="94E-YC-owp" id="ABI-x2-0N2">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfile-1" translatesAutoresizingMaskIntoConstraints="NO" id="gbe-nd-cx8" customClass="CircularImage" customModule="greenBook" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfile-1" translatesAutoresizingMaskIntoConstraints="NO" id="gbe-nd-cx8" customClass="CircularImage" customModule="Green_Book_Guide" customModuleProvider="target">
                                                     <rect key="frame" x="134" y="15" width="107" height="107"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -1433,7 +1433,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjJ-TB-hXW">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-UI-QSA" userLabel="Google+ Login" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Nd-UI-QSA" userLabel="Google+ Login" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                                             <rect key="frame" x="192.5" y="94" width="148.5" height="48"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icGoogle" translatesAutoresizingMaskIntoConstraints="NO" id="1XV-EP-5iW">
@@ -1464,7 +1464,7 @@
                                                                 <outletCollection property="gestureRecognizers" destination="a4e-Mx-IID" appends="YES" id="xZ3-cR-guC"/>
                                                             </connections>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Znp-yy-2zN" userLabel="Facebook Login" customClass="RoundedView" customModule="greenBook" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Znp-yy-2zN" userLabel="Facebook Login" customClass="RoundedView" customModule="Green_Book_Guide" customModuleProvider="target">
                                                             <rect key="frame" x="34" y="94" width="148.5" height="48"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFacebook" translatesAutoresizingMaskIntoConstraints="NO" id="v1c-nC-4KX">
@@ -1495,7 +1495,7 @@
                                                                 <outletCollection property="gestureRecognizers" destination="rvR-D6-z0L" appends="YES" id="mJ6-aD-uSk"/>
                                                             </connections>
                                                         </view>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZH-Qf-Bkv" customClass="RoundedButton" customModule="greenBook" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZH-Qf-Bkv" customClass="RoundedButton" customModule="Green_Book_Guide" customModuleProvider="target">
                                                             <rect key="frame" x="34" y="38" width="148.5" height="48"/>
                                                             <color key="backgroundColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
@@ -1511,7 +1511,7 @@
                                                                 <action selector="loginEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tbz-kx-gxN"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVI-Ud-GJf" customClass="RoundedButton" customModule="greenBook" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVI-Ud-GJf" customClass="RoundedButton" customModule="Green_Book_Guide" customModuleProvider="target">
                                                             <rect key="frame" x="192.5" y="38" width="148.5" height="48"/>
                                                             <color key="backgroundColor" red="0.0078431372550000003" green="0.47058823529999999" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="18"/>
@@ -1585,7 +1585,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="62" id="BLu-8I-4gI" customClass="ProfileMenuCell" customModule="greenBook" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="62" id="BLu-8I-4gI" customClass="ProfileMenuCell" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="520" width="375" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BLu-8I-4gI" id="9Au-GI-gEI">
@@ -1712,7 +1712,7 @@
         <!--Shop Gallery View Controller-->
         <scene sceneID="aIY-tz-g6y">
             <objects>
-                <viewController restorationIdentifier="ShopGalleryView" storyboardIdentifier="ShopGalleryView" automaticallyAdjustsScrollViewInsets="NO" id="QVP-Wg-lUs" customClass="ShopGalleryViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ShopGalleryView" storyboardIdentifier="ShopGalleryView" automaticallyAdjustsScrollViewInsets="NO" id="QVP-Wg-lUs" customClass="ShopGalleryViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QkL-qb-H7Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1761,7 +1761,7 @@
         <!--Maps-->
         <scene sceneID="Or9-uN-Qzs">
             <objects>
-                <viewController title="Maps" id="ReQ-JG-EeG" customClass="SearchMapViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Maps" id="ReQ-JG-EeG" customClass="SearchMapViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hLA-xu-5vO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1769,7 +1769,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dtj-XX-IgC">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ty-L0-rCm" customClass="RoundedButton" customModule="greenBook" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ty-L0-rCm" customClass="RoundedButton" customModule="Green_Book_Guide" customModuleProvider="target">
                                         <rect key="frame" x="95" y="8" width="185" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1850,7 +1850,7 @@
         <!--Shop Reviews View Controller-->
         <scene sceneID="cZB-rU-NAf">
             <objects>
-                <viewController restorationIdentifier="ShopReviewView" storyboardIdentifier="ShopReviewView" automaticallyAdjustsScrollViewInsets="NO" id="SnR-bT-mYi" customClass="ShopReviewsViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ShopReviewView" storyboardIdentifier="ShopReviewView" automaticallyAdjustsScrollViewInsets="NO" id="SnR-bT-mYi" customClass="ShopReviewsViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2SX-lg-4to">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1898,13 +1898,13 @@
         <!--Write A Review-->
         <scene sceneID="liR-bE-XiW">
             <objects>
-                <viewController title="Write A Review" id="tVC-9f-6I5" customClass="AddReviewViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Write A Review" id="tVC-9f-6I5" customClass="AddReviewViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P8B-6i-KOO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfile" translatesAutoresizingMaskIntoConstraints="NO" id="V16-h8-cuV" customClass="CircularImage" customModule="greenBook" customModuleProvider="target">
-                                <rect key="frame" x="17.5" y="79.5" width="45" height="45"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfile" translatesAutoresizingMaskIntoConstraints="NO" id="V16-h8-cuV" customClass="CircularImage" customModule="Green_Book_Guide" customModuleProvider="target">
+                                <rect key="frame" x="17.5" y="35.5" width="45" height="45"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="jES-XN-beS"/>
@@ -1912,13 +1912,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xb7-to-RWw">
-                                <rect key="frame" x="75.5" y="92" width="283.5" height="23.5"/>
+                                <rect key="frame" x="75.5" y="48" width="283.5" height="23.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
                                 <color key="textColor" red="0.047058823529411764" green="0.6470588235294118" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a Review" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q7v-lU-aVe" customClass="PlaceholderTextView" customModule="greenBook" customModuleProvider="target">
-                                <rect key="frame" x="25" y="139.5" width="325" height="125"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a Review" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q7v-lU-aVe" customClass="PlaceholderTextView" customModule="Green_Book_Guide" customModuleProvider="target">
+                                <rect key="frame" x="25" y="95.5" width="325" height="125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1929,14 +1929,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5B8-PH-81f" userLabel="Separator View">
-                                <rect key="frame" x="0.0" y="283.5" width="375" height="1.5"/>
+                                <rect key="frame" x="0.0" y="239.5" width="375" height="1.5"/>
                                 <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1.5" id="42g-UZ-A4K"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cs2-zc-7zM" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="115" y="301" width="145" height="25"/>
+                                <rect key="frame" x="115" y="257" width="145" height="25"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="XkM-dB-dGY"/>
@@ -1963,7 +1963,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a Star to Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htt-Cm-B3v">
-                                <rect key="frame" x="127" y="347" width="122.5" height="20.5"/>
+                                <rect key="frame" x="127" y="303" width="122.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2050,12 +2050,12 @@
         <!--Update Profile View Controller-->
         <scene sceneID="wn6-lg-9NN">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="JG8-8f-egn" customClass="UpdateProfileViewController" customModule="greenBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="JG8-8f-egn" customClass="UpdateProfileViewController" customModule="Green_Book_Guide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lkf-mL-8v0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfile-1" translatesAutoresizingMaskIntoConstraints="NO" id="kzG-bb-Ilv" customClass="CircularImage" customModule="greenBook" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfile-1" translatesAutoresizingMaskIntoConstraints="NO" id="kzG-bb-Ilv" customClass="CircularImage" customModule="Green_Book_Guide" customModuleProvider="target">
                                 <rect key="frame" x="141" y="97" width="92" height="92"/>
                                 <color key="backgroundColor" red="0.90196078430000004" green="0.8980392157" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2176,6 +2176,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="CLn-ky-ofK"/>
-        <segue reference="qTU-0V-Zz2"/>
+        <segue reference="lkk-c5-nEy"/>
     </inferredMetricsTieBreakers>
 </document>

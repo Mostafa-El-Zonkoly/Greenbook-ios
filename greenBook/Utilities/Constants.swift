@@ -11,8 +11,8 @@ import UIKit
 
 struct KEYS {
     #if PROD
-        static let GMSPLacesKey = "AIzaSyDkwcSMj8diFAtWR9_Fiue4ceqKnxcGe0I"
-        static let GMSServiceKey = "AIzaSyDw6Lr27FzIZX5vqLvIyt_XqxqtI6bb3ZE"
+        static let GMSPLacesKey = "AIzaSyAN9Y3RRPU3KD0hFPp4PEa67O_tT31pxrw"
+        static let GMSServiceKey = "AIzaSyBLJTQtJVhAkYoJaB_TGHzwJD60fjY_nkY"
     #else
         static let GMSPLacesKey = "AIzaSyDkwcSMj8diFAtWR9_Fiue4ceqKnxcGe0I"
         static let GMSServiceKey = "AIzaSyDw6Lr27FzIZX5vqLvIyt_XqxqtI6bb3ZE"
@@ -20,7 +20,7 @@ struct KEYS {
 }
 struct URLS {
     #if PROD
-        static let SERVER_URL = "https://staging-greenbook.herokuapp.com/api/v1/"
+        static let SERVER_URL = "https://greenbookshop.herokuapp.com/api/v1/"
     
     #else
         static let SERVER_URL = "https://staging-greenbook.herokuapp.com/api/v1/"

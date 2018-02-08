@@ -23,20 +23,29 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
     var shopMarkers : [GMSMarker] = []
     
     @IBOutlet weak var redoButton: UIButton!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.initMap()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     self.navigationController?.isNavigationBarHidden = false
         customizeNavigationBar()
         self.redoButton.isHidden = true
+        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "icSwitchSearch"), style: .done, target: self, action: #selector(backToInitial(_:)))
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "icSwitchSearch"), style: .done, target: self, action: #selector(refineSearch(_:)))
 
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: navigationController, action: nil)
         self.navigationItem.title = "Maps"
 
-        self.initMap()
         self.buttonsView.isHidden = true
     }
+    
     @IBAction func refineSearchButtonPressed(_ sender: UIButton) {
         self.refineSearch(sender)
     }
@@ -59,6 +68,7 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
                         self.showErrorMessage(errorMessage: Messages.DEFAULT_ERROR_MSG)
                     }
                 }
+                
                 self.shops = newShops
                 self.showShops()
             })
@@ -84,20 +94,29 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
         print(googleMapContainer.frame)
         userMarker.position = startLocation
         let camera = GMSCameraPosition.camera(withLatitude: startLocation.latitude, longitude: startLocation.longitude, zoom: 6.0)
-
-        googleMapView = GMSMapView.map(withFrame: googleMapContainer.bounds, camera: camera)
-        googleMapView.delegate = self
-        googleMapContainer.addSubview(googleMapView)
-        userMarker.tracksViewChanges = true
-        userMarker.tracksInfoWindowChanges = true
-        userMarker.map = googleMapView
-        userMarker.tracksInfoWindowChanges = true
-        userMarker.title = "Search Location"
-        userMarker.icon = #imageLiteral(resourceName: "cirLocation")
-        userMarker.iconView?.contentMode = .center
-        userMarker.groundAnchor = CGPoint.init(x: 0.5, y: 0.5) // For image to be centered
         
-        googleMapView.isMyLocationEnabled = true
+        if googleMapView == nil {
+            googleMapView = GMSMapView.map(withFrame: googleMapContainer.bounds, camera: camera)
+            googleMapContainer.addSubview(googleMapView)
+            userMarker.tracksViewChanges = true
+            userMarker.tracksInfoWindowChanges = true
+            userMarker.map = googleMapView
+            userMarker.tracksInfoWindowChanges = true
+            userMarker.title = "Search Location"
+            userMarker.icon = #imageLiteral(resourceName: "cirLocation")
+            userMarker.iconView?.contentMode = .center
+            userMarker.groundAnchor = CGPoint.init(x: 0.5, y: 0.5) // For image to be centered
+            
+            googleMapView.isMyLocationEnabled = true
+            googleMapView.settings.myLocationButton = true
+            googleMapView.settings.compassButton = true
+//            self.view.bringSubview(toFront: googleMapContainer)
+
+        }
+        googleMapView.frame = googleMapContainer.bounds
+        googleMapView.camera = camera
+
+        googleMapView.delegate = self
         self.googleMapContainer.bringSubview(toFront: self.redoButton)
         showShops()
 
@@ -135,8 +154,10 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
         didSet {
             if selectedMarker == nil {
                 self.buttonsView.isHidden = true
+                self.googleMapView.settings.myLocationButton = true
             }else{
                 self.buttonsView.isHidden = false
+                self.googleMapView.settings.myLocationButton = false
             }
         }
     }

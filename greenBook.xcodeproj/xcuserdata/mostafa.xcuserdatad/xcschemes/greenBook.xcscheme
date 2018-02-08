@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "06B3C4081FA7E88500D02947"
-               BuildableName = "greenBook.app"
-               BlueprintName = "greenBook"
+               BuildableName = "Green Book Guide.app"
+               BlueprintName = "Green Book Guide"
                ReferencedContainer = "container:greenBook.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "06B3C4081FA7E88500D02947"
-            BuildableName = "greenBook.app"
-            BlueprintName = "greenBook"
+            BuildableName = "Green Book Guide.app"
+            BlueprintName = "Green Book Guide"
             ReferencedContainer = "container:greenBook.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -58,8 +58,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "06B3C4081FA7E88500D02947"
-            BuildableName = "greenBook.app"
-            BlueprintName = "greenBook"
+            BuildableName = "Green Book Guide.app"
+            BlueprintName = "Green Book Guide"
             ReferencedContainer = "container:greenBook.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "06B3C4081FA7E88500D02947"
-            BuildableName = "greenBook.app"
-            BlueprintName = "greenBook"
+            BuildableName = "Green Book Guide.app"
+            BlueprintName = "Green Book Guide"
             ReferencedContainer = "container:greenBook.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -88,6 +88,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "Greenbook Guide"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
