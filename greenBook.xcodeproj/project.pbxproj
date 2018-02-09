@@ -122,6 +122,8 @@
 		066670DA1FAE7E2000739695 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D51FAE7E1F00739695 /* RoundedView.swift */; };
 		066670DB1FAE7E2000739695 /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066670D61FAE7E1F00739695 /* BorderedView.swift */; };
 		067853131FC43F49007D4884 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067853121FC43F49007D4884 /* ImageUploader.swift */; };
+		067B6E13202D1B0400449ABC /* WebpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B6E12202D1B0400449ABC /* WebpageViewController.swift */; };
+		067B6E14202D1B0400449ABC /* WebpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067B6E12202D1B0400449ABC /* WebpageViewController.swift */; };
 		0691241F1FBA6E700022D063 /* ShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691241E1FBA6E700022D063 /* ShopManager.swift */; };
 		069577261FC21D0200DCB24D /* ShopReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 069577251FC21D0200DCB24D /* ShopReviewCell.xib */; };
 		069577281FC2258D00DCB24D /* ShopReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069577271FC2258D00DCB24D /* ShopReview.swift */; };
@@ -210,6 +212,7 @@
 		066670D51FAE7E1F00739695 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		066670D61FAE7E1F00739695 /* BorderedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
 		067853121FC43F49007D4884 /* ImageUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		067B6E12202D1B0400449ABC /* WebpageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebpageViewController.swift; sourceTree = "<group>"; };
 		0691241E1FBA6E700022D063 /* ShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopManager.swift; sourceTree = "<group>"; };
 		069577251FC21D0200DCB24D /* ShopReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopReviewCell.xib; sourceTree = "<group>"; };
 		069577271FC2258D00DCB24D /* ShopReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopReview.swift; sourceTree = "<group>"; };
@@ -385,6 +388,7 @@
 				06B3C41F1FA7E8EE00D02947 /* Abstract Controllers */,
 				06A1E2791FBFE77D005F618A /* Shop */,
 				06DB954E1FC7AFAA0012ED2F /* UpdateProfileViewController.swift */,
+				067B6E12202D1B0400449ABC /* WebpageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -877,6 +881,7 @@
 				0661F1D91FD5FEAE00EA9F14 /* Location.swift in Sources */,
 				0661F1DA1FD5FEAE00EA9F14 /* BaseModel.swift in Sources */,
 				0661F1DB1FD5FEAE00EA9F14 /* BorderlessView.swift in Sources */,
+				067B6E14202D1B0400449ABC /* WebpageViewController.swift in Sources */,
 				0661F1DC1FD5FEAE00EA9F14 /* AbstractFormViewController.swift in Sources */,
 				0661F1DD1FD5FEAE00EA9F14 /* AbstractManager.swift in Sources */,
 				0661F1DE1FD5FEAE00EA9F14 /* Shop.swift in Sources */,
@@ -940,6 +945,7 @@
 				060E716A1FBA5E0600898592 /* Location.swift in Sources */,
 				06B3C42C1FA7EA6200D02947 /* BaseModel.swift in Sources */,
 				066670D71FAE7E2000739695 /* BorderlessView.swift in Sources */,
+				067B6E13202D1B0400449ABC /* WebpageViewController.swift in Sources */,
 				0646ACB71FB3D078007760EE /* AbstractFormViewController.swift in Sources */,
 				06B3C4321FA7F1B500D02947 /* AbstractManager.swift in Sources */,
 				060E71601FBA4BE300898592 /* Shop.swift in Sources */,

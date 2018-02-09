@@ -33,7 +33,7 @@ class DetailsViewController: AbstractViewController,IndicatorInfoProvider, UITab
     var shop : Shop!
     
     @IBOutlet weak var detailsTableView: UITableView!
-    
+    var superViewController : UIViewController?
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo.init(title: "Details")
     }
@@ -98,8 +98,14 @@ class DetailsViewController: AbstractViewController,IndicatorInfoProvider, UITab
             }
         }else if indexPath.section < cellIdentifiers.count, cellIdentifiers[indexPath.section] == .website{
             // TODO open website
-            if let url = URL.init(string: self.shop.website) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            if let _ = URL.init(string: self.shop.website), let parent = self.superViewController as? ShopViewController{
+//                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                if let webpageController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WebPageViewController") as? WebpageViewController{
+                    webpageController.urlString = self.shop.website
+                    webpageController.title = self.shop.name
+                    parent.forwardSegue = true
+                    parent.navigationController?.show(webpageController, sender: self)
+                }
             }else{
                 self.showErrorMessage(errorMessage: "Can't open url")
             }

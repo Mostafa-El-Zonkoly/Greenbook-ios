@@ -15,6 +15,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     @IBOutlet weak var buttonsView: ButtonBarView!
     
     @IBOutlet weak var shopContainerView : UIView!
+    var forwardSegue : Bool = false
     var shopView : ShopView!
     var shop : Shop?
     var shopViewAdded = false
@@ -24,7 +25,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
-    var forwardSegue = false
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -148,7 +149,7 @@ class ShopViewController: AbstractSegmentedBarViewController,ShopViewDelegate,Sh
             shopReviewView.shop = shop
         }
         shopReviewView.delegate = self
-
+        detailsView.superViewController = self
         var frame = detailsView.view.frame
         frame.size.width = self.containerView.frame.width
         detailsView.view.frame = frame

@@ -94,7 +94,7 @@ class Shop: BaseModel {
             
            let distance =  (location.distance(from: CLLocation.init(latitude: self.location.lat, longitude: self.location.long)) / 1000.0).toMile()
             
-            return "\(max(distance, 0).toString(decimals: 2)) Miles from you"
+            return "\(max(distance, 0).toString(decimals: 1)) Miles from you"
         }
         return "Unkown"
     }
