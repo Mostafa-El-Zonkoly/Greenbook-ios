@@ -1790,17 +1790,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2fs-fy-1Np" userLabel="Buttons View">
                                 <rect key="frame" x="230" y="529" width="130" height="61"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcn-UG-pDc">
-                                        <rect key="frame" x="0.0" y="0.0" width="61" height="61"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="61" id="HlQ-vB-K7w"/>
-                                        </constraints>
-                                        <state key="normal" image="icNavigation"/>
-                                        <connections>
-                                            <action selector="showDirection:" destination="ReQ-JG-EeG" eventType="touchUpInside" id="Q9Y-fM-ZVy"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFx-NK-Nyt">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFx-NK-Nyt">
                                         <rect key="frame" x="68" y="0.5" width="61" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="61" id="ydM-cj-GPL"/>
@@ -1810,14 +1800,24 @@
                                             <action selector="showLocation:" destination="ReQ-JG-EeG" eventType="touchUpInside" id="vr7-ae-eew"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcn-UG-pDc">
+                                        <rect key="frame" x="68" y="0.0" width="61" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="61" id="HlQ-vB-K7w"/>
+                                        </constraints>
+                                        <state key="normal" image="icNavigation"/>
+                                        <connections>
+                                            <action selector="showDirection:" destination="ReQ-JG-EeG" eventType="touchUpInside" id="Q9Y-fM-ZVy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="1ng-UK-OgX"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tcn-UG-pDc" secondAttribute="trailing" constant="1" id="2RV-Zz-uU7"/>
                                     <constraint firstAttribute="trailing" secondItem="gFx-NK-Nyt" secondAttribute="trailing" constant="1" id="45A-MA-wUE"/>
                                     <constraint firstAttribute="height" constant="61" id="Lxy-EY-Ltn"/>
                                     <constraint firstItem="gFx-NK-Nyt" firstAttribute="height" secondItem="2fs-fy-1Np" secondAttribute="height" id="Qso-Y0-Hr8"/>
-                                    <constraint firstItem="Tcn-UG-pDc" firstAttribute="leading" secondItem="2fs-fy-1Np" secondAttribute="leading" id="Vjc-bc-4vc"/>
                                     <constraint firstItem="Tcn-UG-pDc" firstAttribute="centerY" secondItem="2fs-fy-1Np" secondAttribute="centerY" id="cB8-ec-bbd"/>
                                     <constraint firstItem="gFx-NK-Nyt" firstAttribute="centerY" secondItem="2fs-fy-1Np" secondAttribute="centerY" id="dUK-tf-P6X"/>
                                     <constraint firstItem="Tcn-UG-pDc" firstAttribute="height" secondItem="2fs-fy-1Np" secondAttribute="height" id="wHB-Dl-HHE"/>
