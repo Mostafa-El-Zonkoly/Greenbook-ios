@@ -54,7 +54,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     // MARK: Google Places Search
     let autocompleteController = GMSAutocompleteViewController()
 
-    var viewState : SearchState = .results {
+    var viewState : SearchState = .noSearch {
         didSet{
             self.adjustView()
         }
@@ -100,7 +100,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
-        self.viewState = .noResults
+        
         
         // Capture location On map action
         let gestureRecong = UITapGestureRecognizer.init(target: self, action: #selector(showOnMap))
@@ -122,6 +122,7 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         tableView.addSubview(refreshControl)
         self.noResultLabel.text = "Pull down or type keyword to search."
         self.view.sendSubview(toBack: self.noResultScreen)
+        self.adjustView()
         
     }
     @objc func didPullToRefresh() {
@@ -151,12 +152,16 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
 
         self.selectedShop = nil
         self.navigationController?.isNavigationBarHidden = true
-        if loadOnAppear {
-            self.loadData(showLoading: true)
+        if self.viewState != .noSearch {
+            if loadOnAppear {
+                self.loadData(showLoading: true)
+            }else{
+                showScreen(type: .hint)
+            }
+            loadOnAppear = true
         }else{
-            showScreen(type: .hint)
+            self.showScreen(type: .none)
         }
-        loadOnAppear = true
         ShopManager.sharedInstance.loadFavouriteShops { (response) in
             self.tableView.reloadData()
         }

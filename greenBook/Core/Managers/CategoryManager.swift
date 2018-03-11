@@ -47,8 +47,13 @@ class CategoryManager: AbstractManager {
                         
                         if let _ = dict["data"] as? NSDictionary, let categoriesDict = (dict["data"] as! [String: Any])["categories"] as? [[String : Any]] {
                             // Success
+                            var categoriesDictTemp : [[String: Any]] = categoriesDict
+                            if categoriesDictTemp.count == 0
+                            {
+                                categoriesDictTemp = [["id":1, "name" : "Bank"],["id":2, "name" : "Barber Shops"],["id":3, "name" : "Coffee"],["id":4, "name" : "Club"],["id":5, "name" : "Computer Shop"],["id":6, "name" : "Doctor"],["id":7, "name" : "Gas Station"],["id":8, "name" : "Gift Shop"],["id":9, "name" : "Hair Salon"],["id":10, "name" : "Lawyer"],["id":11, "name" : "Mobile Shop"],["id":12, "name" : "Restaurants"],["id":13, "name" : "Tea"]]
+                            }
                             var categories : [Category] = []
-                            for categoryDict in categoriesDict {
+                            for categoryDict in categoriesDictTemp {
                                 let category = Category.init()
                                 category.bindDictionary(dict: categoryDict)
                                 categories.append(category)
