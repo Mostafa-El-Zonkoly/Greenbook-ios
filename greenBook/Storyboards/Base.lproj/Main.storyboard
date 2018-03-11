@@ -55,11 +55,11 @@
                                     <constraint firstAttribute="height" constant="145" id="uCi-WS-FOO"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oe-oU-8kU">
-                                <rect key="frame" x="132.5" y="207" width="110" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green Book Guide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oe-oU-8kU">
+                                <rect key="frame" x="97.5" y="207" width="180" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="FHr-0k-Gch"/>
-                                    <constraint firstAttribute="width" constant="110" id="lNr-e0-gIb"/>
+                                    <constraint firstAttribute="width" constant="180" id="lNr-e0-gIb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="19"/>
                                 <color key="textColor" red="0.84705882352941175" green="0.27450980392156865" blue="0.23137254901960785" alpha="1" colorSpace="calibratedRGB"/>
@@ -1633,11 +1633,11 @@
                                                         <constraint firstAttribute="height" constant="145" id="mQf-KC-g7C"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green book" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNs-2p-6gb">
-                                                    <rect key="frame" x="132" y="188" width="110" height="26"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green Book Guide" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNs-2p-6gb">
+                                                    <rect key="frame" x="97" y="188" width="180" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26" id="C8t-LS-PWe"/>
-                                                        <constraint firstAttribute="width" constant="110" id="HUm-Bm-a7A"/>
+                                                        <constraint firstAttribute="width" constant="180" id="HUm-Bm-a7A"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="19"/>
                                                     <color key="textColor" red="0.84705882349999995" green="0.27450980390000002" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -2191,7 +2191,7 @@
         <image name="icFavPressed" width="29" height="27"/>
         <image name="icGoogle" width="19" height="19"/>
         <image name="icLocation" width="17" height="21"/>
-        <image name="icLocationMap" width="23" height="22"/>
+        <image name="icLocationMap" width="40" height="40"/>
         <image name="icLocked" width="25" height="31"/>
         <image name="icMylocation" width="61" height="60"/>
         <image name="icNavigation" width="61" height="60"/>

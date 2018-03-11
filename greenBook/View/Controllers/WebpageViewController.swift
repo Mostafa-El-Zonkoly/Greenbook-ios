@@ -38,6 +38,10 @@ class WebpageViewController: AbstractViewController, UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         self.endLoading()
     }
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        self.endLoading()
+        print("Error = \(error.localizedDescription)")
+    }
     
 }
 
