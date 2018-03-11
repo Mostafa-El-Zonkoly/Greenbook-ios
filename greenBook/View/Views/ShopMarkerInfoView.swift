@@ -36,7 +36,7 @@ class ShopMarkerInfoView: UIView {
             self.shopImageView.image = nil
         }
         self.shopRateView.rating = shop.rate
-        self.shopRateLabel.text = "\(shop.rate.toString(decimals: 1)))"
+        self.shopRateLabel.text = "(\(shop.rate.toString(decimals: 1)))"
         self.shopNameLabel.text = shop.name
     }
 }

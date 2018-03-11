@@ -184,6 +184,16 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
         }
         return nil
     }
+    var selectedShop : Shop?
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        if let index = marker.userData as? Int {
+            if index < self.shops.count {
+                let shopToOpen : Shop = self.shops[index]
+                self.selectedShop = shopToOpen
+                self.performSegue(withIdentifier: "showShopSegue", sender: self)
+            }
+        }
+    }
     func mapView(_ mapView: GMSMapView, didCloseInfoWindowOf marker: GMSMarker) {
         selectedMarker = nil
         print("Deselect Marker")
@@ -267,5 +277,16 @@ class SearchMapViewController: AbstractViewController, GMSMapViewDelegate,ShopMa
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showShopSegue"
+        {
+            if let dest = segue.destination as? ShopViewController {
+                if let shop = self.selectedShop {
+                    dest.shop = shop
+                }
+
+            }
+        }
+    }
     
 }
