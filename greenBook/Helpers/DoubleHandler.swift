@@ -17,6 +17,7 @@ extension Double {
         if self < min {
             return "0"
         }
+        
         return String.localizedStringWithFormat("%.\(decimals)f", self)
     }
 }

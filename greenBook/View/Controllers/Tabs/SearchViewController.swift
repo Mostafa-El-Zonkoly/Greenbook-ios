@@ -106,7 +106,9 @@ class SearchViewController: AbstractViewController, UITextFieldDelegate, UITable
         let gestureRecong = UITapGestureRecognizer.init(target: self, action: #selector(showOnMap))
         self.locationMapImgView.isUserInteractionEnabled = true
         self.locationMapImgView.addGestureRecognizer(gestureRecong)
+        self.startLoading()
         CategoryManager.sharedInistance.loadCategories { (response) in
+            self.endLoading()
             self.categories = CategoryManager.sharedInistance.categories
             self.tableView.reloadData()
         }

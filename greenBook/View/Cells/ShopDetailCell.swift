@@ -36,6 +36,7 @@ class ShopDetailCell: UITableViewCell {
 
     func didSelectCell(){
         if detailsType == .hours {
+            let controller = UIViewController()
             
             DispatchQueue.main.async {
                 

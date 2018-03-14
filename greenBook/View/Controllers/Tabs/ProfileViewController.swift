@@ -137,7 +137,7 @@ class ProfileViewController: AbstractViewController, UITableViewDelegate, UITabl
     }
     
     func inviteFriend(){
-        let textToShare = "Check out Greenbook iOS"
+        let textToShare = "Check out Green Book Guide iOS"
         
         if let myWebsite = URL(string:appURL) {
             let objectsToShare = [textToShare, myWebsite] as [Any]
